@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1459233606999.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4A850B0A",
+    "lastKnownWriteTime" : 1458253056,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "e81tqk5gxy",
+        "caption" : "party_means_wide",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=party_means_wide&cache_key=e81tqk5gxy",
+        "displayedObservations" : "32",
+        "environment" : "",
+        "object" : "party_means_wide",
+        "totalObservations" : "32",
+        "variables" : "4"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,19 @@
+
+\backmatter
+
+# Bibliography
+
+\noindent
+
+<!--  http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html  -->
+
+<!--  To create a hanging indent and spacing between entries.  These three lines may need to be removed. -->
+
+\setlength{\parindent}{-0.20in}
+\setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+---
+nocite: | 
+  @Dodd2012, @Cox2005, @Nokken2004, @Heberlig2006, @Evans1999, @Brewer2015, @Poole1991, @Stewart2001, @Theriault2008, @Mayhew2004
+...

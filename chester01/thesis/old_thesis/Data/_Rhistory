@@ -1,0 +1,512 @@
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_n(5)
+cars %>% sample_n(5)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = F)
+cars %>% sample_frac(.1, replace = T)
+cars %>% sample_frac(.50, replace = T)
+cars %>% sample_frac(.50, replace = T)
+cars %>% sample_frac(.50, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+cars %>% sample_frac(.2, replace = T)
+ddss <- c(1:365)
+ddss
+ddss %>% sample_n(5)
+SmallValues <- read.table("http://people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+SmallValues
+summary(SmallValues)
+source('~/.active-rstudio-document')
+SmallValues <- read.table("http://people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+summary(SmallValues)
+attach(SmallValues)
+t.test(RankFree, mu = 3, alternative = "greater")
+# Less than 3?
+t.test(RankFree, mu = 3, alternative = "less")
+# Different than 3?
+t.test(RankFree, mu = 3, alternative = "two.sided")
+t.test(RankFree, mu = 3, alternative = "less")
+summary(SmallValues)
+attach(SmallValues)
+t.test(RankFree, mu = 3, alternative = "greater")
+t.test(RankFree, mu = 3, alternative = "less")
+t.test(RankFree, mu = 3, alternative = "two.sided")
+SmallValues <- read.table("http://people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+summary(SmallValues)
+attach(SmallValues)
+# Is mean rank of freedom greater than 3?
+t.test(RankFree, mu = 3, alternative = "greater")
+# Less than 3?
+t.test(RankFree, mu = 3, alternative = "less")
+# Different than 3?
+t.test(RankFree, mu = 3, alternative = "two.sided")
+# Different than 3?
+t.test(RankFree, mu = 3, alternative = "two.sided")
+# Testing whether average rank on freedom is equal among males and females
+t.test(RankFree ~ female) # RankFree is numeric, female is 0,1
+# Same test, now among whites and nonwhites
+t.test(RankFree ~ nonwhite) # Now nonwhite is 0,1
+summary(SmallValues)
+length(SmallValues)
+SmallValues
+t.test(RankFree ~ female) # RankFree is numeric, female is 0,1
+# Same test, now among whites and nonwhites
+t.test(RankFree ~ nonwhite) # Now nonwhite is 0,1
+# Is mean rank for freedom same as mean rank for equality?
+t.test(RankFree, RankEq) # Now we're comparing two numeric variables
+boxplot(RankEq ~ party)
+SmallValues1 <- read.table("people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+SmallValues1 <- read.table("http://people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+SmallValues <- read.table("http://people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+attach(SmallValues)
+detach(SmallValues)
+detach(SmallValues)
+SmallValues$FreeMost <- ifelse(SmallValues$RankFree == 5, 1, 0)
+# Is the proportion of people that think freedom is most important = .5?
+?prop.test
+?prop.test
+prop.test(289, 298+330, p = .5, alternative = "two.sided")
+# Difference between men and women?
+prop.test(table(SmallValues$FreeMost, SmallValues$female))
+# chi sq
+SmallValues$Party3[SmallValues$party > 5] <- "Democrat"
+SmallValues$Party3[SmallValues$party > 2 & SmallValues$party < 5] <- "Independent"
+SmallValues$Party3[SmallValues$party < 3] <- "Republican"
+SmallValues$Free3[SmallValues$RankFree == 5] <- "Most"
+SmallValues$Free3[SmallValues$RankFree < 5 & SmallValues$RankFree > 1] <- "Middle"
+SmallValues$Free3[SmallValues$RankFree == 1] <- "Least"
+SmallValues$Eq3[SmallValues$RankEq == 5] <- "Most"
+SmallValues$Eq3[SmallValues$RankEq < 5 & SmallValues$RankEq > 1] <- "Middle"
+SmallValues$Eq3[SmallValues$RankEq == 1] <- "Least"
+SmallValues$ES3[SmallValues$RankES == 5] <- "Most"
+SmallValues$ES3[SmallValues$RankES < 5 & SmallValues$RankES > 1] <- "Middle"
+SmallValues$ES3[SmallValues$RankES == 1] <- "Least"
+attach(SmallValues)
+# Does rank of economic security vary by party?
+ourtable <- table(ES3, Party3)
+ourtable
+prop.table(ourtable, 2)
+?prop.table
+chisq1 <- chisq.test(ourtable)
+chisq1
+summary(SmallValues)
+summary(SmallValues)
+t.test(RankFree, mu = 3, alternative = "two.sided")
+t.test(RankMT, mu = 3, alternative = "two.sided")
+t.test(RankEQ, mu = 3, alternative = "two.sided")
+t.test(RankEq, mu = 3, alternative = "two.sided")
+t.test(RankES, mu = 3, alternative = "two.sided")
+t.test(RankLO, mu = 3, alternative = "two.sided")
+SmallValues <- read.table("http://people.reed.edu/~ciukd/SmallValues.txt", header = TRUE)
+summary(SmallValues)
+SmallValues$Party3[SmallValues$party > 5] <- "Democrat"
+summary(SmallValues)
+x <- 3
+y = 6
+y
+x == y
+t.test(SmallValues$RankEq[SmallValues$Party3 == 'Democrat'], mu = 5)
+t.test(SmallValues$RankEq, mu = 5)
+t.test(SmallValues$RankEq[SmallValues$Party3 != 'Democrat'], mu = 5)
+summary(SmallValues)
+mean(RankEq, na.rm = TRUE)
+mean(SmallValues$RankEq, na.rm = TRUE)
+aov1 <- aov(SmallValues$RankEq[SmallValues$Party3 == 'Democrat'])
+aov1 <- aov(SmallValues$RankEq[SmallValues$Party3 == 'Democrat'] ~ SmallValues$Party)
+aov1 <- aov(SmallValues$RankEq[SmallValues$Party3 == 'Democrat'] ~ as.factor(SmallValues$Party)
+))
+aov1 <- aov(SmallValues$RankEq[SmallValues$Party3 == 'Democrat'] ~ as.factor(SmallValues$Party))
+install.packages("RGtk2")
+exit
+q()
+install.packages("rattle")
+library(rattle)
+rattle()
+rattle()
+install.packages('RGtk2')
+rattle()
+library(stringr)
+library(XML)
+library(xml)
+install.packages("XML")
+library(maps)
+install.packages("maps")
+library(maps)
+heritage_parsed <- htmlParse("http://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger", encoding = "UTF-8")
+library(xml)
+library(XML)
+heritage_parsed <- htmlParse("http://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger", encoding = "UTF-8")
+tables <- readHTMLTable(heritage_parsed, stringsAsFactors = FALSE)
+tables
+danger_table <- danger_ table <- tables[[2]]
+danger_table <- danger_table <- tables[[2]]
+names(danger_table)
+danger_table$name
+danger_table$Name
+danger_table$Name[1:3]
+danger_table$crit <- ifelse(str_detect(danger_table$crit, "Natural") ==                                TRUE, "nat", "cult")
+danger_table$Criteria <- ifelse(str_detect(danger_table$crit, "Natural") == TRUE, "nat", "cult")
+library(rvest)
+install.packages("rvest")
+library(rvest)
+library(dplyr)
+install.packages("dplyr")
+install.packages("reshape2")
+webpage <- html("http://www.tdcj.state.tx.us/death_row/dr_executed_offenders.html")
+webpage %>%
+html_nodes("table") %>%
+.[[1]] %>%
+html_table()
+data <-
+webpage %>%
+html_nodes("table") %>%
+.[[1]] %>%
+html_table()
+data
+summary(data)
+install.packages("XLConnect")
+library(XLConnect)
+dattt <- read.xlsx(file.choose())
+library(xlsx)
+install.packages("xlsx")
+install.packages('Ecdat')
+data(Ketchup)
+library(Ecdat)
+data(Ketchup)
+Ketchup
+summary(Ketchup)
+ls
+ls()
+list.files()
+library(ecdat)
+library(Ketchup)
+library("Ecdat", lib.loc="/usr/local/Cellar/r/3.2.0/R.framework/Versions/3.2/Resources/library")
+library(Ketchup)
+data(Ketchup)
+Ketchup
+head(Ketchup)
+head(Ketchup, 25)
+price.hunts
+t.test(Ketchup$price.hunts ~ Ketchup.choice)
+t.test(Ketchup$price.hunts ~ Ketchup$Ketchup.choice)
+fit <- lm(Ketchup$Ketchup.choice ~ Ketchup$price.heinz + Ketchup$price.hunts + Ketchup$price.delmonte + Ketchup$price.stb)
+data(Males)
+Males
+head(Males)
+summary(Males)
+head(Males)
+summary(Males)
+fit <- lm(wage ~ school, data=Males)
+fit
+summary(fit)
+head(Males)
+fit <- lm(wage ~ school + ethn, data=Males)
+fit
+fit <- lm(wage ~ school + union + health + industry + occupation + residence + ethn, data=Males)
+summary(fit)
+library(Ecdat)
+data(Males)
+fit <- lm(wage ~ school + union + health + industry + occupation + residence + ethn, data=Males)
+summary(fit)
+install.packages("XLConnect")
+AB <- read.xlsx(file.choose())
+install.packages("xlsx")
+library(xlsx)
+install.packages("gdata")
+install.packages("gdata")
+library(gdata)
+list.files()
+data(Males)
+fit_wage <- lm(wage ~ school + union + health + industry + occupation + residence + ethn, data=Males)
+summary(fit_wage)
+data(OFP)
+library(Ecdat)
+data(OFP)
+data(OFP)
+fit_ofp <- lm(ofp ~ emr + sex + age + maried + black + school + famine + employed +
+privins + medicaid + region + hlth, data=OFP)
+summary(fit_ofp)
+data(OFP)
+fit_ofp <- lm(ofp ~ emr + sex + age + maried + black + school + faminc + employed +
+privins + medicaid + region + hlth, data=OFP)
+summary(fit_ofp)
+fit_ofp <- lm(ofp + ofnp + opp + opnp ~ emr + sex + age + maried + black + school + faminc + employed +
+privins + medicaid + region + hlth, data=OFP)
+summary(fit_ofp)
+fit_ofp <- lm(ofp + ofnp + opp + opnp + emr ~ sex + age + maried + black + school + faminc + employed +
+privins + medicaid + region + hlth, data=OFP)
+summary(fit_ofp)
+fit_ofp <- lm(ofp + ofnp ~ sex + age + maried + black + school + faminc + employed +
+privins + medicaid + region + hlth, data=OFP)
+summary(fit_ofp)
+data(Orange)
+fit_orange <- lm(priceoj ~ pricefg + fdd, data=Orange)
+summary(fit_orange)
+data(Participation)
+fit_parti <- lm(lfp ~ lnnlinc + age + educ + nyc + noc, data=Participation)
+summary(fit_parti)
+fit_parti <- lm(lfp ~ lnnlinc + age + educ + nyc + noc, data=Participation)
+head(Participation$lfp)
+data(politicalKnowledge)
+head(politicalKnowledge)
+head(politicalKnowledge, 20)
+head(politicalKnowledge, 6)
+?head
+head(politicalKnowledge, n = 16)
+politicalKnowledge
+data(RetSchool)
+data(Schooling)
+fit_sch <- lm(iqscore ~ age76, data=Schooling)
+summary(fit_sch)
+fit_sch <- lm(iqscore ~ age76 + ed66 + ed76 + sinmom14, data=Schooling)
+summary(fit_sch)
+data(Star)
+fit_star <- lm(tmathssk + treadssk ~ classk + totexpk + sex + freelunk + race + schidkn, data=Star)
+summary(fit_star)
+data(Sumhes)
+data(SumHes)
+summary(lm(gdp ~ sr + pop + opecdata=SumHes))
+summary(lm(gdp ~ sr + pop + opec, data=SumHes))
+summary(lm(gdp ~ sr, data=SumHes))
+head(SumHes)
+head(SumHes[SumHes$country == "UNITED STATES"])
+head(SumHes[SumHes$country == "US"])
+head(SumHes[SumHes$country == "USA"])
+SumHes$country
+head(SumHes[SumHes$country == "U.S.A."])
+SumHes[SumHes$country == "U.S.A."]
+SumHes$country == "U.S.A."
+SumHes$sr[SumHes$country == "U.S.A."]
+data(Tobacco)
+summary(lm(salcohol ~ stobacco, data=Tobacco))
+head(Tobacco)
+head(Tobacco, 18)
+summary(lm(salcohol ~ stobacco + nadults, data=Tobacco))
+summary(lm(salcohol ~ stobacco + nadults + nkids + nkids2 + occupation, data=Tobacco))
+data(Wages)
+data(Wages)
+fit_wages <- lm(lwage ~ exp + wks + bluecol + ind + south + smsa + married +
+sex + union + ed + black, data=Wages)
+summary(wages)
+summary(fit_wages)
+data(Schooling)
+fit_sch <- lm(iqscore ~ age76 + ed66 + ed76 + sinmom14, data=Schooling)
+summary(fit_sch)
+data(Males)
+fit_wage <- lm(wage ~ school + union + health + industry + occupation + residence + ethn, data=Males)
+summary(fit_wage)
+data(Mathlevel)
+fit_math <- lm()
+summary(fit_math)
+head(MathLevel)
+head(Mathlevel)
+summary(Mathlevel)
+ifelse(Mathlevel$mathlevel == '170', Mathlevel$mlnum = 1, )
+?if
+)
+ifelse(Mathlevel$mathlevel == '170', Mathlevel$mlnum = 1, Mathlevel$mlnum = 0)
+ifelse(Mathlevel$mathlevel == '170', Mathlevel$mlnum <- 1, Mathlevel$mlnum <- 0)
+ifelse(Mathlevel$mathlevel == '171a', Mathlevel$mlnum <- 2, Mathlevel$mlnum <- Mathlevel$mlnum)
+Mathlevel$mathlevel
+data(Mathlevel)
+fit_math <- lm(mathlevel ~ sat + language + sex + major + mathcourse +
+physiccourse + chemistcourse, data=Mathlevel)
+summary(lm(mathlevel ~ sat, data = Mathlevel))
+data(Mathlevel)
+fit_math <- lm(mathlevel ~ sat + language + sex + major + mathcourse +
+physiccourse + chemistcourse, data=Mathlevel)
+summary(fit_math)
+head(Mathlevel, 8)
+head(Mathlevel, 18)
+mean(Mathlevel$sat)
+mean %>%
+Mathlevel$sat
+library(dplyr)
+mean %>%
+library(dplyr)
+data(OFP)
+fit_ofp <- lm(ofp + ofnp ~ sex + age + maried + black + school + faminc + employed +
+privins + medicaid + region + hlth, data=OFP)
+summary(fit_ofp)
+data(Orange)
+fit_orange <- lm(priceoj ~ pricefg + fdd, data=Orange)
+summary(fit_orange)
+data(Participation)
+fit_parti <- lm(lfp ~ lnnlinc + age + educ + nyc + noc, data=Participation)
+summary(fit_parti)
+data(Star)
+fit_star <- lm(tmathssk + treadssk ~ classk + totexpk + sex + freelunk + race + schidkn, data=Star)
+summary(fit_star)
+data(Wages)
+fit_wages <- lm(lwage ~ exp + wks + bluecol + ind + south + smsa + married +
+sex + union + ed + black, data=Wages)
+summary(fit_wages)
+a <- c("Sometimes","Sometimes","Never","Always","Always","Sometimes","Sometimes","Never")
+a
+labels
+clear
+ls()
+?labels
+a <- c("Sometimes","Sometimes","Never","Always","Always","Sometimes","Sometimes","Never")
+?names
+prob_labels <- c(“string1”, “string2”, “string3”)
+prob_labels <- c(“string1”,“string2”,“string3”)
+prob_labels <- c(“string1”,“string2”,“string3”)
+print("pokemon")
+rvest
+library('rvest')
+install.packages("rvest")
+library("rvest")
+webpage <- html("http://elections.huffingtonpost.com/pollster/polls/cnn-22761")
+webpage %>%
+html_nodes("table") %>%
+.[[1]] %>%
+html_table()
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+support
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+support
+colnames(support)
+rename(support, c("X2"="perc"))
+library("dplyr")
+rename(support, c("X2"="perc"))
+support
+rename(support, "X2"="perc")
+colnames(sample)
+colnames(sample)[2]
+colnames(sample)[1]
+colnames(support)[1]
+colnames(support)[2]
+colnames(support)[2] <- perc
+colnames(support)[2] <- "perc"
+support
+colnames(support)
+colnames(support)[2] <- "perc"
+colnames(support)[1] <- "candidate"
+support
+filter(support, candidate, perc)
+select(support, candidate, perc)
+select(support, candidate, perc)
+order(select(support, candidate, perc), perc)
+order(select(support, candidate, perc), "perc")
+support
+order(support$perc)
+support[order(support$perc)]
+support[order(support$perc),]
+support[order(support$-perc),]
+support[order(-support$perc),]
+arrange(support, candidate, perc)
+arrange(support, desc(perc))
+as.numeric(support$perc)
+as.numeric(sub("%", "", support))
+support
+as.numeric(sub("%", "", support$perc))
+support
+support$perc <- as.numeric(sub("%", "", support$perc))
+support
+arrange(support, desc(perc))
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+colnames(support)[2] <- "perc"
+colnames(support)[1] <- "candidate"
+support$perc <- as.numeric(sub("%", "", support$perc))
+arrange(support, desc(perc))
+webpage <- html("https://www.predictit.org/Market/1233/Who-will-win-the-2016-Republican-presidential-nomination")
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+support
+webpage <- html("https://www.predictit.org/Market/1233/Who-will-win-the-2016-Republican-presidential-nomination")
+webpage
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[1]] %>%
+html_table()
+support
+ls
+library("dplyr")
+library("rvest")
+library("magrittr")
+webpage <- html("http://elections.huffingtonpost.com/pollster/polls/bloomberg-selzer-22787")
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[1]] %>%
+html_table()
+colnames(support)[2] <- "perc"
+colnames(support)[1] <- "candidate"
+support$perc <- as.numeric(sub("%", "", support$perc))
+arrange(support, desc(perc))
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+colnames(support)[2] <- "perc"
+colnames(support)[1] <- "candidate"
+support$perc <- as.numeric(sub("%", "", support$perc))
+arrange(support, desc(perc))
+webpage <- html("http://elections.huffingtonpost.com/pollster/polls/quinnipiac-22788")
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+colnames(support)[2] <- "perc"
+colnames(support)[1] <- "candidate"
+support$perc <- as.numeric(sub("%", "", support$perc))
+arrange(support, desc(perc))
+webpage <- html("http://elections.huffingtonpost.com/pollster/polls/quinnipiac-22788")
+support <-
+webpage %>%
+html_nodes("table") %>%
+.[[2]] %>%
+html_table()
+colnames(support)[2] <- "perc"
+colnames(support)[1] <- "candidate"
+support$perc <- as.numeric(sub("%", "", support$perc))
+arrange(support, desc(perc))
+setwd("Insync/Thesis")
+list.files()
+setwd("Data")
+list.files()
+list.files()
+mydata = read.csv("EndoDataColRem.csv")
+mydata
+head(mydata)
+summary(mydata)
+summary(mydata[mydata$State == "VT"])
+summary(mydata[mydata$Contest == "2004D"])

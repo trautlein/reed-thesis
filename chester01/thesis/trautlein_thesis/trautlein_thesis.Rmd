@@ -1,0 +1,72 @@
+---
+author: 'Hans Trautlein'
+date: 'May 2016'
+division: 'History and Social Sciences'
+advisor: 'Alexander H. Montgomery'
+department: 'Political Science'
+title: ',,todo'
+abstract: >
+  `r paste(readLines('chapters/abstract.Rmd'), collapse = '\n')`
+# If you'd rather include the preliminary content in files instead of inline
+# like below, use a command like that for the abstract above.  Note that a tab is 
+# needed on the line after the >.
+#acknowledgements: >
+#  <<todo
+#dedication: >
+#  <<todo
+#preface: >
+#  <<todo
+bibliography: bib/thesis.bib
+csl: bib/chicago-author-date.csl
+output: 
+  reedtemplates::reed_thesis:
+    toc: true
+#lot: true
+#lof: true
+
+#space_between_paragraphs: true 
+# Delete # at previous line if you'd liketo have a blank new line between paragraphs
+
+header-includes:
+- \usepackage{setspace}
+---
+
+
+```{r include_packages, include = FALSE}
+# This chunk ensures that the reedtemplates package is
+# installed and loaded. This reedtemplates package includes
+# the template files for the thesis and also two functions
+# used for labeling and referencing
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(reedtemplates)){
+  library(devtools)
+  devtools::install_github("ismayc/reedtemplates")
+}
+library(reedtemplates)
+```
+
+\doublespacing
+
+```{r intro, child = 'chapters/intro.Rmd'}
+```
+
+```{r chapter1, child = 'chapters/chap1.Rmd'}
+```
+
+```{r conclusion, child = 'chapters/conclusion.Rmd'}
+```
+
+
+<!--
+  Intro
+  Theory/Lit. Review (how to organize?)
+  Method
+  Results
+  Discussion
+  Conclusion (needed after discussion?)
+-->
+
+```{r bib, child = 'chapters/bibliography.Rmd'}
+```
+

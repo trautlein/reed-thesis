@@ -1,0 +1,110 @@
+%Header
+	\documentclass[10pt]{article}
+	\usepackage{indentfirst}
+	\usepackage{palatino}
+	\usepackage{fullpage}
+	\usepackage{microtype}
+	\usepackage{ragged2e}
+	\usepackage{setspace}
+	\usepackage{courier}
+	\usepackage{hyperref}
+	
+	\begin{document}
+	
+	
+	
+\noindent{\large
+	Hans Trautlein 			\hfill Thesis Proposal}
+	
+\center{
+	\Large{Thesis Proposal, Take Two}} \\
+\center{	\textbf{Advisor}			: 	Alex Montgomery \\
+			\textbf{First Reader}	: 	Heather Hodges	
+}
+
+    
+\bigskip 
+
+
+\justify \onehalfspacing
+
+I'm a little worried about the direction I saw my thesis going, so I'd like to have a serious conversation about switching my topic to something that feels a little more manageable. Beyond my ability to manage the project, I would also like to understand the topic 100\% and as I was looking through Cohen's R code for \emph{The Party Decides} as well as his datasets and I was worried to what degree I would be able to really understand my final analysis as much as I would like.\footnote{Working at CUS I would often see students who had some type of data analysis in their thesis that they did not understand in the slightest, I really do not want to be in that position when it is time for the final draft of my thesis as well as my orals.}
+
+I thought the best way to go ahead would be to propose my new topic along with information surrounding the topic, and if it seems infeasible I could continue with the old one. My general idea would be to examine how ideology changes, or does not change, as a person gets into the leadership in the House and/or Senate. This seems much more manageable to me, and also probably more likely to have results that are significant and perhaps an interesting story behind them, whereas I was struggling to understand what sort of discussion I could have around the results around how the home state of an endorser effects the final winning chance of an endorsee. It seemed like there were a lot of other factors that I would want to have in the model but did not exist in the dataset and would be difficult to add in.
+
+Another benefit here is that the dataset is a lot easier to work with. Also I have worked with the dataset in one of my past classes, US Congress with Paul Gronke, so I am a little more familiar with it. I'm imagining that I would first quickly code the data so that I would have leaders. I'm imagining in the House I code Speakers, Majority and Minority Leaders and Whips, whereas in the Senate I would just code Majority and Minority Leaders and Whips. I'd also code them if they were to eventually end up in a leadership position but weren't there yet.
+
+There is a considerable amount of literature on the topic of political ideology (especially related to the US Congress), as well as literature on polarization that could useful as well. The last page of this proposal is a small bibliography from which I hope to build off of.
+
+Finally, I have a short term timeline for what I'd like to get done now so that I can make up for the lost time surrounding my thesis. I'm imagining that by the end of the thanksgiving break I'd like to have a more substantial literature built up so that I can get to work on the my literature review. I'd also like to try to have the entire Senate coded before I get back from break. This is a smaller project that coding the entire House but it would still give me a place to work from and I imagine that the methods I use to analyze one chamber would apply well to the other. Because each legislator is given a unique ICPSR ID number I do not imagine this being a particularly difficult task.
+
+\newpage
+
+
+\begin{center}
+	\textbf{Resources}
+\end{center}
+
+\setlength{\parindent}{0pt}
+\hangindent=1cm
+
+\url{http://voteview.com/dwnomin.htm} -- These are not the ``Common Space'' scores that are used to compare between the House and Senate as those include only one point for each legislature across their whole career, whereas these \texttt{DW-NOMINATE} scores allows for a point for each legislator in each congress they served in. If you'd like to get a look at what the data looks like I would suggest looking at the key on this page and downloading this .xls file: \url{ftp://voteview.com/junkord/SL01113D21_BSSE.XLSX}
+
+\url{http://voteview.com/leaders.htm} -- 
+	Not as useful, but this URL does have unchanging scores for the leaders of the House and Senate, but only up to the year 2000.
+
+\url{http://en.wikipedia.org/wiki/Party_leaders_of_the_United_States_Senate}
+
+\url{http://en.wikipedia.org/wiki/Speaker_of_the_United_States_House_of_Representatives}
+
+\url{http://en.wikipedia.org/wiki/Party_leaders_of_the_United_States_House_of_Representatives}
+
+\hspace{1cm} One quick source of data that I could easily scrape off of Wikipedia if I needed to using something like \texttt{rvest} to scrape the data, although I imagine that it almost might be easier to do it manually rather than trying to lookup how to merge the data in the most effective way.
+
+\url{http://voteview.com/political_polarization_2014.htm} -- Interesting information on political polarization that uses \texttt{NOMINATE} scores, includes graphs, links to recent papers, etc.
+
+
+
+
+\begin{center}
+	\textbf{Bibliography}
+\end{center}
+
+\doublespacing
+\hangindent=1cm
+
+{\sc M.~D. Brewer and J.~M. Stonecash}, {\em Polarization and the Politics of
+  Personal Responsibility}, Oxford University Press, 2015.
+
+{\sc L.~C. Dodd and B.~I. Oppenheimer}, {\em Congress reconsidered}, SAGE,
+  2012.
+
+{\sc E.~Heberlig, M.~Hetherington, and B.~Larson}, {\em The price of
+  leadership: Campaign money and the polarization of congressional parties},
+  Journal of Politics, 68 (2006), pp.~992--1005.
+
+{\sc D.~R. Mayhew}, {\em Congress: The electoral connection}, Yale University
+  Press, 1974.
+
+{\sc N.~McCarty, K.~T. Poole, and H.~Rosenthal}, {\em Polarized America: The
+  dance of ideology and unequal riches}, vol.~5, mit Press, 2006.
+
+{\sc K.~T. Poole and H.~Rosenthal}, {\em Patterns of congressional voting},
+  American Journal of Political Science,  (1991), pp.~228--278.
+
+{\sc K.~T. Poole and H.~Rosenthal, {\em Congress: A
+  political-economic history of roll call voting}, Oxford University Press,
+  2000.
+
+{\sc K.~T. Poole and H.~L. Rosenthal}, {\em Ideology and congress}, vol.~1,
+  Transaction Publishers, 2011.
+
+{\sc D.~W. Rohde}, {\em Parties and leaders in the postreform House},
+  University of Chicago Press, 2010.
+
+{\sc C.~H. Stewart}, {\em Analyzing Congress}, Norton, 2001.
+
+{\sc S.~M. Theriault}, {\em Party polarization in congress}, Cambridge
+  University Press, 2008.
+
+\end{document}

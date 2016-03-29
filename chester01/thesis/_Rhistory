@@ -1,0 +1,113 @@
+install.packages("devtools")
+devtools::install_github("ismayc/reedtemplates")
+library("reedtemplates", lib.loc="~/Library/R/3.2/library")
+get.wd()
+list.files()
+set.wd("trautlein_thesis/")
+d <- read.csv("data/SenateData002.csv")
+set.wd("trautlein_thesis/")
+set.wd("~/trautlein_thesis/")
+setwd("~/trautlein_thesis/")
+d <- read.csv("data/SenateData002.csv")
+list.files()
+setwd("~/trautlein_thesis/")
+d <- read.csv("data/SenateData002.csv")
+list.files()
+setwd("~/")
+list.files()
+setwd("~/trautlein_thesis/")
+list.files()
+d <- read.csv("data/SenateData002.csv")
+d <- read.csv("data/SenateData002.csv")
+d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role", "Leader")]
+d <- read.csv("data/SenateData002.csv")
+d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role", "Leader")]
+d <- dplyr::rename(d, cong = Cong.,
+icpsr = ICPSR,
+statecode = State.Code,
+state = State,
+party = Party,
+setwd("~/Desktop/thesis/")
+d <- read.csv("data/SenateData002.csv")
+d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role", "Leader")]
+d <- dplyr::rename(d, cong = Cong.,
+icpsr = ICPSR,
+statecode = State.Code,
+state = State,
+setwd("~/Desktop/thesis/")
+eal;sfjla;j
+setwd("~/Desktop/thesis/")
+d <- read.csv("data/SenateData002.csv")
+d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role", "Leader")]
+d <- dplyr::rename(d, cong = Cong.,
+icpsr = ICPSR,
+statecode = State.Code,
+state = State,
+party = Party,
+name = Name,
+ideo = X1st.Dim.,
+x2 = X2nd.Dim.,
+role = Role,
+leader = Leader)
+d1 <- dplyr::filter(d, party == 100 | party == 200) # strips out all non Rs and Ds
+View(d1)
+View(d1)
+dplyr::filter(d1, icpsr == 41301, cong = 113)$ideo
+dplyr::filter(d1, icpsr == 41301)
+dplyr::filter(d1, icpsr == 41301)$ideo
+dplyr::filter(d1, icpsr == 41301, cong = 113)$ideo
+dplyr::filter(d1, cong = 113)
+dplyr::filter(d1, cong = 113)
+dplyr::filter(d1, cong == 113)
+dplyr::filter(d1, icpsr == 41301, cong == 113)$ideo
+d <- read.csv("data/SenateData002.csv")
+d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role", "Leader")]
+d <- dplyr::rename(d, cong = Cong.,
+icpsr = ICPSR,
+statecode = State.Code,
+state = State,
+party = Party,
+name = Name,
+ideo = X1st.Dim.,
+x2 = X2nd.Dim.,
+role = Role,
+leader = Leader)
+names(d)
+ggplot(dplyr::filter(d1, cong > 90), aes(cong, ideo)) + geom_point(aes(color = factor(-party)))
+library(ggplot2)
+library(dplyr)
+ggplot(dplyr::filter(d1, cong > 90), aes(cong, ideo)) + geom_point(aes(color = factor(-party)))
+min(dplyr::filter(d1, party == 100))
+d1 <- dplyr::filter(d, party == 100 | party == 200) # strips out all non Rs and Ds
+min(dplyr::filter(d1, party == 100))
+min(dplyr::filter(d1, party == 100)$ideo)
+max(dplyr::filter(d1, party == 100)$ideo)
+names(d1)
+qplot(data=d1, ideo, x2)
+qplot(data=dplyr::filter(d1, cong == 113), ideo, x2)
+qplot(data=dplyr::filter(d1, cong == 112), ideo, x2)
+qplot(data=dplyr::filter(d1, cong == 111), ideo, x2)
+qplot(data=dplyr::filter(d1, cong == 110), ideo, x2)
+qplot(data=dplyr::filter(d1, cong == 109), ideo, x2)
+qplot(data=dplyr::filter(d1, cong == 108), ideo, x2)
+ggplot(dplyr::filter(d1, cong == 113), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 104), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 105), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 106), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 107), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 108), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 109), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 110), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 111), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 112), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 113), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 113), aes(ideo, x2)) + geom_point(aes(color = factor(-party))) + ggtitle()
+ggplot(dplyr::filter(d1, cong == 100), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 101), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 102), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 103), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 104), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 105), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 103), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 104), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
+ggplot(dplyr::filter(d1, cong == 113), aes(ideo, x2)) + geom_point(aes(color = factor(-party)))
