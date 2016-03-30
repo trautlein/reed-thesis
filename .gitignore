@@ -2,4 +2,9 @@ proj.user
 .Rhistory
 .RData
 .Ruserdata
+_RData
+_Rhistory
+
+.DS_Store
+
 
