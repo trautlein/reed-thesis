@@ -1,12 +1,14 @@
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(readr)
 
 options(scipen = 10)
 
 start_cong <- 82 # starting congress I want
-d <- read.csv("data/SenateData002.csv")
-d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role")]
+d <- read.csv("data/SenateData002.csv") %>%
+  select_("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role")
+#d <- d[,c("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role")]
 
 d <- dplyr::rename(d, cong = Cong., icpsr = ICPSR, statecode = State.Code,
                    state = State, party = Party, name = Name, 
@@ -30,15 +32,14 @@ lookup <- function(df, val1, val2, col = 3){
   df[df[1] == val1 & df[2] == val2, col][1]
 }
 
-Dlagged <- dplyr::lag(party_means_wide$D, n = 1)
+Dlagged <- stats::lag(party_means_wide$D, k = 1)
 Rlagged <- dplyr::lag(party_means_wide$R, n = 1)
 
 party_means_wide <- party_means_wide %>%
   mutate(D_lagged = Dlagged,
-    R_lagged = Rlagged)
-#,
-    D_del = D - D_lagged,
-    R_del = R - R_lagged)
+         R_lagged = Rlagged,
+         D_del = D - D_lagged,
+         R_del = R - R_lagged)
 
 party_means_dif <- party_means_wide %>%
   select(cong, D_del, R_del) %>%
