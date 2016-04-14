@@ -137,12 +137,25 @@ for (j in 1:nrow(merged3)) {
 }
 
 
-lm1 <- lm(last_ideo ~ 
+
+merged_D <- dplyr::filter(merged3, party == "D")
+merged_R <- dplyr::filter(merged3, party == "R")
+
+lmD <- lm(ideo ~ 
             cong_ideo_mean + # party mean
             last_cong_ideo_mean + # last party mean
-            ideo + 
+            last_ideo + # last ideology score
             leader, # are they a leader
-          data = merged3)
+          data = merged_D)
 
-summary(lm1)
+summary(lmD)
+
+lmR <- lm(ideo ~ 
+            cong_ideo_mean + # party mean
+            last_cong_ideo_mean + # last party mean
+            last_ideo + # last ideology score
+            leader, # are they a leader
+          data = merged_R)
+
+summary(lmR)
 
