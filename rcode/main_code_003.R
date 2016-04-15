@@ -8,20 +8,14 @@ options(scipen = 10, digits = 5)
 
 start_cong <- 82 # starting congress I want
 d <- read.csv("data/SenateData002.csv") %>%
-select_("Cong.","ICPSR", "State.Code", "State", "Party", "Name", "X1st.Dim.", "X2nd.Dim.", "Role")
-
-
-d <- dplyr::rename(d, cong = Cong., icpsr = ICPSR, statecode = State.Code,
-                   state = State, party = Party, name = Name, 
-                   ideo = X1st.Dim.,x2 = X2nd.Dim., role = Role)
-
+  select(cong:x2, role)
 
 
 d1 <- d %>% # strips out 3rd party, before cong 60, make party variable D or R instead of 100 or 200
   mutate(leader = ifelse(role == "", "N", "Y")) %>%
 #  mutate(leader_now = ifelse(role != "W" | "L" | "WL" | "LN", "0", "1")) %>%
   dplyr::filter((party == 100 | party == 200) & cong >= start_cong) %>%
-  dplyr::filter(state != "USA") # remove presidents
+  dplyr::filter(state != "USA") %>% # remove presidents
   mutate(party2 = as.factor(ifelse(party == 100, "D","R"))) %>%
   select(-party) %>%
   rename(party = party2)
@@ -35,12 +29,6 @@ party_means_table <- d1 %>%
 
 party_means_wide <- party_means_table %>%
   spread(key = party, value = mean_ideo)
-
-# plot of how mean_ideo by party has changed over congresses
-ggplot(data = party_means_table, aes(x = cong, y = mean_ideo, color = party)) + 
-  geom_line(size = 1) + geom_point(size = 3) + 
-  scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
-  scale_color_manual(values=c("blue", "red"))
 
 
 
@@ -99,21 +87,7 @@ last_ideo_lookup <- function(df, cong, icpsr, col = 6){
   df[df[1] == cong & df[2] == icpsr, col][1]
 }
 
-for (year in c(2010,2011,2012,2013,2014,2015)){
-  print(paste("The year is", year))
-}
 
-
-for (point in merged3) {
-  )]
-}
-
-
-for (point in testmerge) {
-  
-}
-
-# 49703 is collins
 
 
 
