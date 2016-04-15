@@ -7,7 +7,7 @@ library(DT)
 options(scipen = 10, digits = 5)
 
 start_cong <- 82 # starting congress I want
-d <- read.csv("data/SenateData002.csv") %>%
+d <- read.csv("data/SenateData.csv") %>%
   select(cong:x2, role)
 
 
