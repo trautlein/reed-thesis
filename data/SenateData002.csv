@@ -1,4 +1,4 @@
-Cong.,ICPSR,State Code,District,State,Party,Name,1st Dim.,2nd Dim.,Log Likelihood,Votes,Classification Errors,Geometric Mean Probability,Role,Power,Leader
+cong,icpsr,statecode,district,state,party,name,ideo,x2,loglike,nvotes,classerrs,gmp,role,power,leader
 1,4998,1,0,CONNECT,5000,JOHNSON,0.998,-0.064,-29.81118,82,14,0.695,,,
 1,2936,1,0,CONNECT,5000,ELLSWORTH,0.527,0.645,-17.25366,97,8,0.837,,,
 1,507,11,0,DELAWAR,4000,BASSETT,0.065,-0.135,-26.30825,90,9,0.747,,,
