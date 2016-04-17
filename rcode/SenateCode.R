@@ -10,6 +10,7 @@ start_cong <- 82 # starting congress I want
 d <- read.csv("data/SenateData.csv") %>%
   select(cong:x2, role)
 
+# testing out public key addition
 
 d1 <- d %>% # strips out 3rd party, before cong 60, make party variable D or R instead of 100 or 200
   mutate(leader = ifelse(role == "", "N", "Y")) %>%
