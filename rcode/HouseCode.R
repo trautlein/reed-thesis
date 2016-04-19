@@ -22,17 +22,14 @@ house_start <- read.csv("data/HouseData.csv") %>%
 
 house_party_means_table <- house_start %>% 
   group_by(cong, party) 
-
+  summarise(mean_ideo = mean(ideo))
 
 
 start_cong_house <- 56 # starting congress I want
-h1 <- read.csv("data/HouseData.csv") %>%
-  select(cong:x2, role)
-
-h2 <- h1 %>% # strips out 3rd party, before cong 60, make party variable D or R instead of 100 or 200
+house_data <- read.csv("data/HouseData.csv") %>%
+  select(cong:x2, role) %>%
   mutate(leader = ifelse(role == "", "N", "Y")) %>%
-#  mutate(leader_now = ifelse(role != "W" | "L" | "WL" | "LN", "0", "1")) %>%
-  dplyr::filter((party == 100 | party == 200) & cong >= start_cong_house) %>%
+  dplyr::filter(party == 100 | party == 200) %>%
   dplyr::filter(state != "USA") %>% # remove presidents
   mutate(party2 = as.factor(ifelse(party == 100, "D","R"))) %>%
   select(-party) %>%
@@ -40,6 +37,29 @@ h2 <- h1 %>% # strips out 3rd party, before cong 60, make party variable D or R 
 
 
 
-party_means_table <- h2 %>% 
+house_party_means_table <- house_data %>% 
   group_by(cong, party) %>%
   summarise(mean_ideo = mean(ideo))
+
+
+house_party_means_wide <- house_party_means_table %>%
+  spread(key = party, value = mean_ideo)
+
+
+
+house_party_means_wide$D_del <- vector(mode = "numeric", length = nrow(house_party_means_wide))
+house_party_means_wide$R_del <- vector(mode = "numeric", length = nrow(house_party_means_wide))
+house_party_means_wide$D_del[1] <- NA
+house_party_means_wide$R_del[1] <- NA
+for(i in 2:nrow(party_means_wide)){
+  house_party_means_wide$D_del[i] <- house_party_means_wide$D[i] - house_party_means_wide$D[i - 1]
+  house_party_means_wide$R_del[i] <- house_party_means_wide$R[i] - house_party_means_wide$R[i - 1]
+}
+
+
+house_party_means_dif <- house_party_means_wide %>%
+  select(cong, D_del, R_del) %>%
+  rename(D = D_del, R = R_del) %>%
+  gather(key = party, value = party_del, D:R)
+
+

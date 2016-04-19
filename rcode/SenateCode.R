@@ -16,92 +16,83 @@ lookup <- function(df, val1, val2, col = 3){
 last_ideo_lookup <- function(df, cong, icpsr, col = 6){
   df[df[1] == cong & df[2] == icpsr, col][1]
 }
-
 #####################
 
-start_cong_senate <- 66 # starting congress I want
-d <- read.csv("data/SenateData.csv") %>%
-  select(cong:x2, role)
 
-d1 <- d %>% # strips out 3rd party, before cong 60, make party variable D or R instead of 100 or 200
+senate_start_cong <- 66 # starting congress I want
+# strips out 3rd party, before cong 60, make party variable D or R 
+senate_data <- read.csv("data/SenateData.csv") %>% 
+  select(cong:x2, role) %>%
   mutate(leader = ifelse(role == "", "N", "Y")) %>%
-  #  mutate(leader_now = ifelse(role != "W" | "L" | "WL" | "LN", "0", "1")) %>%
-  dplyr::filter((party == 100 | party == 200) & cong >= start_cong_senate) %>%
+  dplyr::filter(party == 100 | party == 200) %>%
   dplyr::filter(state != "USA") %>% # remove presidents
   mutate(party2 = as.factor(ifelse(party == 100, "D","R"))) %>%
   select(-party) %>%
   rename(party = party2)
 
 
-
-party_means_table <- d1 %>% 
+senate_party_means_table <- senate_data %>% 
   group_by(cong, party) %>%
   summarise(mean_ideo = mean(ideo))
 
-party_means_wide <- party_means_table %>%
+senate_party_means_wide <- senate_party_means_table %>%
   spread(key = party, value = mean_ideo)
 
 
-
-
-
-party_means_wide$D_del <- vector(mode = "numeric", length = nrow(party_means_wide))
-party_means_wide$R_del <- vector(mode = "numeric", length = nrow(party_means_wide))
-party_means_wide$D_del[1] <- NA
-party_means_wide$R_del[1] <- NA
-for(i in 2:nrow(party_means_wide)){
-  party_means_wide$D_del[i] <- party_means_wide$D[i] - party_means_wide$D[i - 1]
-  party_means_wide$R_del[i] <- party_means_wide$R[i] - party_means_wide$R[i - 1]
+senate_party_means_wide$D_del <- vector(mode = "numeric", length = nrow(senate_party_means_wide))
+senate_party_means_wide$R_del <- vector(mode = "numeric", length = nrow(senate_party_means_wide))
+senate_party_means_wide$D_del[1] <- NA
+senate_party_means_wide$R_del[1] <- NA
+for(i in 2:nrow(senate_party_means_wide)){
+  senate_party_means_wide$D_del[i] <- senate_party_means_wide$D[i] - senate_party_means_wide$D[i - 1]
+  senate_party_means_wide$R_del[i] <- senate_party_means_wide$R[i] - senate_party_means_wide$R[i - 1]
 }
 
 
-party_means_dif <- party_means_wide %>%
+senate_party_means_dif <- senate_party_means_wide %>%
   select(cong, D_del, R_del) %>%
   rename(D = D_del, R = R_del) %>%
   gather(key = party, value = party_del, D:R)
 
 
-merged <- d1 %>% inner_join(party_means_table, by = c("cong", "party")) %>%
-  inner_join(party_means_dif, by = c("cong", "party"))
-merged <- merged %>%
-  mutate(last_cong = ifelse(cong > start_cong_senate, cong - 1, NA))
-merged2 <- merged %>% left_join(party_means_table, by = c("last_cong" = "cong", "party")) %>%
+senate_merged <- senate_data %>% inner_join(senate_party_means_table, by = c("cong", "party")) %>%
+  inner_join(senate_party_means_dif, by = c("cong", "party"))
+senate_merged <- senate_merged %>%
+  mutate(last_cong = ifelse(cong > senate_start_cong, cong - 1, NA))
+senate_merged2 <- senate_merged %>% left_join(senate_party_means_table, by = c("last_cong" = "cong", "party")) %>%
   rename(cong_ideo_mean = mean_ideo.x, last_cong_ideo_mean = mean_ideo.y) %>%
   select(-last_cong)
 
-merged3 <- merged2 %>%
+senate_merged3 <- senate_merged2 %>%
   mutate(ideo_dif = cong_ideo_mean - ideo) %>%
   mutate(last_ideo = NA)
 
 
 
 
-
-for (j in 1:nrow(merged3)) {
-  merged3[j,]$last_ideo <- lookup(merged3, merged3[j,]$cong - 1, merged3[j,]$icpsr, 6)
+for (j in 1:nrow(senate_merged3)) { ###### TAKES A WHILE TO RUN! ######
+  senate_merged3[j,]$last_ideo <- last_ideo_lookup(senate_merged3, 
+                                                   senate_merged3[j,]$cong - 1, senate_merged3[j,]$icpsr)
 }
 
 
+senate_merged_D <- dplyr::filter(senate_merged3, party == "D")
+senate_merged_R <- dplyr::filter(senate_merged3, party == "R")
 
-merged_D <- dplyr::filter(merged3, party == "D")
-merged_R <- dplyr::filter(merged3, party == "R")
-
-lmD <- lm(ideo ~ 
+senate_lmD <- lm(ideo ~ 
             cong_ideo_mean + # party mean
             last_cong_ideo_mean + # last party mean
             last_ideo + # last ideology score
             leader, # are they a leader
-          data = merged_D)
+          data = senate_merged_D)
 
-summary(lmD)
+summary(senate_lmD)
 
-lmR <- lm(ideo ~ 
+senate_lmR <- lm(ideo ~ 
             cong_ideo_mean + # party mean
             last_cong_ideo_mean + # last party mean
             last_ideo + # last ideology score
             leader, # are they a leader
-          data = merged_R)
+          data = senate_merged_R)
 
-summary(lmR)
-
-
+summary(senate_lmR)
