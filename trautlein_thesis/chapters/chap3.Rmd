@@ -1,5 +1,50 @@
 #Results
 
+```{r source R, warning=F, message=F, echo=FALSE}
+## REMOVE CHUNK LATER
+source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
+```
+
+Some statistically significant results are found from my regression.
+
+```{r echo=F}
+lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
+lm_senate_R <- sum_cong_lm(senate_R, 67, 113)
+lm_house_D <- sum_cong_lm(house_D, 67, 113)
+lm_house_R <- sum_cong_lm(house_R, 67, 113)
+```
+
+\begin{table}[h]
+\centering
+\caption{Summary of Models Across All Years, House and Senate}
+\label(FullModels)
+\begin{tabular}{r|rrrr}
+                       & Senate Ds & Senate Rs & House Ds & House Rs \\ \hline
+(Intercept)            & 0.00489   & 0.00259   & 0.01131  & 0.00405  \\
+cong\_ideo\_mean       & 0.51583   & 0.61344   & 0.73047  & 0.67749  \\
+last\_cong\_ideo\_mean & -0.38112  & -0.50989  & -0.57483 & -0.53415 \\
+last\_ideo             & 0.87467   & 0.87061   & 0.87636  & 0.85013  \\
+leaderY                & \textbf{-0.01863}  & 0.01289   & -\textbf{0.03022} & -0.00417 \\
+Adjusted R-Squared     & 0.802     & 0.781     & 0.781    & 0.824    \\
+N                      & 2239      & 1817      & 11380    & 9270    
+\end{tabular}
+\end{table}
+
+
+All of the control variables that were enlisted were found to be statistically signicant. These three variables were the idelogical mean of congress, the ideological mean of congress from the previous congressional session, and the congressperson's ideology from the previous congressional session. For all three of these variables across both parties in both the House and Senate the p-value was always less than 0.0001. Please see Table 3.1 to see
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
 There are five different outcomes that are possible with the above methodology.
 
   1. A null result is found - the leaders and non-leaders do not change in significantly different ways.

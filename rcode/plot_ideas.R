@@ -1,9 +1,6 @@
 library(tidyr)
 library(dplyr)
 library(ggplot2)
-library(knitr)
-library(readr)
-library(DT)
 options(scipen = 10, digits = 5)
 
 
@@ -62,10 +59,10 @@ get_p_vals <- function(data, start_cong, end_cong = 113) {
 ##### END FUNCTIONS ####################################
 
 # from 1921 to 2015
-sum_cong_lm(senate_D, 67, 113)
-sum_cong_lm(senate_R, 67, 113)
-sum_cong_lm(house_D, 67, 113)
-sum_cong_lm(house_R, 67, 113)
+lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
+lm_senate_R <- sum_cong_lm(senate_R, 67, 113)
+lm_house_D <- sum_cong_lm(house_D, 67, 113)
+lm_house_R <- sum_cong_lm(house_R, 67, 113)
 
 
 sum_cong_lm(senate_D, 85, 101) 

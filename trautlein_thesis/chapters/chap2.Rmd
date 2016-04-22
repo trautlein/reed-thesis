@@ -1,27 +1,5 @@
 # Methodology
 
-```{r source R, warning=F, messages = F, echo=F}
-source('~/thesis/rcode/plot_ideas.R', echo=TRUE)
-```
-
-```{r echo=TRUE}
-plot_senate_means <- ggplot(data = senate_means, aes(x = cong, y = mean_ideo, color = party)) +
-  geom_line(size = 1) + geom_point(size = 3) +
-  scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
-  scale_color_manual(values=c("blue", "red")) +
-  xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
-  ggtitle("Mean House Ideological Scores Separated By Party")
-ggsave("~/thesis/trautlein_thesis/figures/plot_senate_means.pdf", plot = plot_senate_means,
-  height = 3, width = 6)
-```
-
-
-```{r box_label, results = "asis"}
-label(path = "~/thesis/trautlein_thesis/figures/plot_senate_means.pdf",
-      caption = "Mean House Ideological Scores Separated By Party",
-      label = "plot_senate_means", type = "figure")
-```
-
 
 I will use the `acf` function available in **R** to best estimate the number of years I should lag my data. It is assumed that I will see the highest correlation and covariance at the with a lag of `1`, meaning one congresional session behind.The correlation and covariance will be expected to slowly drop off. Once this `acf` function has been properly plotted I will be able to then move towards the fitting of a model to my data. To do that I will first seperate the data into two groups, Republicans and Democrats. Then again that data will be seperated into two groups, leaders and non-leaders. I will find the mean change of each party's ideology by congressional session within the `D-NOMINATE` dataset. Then I will compare the changes through each Congress of non-leaders to leaders within each party. This will allow me to see the differences in ideological change of one group versus the others.
 

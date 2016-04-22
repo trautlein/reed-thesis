@@ -4,7 +4,7 @@ date: 'May 2016'
 division: 'History and Social Sciences'
 advisor: 'Alexander H. Montgomery'
 department: 'Political Science'
-title: 'Political Ideology Within Congressional Leadership'
+title: 'Political Ideology and Congressional Leadership'
 abstract: >
   `r paste(readLines('chapters/abstract.Rmd'), collapse = '\n')`
 # If you'd rather include the preliminary content in files instead of inline
@@ -47,6 +47,11 @@ library(reedtemplates)
 ```
 
 \doublespacing
+
+```{r}
+source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
+```
+
 
 ```{r intro, child = 'chapters/intro.Rmd'}
 ```
