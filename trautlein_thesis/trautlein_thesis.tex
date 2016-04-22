@@ -142,7 +142,9 @@ Results are then expanded on and a discussion follows.
     \setcounter{tocdepth}{2}
     \tableofcontents
   
+      \listoftables
   
+      \listoffigures
   
       \begin{abstract}
       This paper examines the differences in ideology in Congress between
@@ -382,23 +384,6 @@ Results are then expanded on and a discussion follows.
   are screened from the agenda. This diversity notwithstanding, to the
   extent that spatial models are useful in describing the roll call voting
   data, only low-dimensional models are needed'' (2007, 69).
-  
-  \chapter{Methodology}\label{methodology}
-  
-  I will use the \texttt{acf} function available in \textbf{R} to best
-  estimate the number of years I should lag my data. It is assumed that I
-  will see the highest correlation and covariance at the with a lag of
-  \texttt{1}, meaning one congresional session behind.The correlation and
-  covariance will be expected to slowly drop off. Once this \texttt{acf}
-  function has been properly plotted I will be able to then move towards
-  the fitting of a model to my data. To do that I will first seperate the
-  data into two groups, Republicans and Democrats. Then again that data
-  will be seperated into two groups, leaders and non-leaders. I will find
-  the mean change of each party's ideology by congressional session within
-  the \texttt{D-NOMINATE} dataset. Then I will compare the changes through
-  each Congress of non-leaders to leaders within each party. This will
-  allow me to see the differences in ideological change of one group
-  versus the others.
   
   \chapter{Results}\label{results}
   

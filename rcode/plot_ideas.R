@@ -8,14 +8,14 @@ options(scipen = 10, digits = 5)
 
 
 #### LOAD CODE ####
-senate_D <- read.csv("data/Senate_D.csv", header = TRUE)
-senate_R <- read.csv("data/Senate_R.csv", header = TRUE)
+senate_D <- read.csv("~/thesis/data/Senate_D.csv", header = TRUE)
+senate_R <- read.csv("~/thesis/data/Senate_R.csv", header = TRUE)
 
-house_D <- read.csv("data/House_D.csv", header = TRUE)
-house_R <- read.csv("data/House_R.csv", header = TRUE)
+house_D <- read.csv("~/thesis/data/House_D.csv", header = TRUE)
+house_R <- read.csv("~/thesis/data/House_R.csv", header = TRUE)
 
-senate_means <- read.csv("data/Senate_Means.csv", header = TRUE)
-house_means <- read.csv("data/House_Means.csv", header = TRUE)
+senate_means <- read.csv("~/thesis/data/Senate_Means.csv", header = TRUE)
+house_means <- read.csv("~/thesis/data/House_Means.csv", header = TRUE)
 ###################
 
 
@@ -68,14 +68,24 @@ sum_cong_lm(house_D, 67, 113)
 sum_cong_lm(house_R, 67, 113)
 
 
- sum_cong_lm(senate_D, 85, 101) 
+sum_cong_lm(senate_D, 85, 101) 
 
 
-#### SENATE ####
 # plot of how mean_ideo by party has changed over congresses
-# ggplot(data = party_means_table, aes(x = cong, y = mean_ideo, color = party)) + 
-#   geom_line(size = 1) + geom_point(size = 3) + 
+# ggplot(data = senate_means, aes(x = cong, y = mean_ideo, color = party)) +
+#   geom_line(size = 1) + geom_point(size = 3) +
 #   scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
-#   scale_color_manual(values=c("blue", "red"))
+#   scale_color_manual(values=c("blue", "red")) + 
+#   xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
+#   ggtitle("Mean Senate Ideological Scores Separated By Party")
+
+
+# ggplot(data = house_means, aes(x = cong, y = mean_ideo, color = party)) +
+#   geom_line(size = 1) + geom_point(size = 3) +
+#   scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
+#   scale_color_manual(values=c("blue", "red")) +
+#   xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
+#   ggtitle("Mean House Ideological Scores Separated By Party")
 # 
-# 
+
+

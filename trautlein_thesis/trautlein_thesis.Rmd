@@ -21,8 +21,8 @@ csl: bib/chicago-author-date.csl
 output: 
   reedtemplates::reed_thesis:
     toc: true
-#lot: true
-#lof: true
+lot: true
+lof: true
 
 #space_between_paragraphs: true 
 # Delete # at previous line if you'd liketo have a blank new line between paragraphs
