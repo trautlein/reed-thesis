@@ -4,8 +4,9 @@ proj.user
 .Ruserdata
 _RData
 _Rhistory
+.Rproj.user
 
 .DS_Store
 
+.html
 
-.Rproj.user
