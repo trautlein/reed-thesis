@@ -85,6 +85,9 @@ for (j in 1:nrow(house_merged3)) {
 }
 
 
+house_merged_D <- dplyr::filter(house_merged3, party == "D")
+house_merged_R <- dplyr::filter(house_merged3, party == "R")
+
 #####
 
 
@@ -151,12 +154,16 @@ for (j in 1:nrow(senate_merged3)) { ###### TAKES A WHILE TO RUN! ######
 senate_merged_D <- dplyr::filter(senate_merged3, party == "D")
 senate_merged_R <- dplyr::filter(senate_merged3, party == "R")
 
-house_merged_D <- dplyr::filter(house_merged3, party == "D")
-house_merged_R <- dplyr::filter(house_merged3, party == "R")
 
 
-write.csv(senate_merged_D, file = "data/Senate_D.csv", row.names=FALSE)
-write.csv(senate_merged_R, file = "data/Senate_R.csv", row.names=FALSE)
 
-write.csv(house_merged_D, file = "data/House_D.csv", row.names=FALSE)
-write.csv(house_merged_R, file = "data/House_R.csv", row.names=FALSE)
+# write.csv(senate_merged_D, file = "data/Senate_D.csv", row.names=FALSE)
+# write.csv(senate_merged_R, file = "data/Senate_R.csv", row.names=FALSE)
+# 
+# write.csv(house_merged_D, file = "data/House_D.csv", row.names=FALSE)
+# write.csv(house_merged_R, file = "data/House_R.csv", row.names=FALSE)
+
+write.csv(senate_party_means_table, file = "data/Senate_Means.csv", row.names=FALSE)
+write.csv(house_party_means_table, file = "data/House_Means.csv", row.names=FALSE)
+
+##

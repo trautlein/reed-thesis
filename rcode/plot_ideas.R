@@ -3,20 +3,24 @@ library(dplyr)
 library(ggplot2)
 library(knitr)
 library(readr)
-library(DT))
+library(DT)
 options(scipen = 10, digits = 5)
 
 
 #### LOAD CODE ####
 senate_D <- read.csv("data/Senate_D.csv", header = TRUE)
 senate_R <- read.csv("data/Senate_R.csv", header = TRUE)
+
 house_D <- read.csv("data/House_D.csv", header = TRUE)
 house_R <- read.csv("data/House_R.csv", header = TRUE)
+
+senate_means <- read.csv("data/Senate_Means.csv", header = TRUE)
+house_means <- read.csv("data/House_Means.csv", header = TRUE)
 ###################
 
 
 ##### FUNCTIONS #########
-cong_lm <- function(data, start_cong, end_cong = 113){
+cong_lm <- function(data, start_cong, end_cong){
   
   working_data <- dplyr::filter(data, 
                                 cong >= start_cong,
@@ -32,15 +36,11 @@ cong_lm <- function(data, start_cong, end_cong = 113){
   return(lm)
 }
 
-
 sum_cong_lm <- function(data, start_cong = 67, end_cong = 113){
   summary(cong_lm(data, start_cong, end_cong))
 }
 
-
-
 p_vals <- NULL
-
 get_p_val <- function(data, start_cong, end_cong = 113) {
   working_lm <- cong_lm(data, start_cong, end_cong)
   p_val <- unname(summary(working_lm)$coefficients[,4][5])
@@ -59,12 +59,16 @@ get_p_vals <- function(data, start_cong, end_cong = 113) {
   
   return(p_vals_df)
 }
+##### END FUNCTIONS ####################################
+
+# from 1921 to 2015
+sum_cong_lm(senate_D, 67, 113)
+sum_cong_lm(senate_R, 67, 113)
+sum_cong_lm(house_D, 67, 113)
+sum_cong_lm(house_R, 67, 113)
 
 
-sum_cong_lm(senate_D)
-sum_cong_lm(senate_R)
-sum_cong_lm(house_D)
-sum_cong_lm(house_R)
+ sum_cong_lm(senate_D, 85, 101) 
 
 
 #### SENATE ####
