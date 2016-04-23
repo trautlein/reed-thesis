@@ -7,13 +7,6 @@ source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 
 Some statistically significant results are found in my most basic regression. These are the linear regressions computed across all the available congressional sessions that have complete leader data in both the House and the Senate, from the 67th Congress (1921-1923) to the recent 113th Congress (2013-2015). 
 
-```{r echo=F}
-lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
-lm_senate_R <- sum_cong_lm(senate_R, 67, 113)
-lm_house_D <- sum_cong_lm(house_D, 67, 113)
-lm_house_R <- sum_cong_lm(house_R, 67, 113)
-```
-
 \begin{table}[h]
 \centering
 \caption{Summary of Models Across All Years, House and Senate}
@@ -38,22 +31,9 @@ A statistically significant shift was also noticed among the House Democrats. Th
 
 
 
-With the model I have created I think it is likely that the significance of leadership on ideology is underestimated. The change in leadership could have an effect on how the ideology of an entire caucus moves. For an example of this you could refer to the jumps in conservatism that take place around the Republican Revolution of 1994.
+With the model I have created I think it is likely that the significance of leadership on ideology is underestimated. The change in leadership could have an effect on how the ideology of an entire caucus moves. Speaker Ryan right now is trying hard to make his ideology the ideology of the entire party, as he has pushed his agenda of "Confident America" [@Steinhauer2016]. Ryan is closer to the mean ideological scores of the Freedom Caucus, and one would imagine that a concerted effort to continue to elect leaders of more extreme ideologies might allow the rest of the party to move along with them towards their more extreme wings [@Enten2015].
 
-```{r plotted_rep_rev, echo=F, message=F}
-house_means_88_98 <- dplyr::filter(house_means, cong >= 88 , cong <= 98)
-plot_rep_rev <- ggplot(data = house_means_88_98,
-                       aes(x = cong, y = mean_ideo, color = party)) +
-  geom_line(size = 1) + geom_point(size = 3)
-  scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
-  scale_color_manual(values=c("blue", "red")) +
-  xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
-  ggtitle("Mean House Ideological Scores Separated By Party")
-ggsave("~/thesis/trautlein_thesis/figures/plot_senate_means.pdf", plot = plot_senate_means,
-  height = 3, width = 6)
-plot_rep_rev + theme_bw()
-```
-
+Also the model might underestimate the importance of being a leader for a few another reasons. For example, leaders are a part of the data on the last congressional ideological mean and the current congressional ideological mean. Also leaders might have altered their early, pre-leader ideology because they expected or wanted to become leaders in the future. All of these could account for the differences among the significance of the leadership variable among the Democrats when compared to the Republicans. Perhaps Republicans were more likely to know they wanted to pursue leadership since they first entered office, or maybe they were more likely to shift along with their leaders, causing the entire mean of the party to move, possibly nullifing the effects of a leader's move.
 
 .
 
