@@ -434,7 +434,6 @@ Results are then expanded on and a discussion follows.
   \begin{table}[h]
   \centering
   \caption{Summary of Models Across All Years, House and Senate}
-  \label(FullModels)
   \begin{tabular}{r|rrrr}
                          & Senate Ds & Senate Rs & House Ds & House Rs \\ \hline
   (Intercept)            & 0.00489   & 0.00259   & 0.01131  & 0.00405  \\
@@ -447,15 +446,26 @@ Results are then expanded on and a discussion follows.
   \end{tabular}
   \end{table}
   
-  All of the control variables that were enlisted were found to be
-  statistically signicant. These three variables were the idelogical mean
-  of congress, the ideological mean of congress from the previous
-  congressional session, and the congressperson's ideology from the
-  previous congressional session. For all three of these variables across
-  both parties in both the House and Senate the p-value was always less
-  than 0.0001. Please see Table 3.1 to see these values, listed in the
-  table as \texttt{cong\_ideo\_mean\_}, \texttt{last\_cong\_ideo\_mean},
-  and \texttt{last\_ideo}.
+  These are the linear regressions computed across all the available
+  congressional sessions that have complete leader data, from the 67th
+  Congress to the recent 113th Congress. All of the control variables that
+  were enlisted were found to be statistically signicant. These three
+  variables were the idelogical mean of congress, the ideological mean of
+  congress from the previous congressional session, and the
+  congressperson's ideology from the previous congressional session. For
+  all three of these variables across both parties in both the House and
+  Senate the p-value was always less than 0.0001. It is clear that a
+  legislator's current ideology would be affected by what their ideology
+  was in the previous congressional session. While not as obvious, it also
+  makes sense that you would need to understand the greater political
+  environment that their party is in within their chamber. For example, if
+  congresspeople as a whole were becoming more polarized at a rapid rate,
+  as they are currently, you would expect a singular congressperson to be
+  rapidly polarizing as well. Knowing how the party has changed from the
+  previous congress to the most recent one allows you to help control for
+  this effect.
+  
+  Wh
   
   .
   

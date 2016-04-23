@@ -5,7 +5,7 @@
 source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 ```
 
-Some statistically significant results are found from my regression.
+Some statistically significant results are found in my most basic regression. These are the linear regressions computed across all the available congressional sessions that have complete leader data in both the House and the Senate, from the 67th Congress (1921-1923) to the recent 113th Congress (2013-2015). 
 
 ```{r echo=F}
 lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
@@ -17,7 +17,6 @@ lm_house_R <- sum_cong_lm(house_R, 67, 113)
 \begin{table}[h]
 \centering
 \caption{Summary of Models Across All Years, House and Senate}
-\label(FullModels)
 \begin{tabular}{r|rrrr}
                        & Senate Ds & Senate Rs & House Ds & House Rs \\ \hline
 (Intercept)            & 0.00489   & 0.00259   & 0.01131  & 0.00405  \\
@@ -31,7 +30,30 @@ N                      & 2239      & 1817      & 11380    & 9270
 \end{table}
 
 
-All of the control variables that were enlisted were found to be statistically signicant. These three variables were the idelogical mean of congress, the ideological mean of congress from the previous congressional session, and the congressperson's ideology from the previous congressional session. For all three of these variables across both parties in both the House and Senate the p-value was always less than 0.0001. Please see Table 3.1 to see
+All of the control variables that were enlisted were found to be statistically signicant. These three variables were the idelogical mean of congress, the ideological mean of congress from the previous congressional session, and the congressperson's ideology from the previous congressional session. For all three of these variables across both parties in both the House and Senate the p-value was always less than 0.0001. It is clear that a legislator's current ideology would be affected by what their ideology was in the previous congressional session. While not as obvious, it also makes sense that you would need to understand the greater political environment that their party is in within their chamber. For example, if congresspeople as a whole were becoming more polarized at a rapid rate, as they are currently, you would expect a singular congressperson to be rapidly polarizing as well. Knowing how the party has changed from the previous Congress to the most recent one allows you to help control for this effect.
+
+Across all of the years the leadership variable was statistically significant for the Senate Democrats and the House Democrats. The Senate Democrats noticed a small shift, approximately a 0.02 leftward shift on the D-NOMINATE scale, indicating that leaders become slightly more liberal across Congresses than their non-leader counterparts. The result was not significant at a confidence level of the normal 0.05, but with a p-value of 0.059 it would be recognized at a slighty higher confidence level.
+
+A statistically significant shift was also noticed among the House Democrats. They had an even more statistically significant result, with a p-value of about 0.015
+
+
+
+With the model I have created I think it is likely that the significance of leadership on ideology is underestimated. The change in leadership could have an effect on how the ideology of an entire caucus moves. For an example of this you could refer to the jumps in conservatism that take place around the Republican Revolution of 1994.
+
+```{r plotted_rep_rev, echo=F, message=F}
+house_means_88_98 <- dplyr::filter(house_means, cong >= 88 , cong <= 98)
+plot_rep_rev <- ggplot(data = house_means_88_98,
+                       aes(x = cong, y = mean_ideo, color = party)) +
+  geom_line(size = 1) + geom_point(size = 3)
+  scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
+  scale_color_manual(values=c("blue", "red")) +
+  xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
+  ggtitle("Mean House Ideological Scores Separated By Party")
+ggsave("~/thesis/trautlein_thesis/figures/plot_senate_means.pdf", plot = plot_senate_means,
+  height = 3, width = 6)
+plot_rep_rev + theme_bw()
+```
+
 
 .
 

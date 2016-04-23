@@ -45,7 +45,7 @@ plot_senate_means <- ggplot(data = senate_means, aes(x = cong, y = mean_ideo, co
   scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
   scale_color_manual(values=c("blue", "red")) +
   xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
-  ggtitle("Mean House Ideological Scores Separated By Party")
+  ggtitle("Mean Senate Ideological Scores Separated By Party")
 ggsave("~/thesis/trautlein_thesis/figures/plot_senate_means.pdf", plot = plot_senate_means,
   height = 3, width = 6)
 plot_senate_means + theme_bw()
