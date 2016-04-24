@@ -90,8 +90,6 @@
 
 \setlength{\parskip}{0pt}
 
-  %\setlength{\parskip}{\baselineskip}
-  \usepackage[parfill]{parskip}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -170,6 +168,7 @@ Results are then expanded on and a discussion follows.
   
   \begin{Shaded}
   \begin{Highlighting}[]
+  \CommentTok{#add warning = false perhaps?}
   \KeywordTok{source}\NormalTok{(}\StringTok{'~/thesis/rcode/plot_ideas.R'}\NormalTok{, }\DataTypeTok{echo=}\OtherTok{FALSE}\NormalTok{)}
   \end{Highlighting}
   \end{Shaded}
@@ -502,6 +501,32 @@ Results are then expanded on and a discussion follows.
   predict the ideological score of a House Democrat you would not pick
   leadership status as one of your first predictors.
   
+  \subsubsection{Republicans}\label{republicans}
+  
+  It is important to talk about the null results received for Republicans
+  in both the House and Senate. While neither of the results were
+  significant, the regression for the Senate did hint at a possible
+  ideological change due to leadership, with a coefficient of 0.013
+  towards the more conservative side. Accompanied by a p-value of 0.19
+  they must be looked at skeptically, and instead perhaps taken as a hint
+  for future study as opposed to a specific result. The coefficient found
+  here is similar to the results found for the Democrats, they they moved
+  more towards their party's extreme edges when they were leaders. It was
+  not as strong as the coefficient found for either the House Democrats or
+  the Senate Democrats, but it is no as weak as the Republican House,
+  covered below. While significant was not found in this elementary
+  regression, perhaps a regression with better controls and a stronger
+  method might be able to find results that are not just statistically
+  significant but also are statistically sound.
+  
+  The House Republicans however seem to be very far away from any possible
+  impact of leadership on ideology. They had a p-value of 0.65, far away
+  from any reasonable confidence level. Even if it had been significant
+  the coefficient attached was incredibly small, 0.004, towards the more
+  moderate wing fo the Republican party or the Democratic party itself.
+  These results are not in sync with the results found for the other three
+  groups analyzed here, and I might suggest that looking at
+  
   \subsubsection{Comments on Null Results}\label{comments-on-null-results}
   
   With the model I have created I think it is likely that the significance
@@ -528,35 +553,12 @@ Results are then expanded on and a discussion follows.
   causing the entire mean of the party to move, possibly nullifing the
   effects of a leader's move.
   
-  \subsubsection{Republicans}\label{republicans}
-  
-  With the above being said I think it is important to talk about the null
-  results received for Republicans in both the House and Senate. While
-  neither of the results were significant, the regression for the Senate
-  did hint at a possible ideological change due to leadership, with a
-  coefficient of 0.013 towards the more conservative side. Accompanied by
-  a p-value of 0.19 they must be looked at skeptically, and instead
-  perhaps taken as a hint for future study as opposed to a specific
-  result. The coefficient found here is similar to the results found for
-  the Democrats, they they moved more towards their party's extreme edges
-  when they were leaders. It was not as strong as the coefficient found
-  for either the House Democrats or the Senate Democrats, but it is no as
-  weak as the Republican House, covered below. While significant was not
-  found in this elementary regression, perhaps a regression with better
-  controls and a stronger method might be able to find results that are
-  not just statistically significant but also are statistically sound.
-  
-  The House Republicans however seem to be very far away from any possible
-  impact of leadership on ideology. They had a p-value of 0.65, far away
-  from any reasonable confidence level. Even if it had been significant
-  the coefficient attached was incredibly small, 0.004, towards the more
-  moderate wing fo the Republican party or the Democratic party itself.
-  These results are not in sync with the results \#\#\# Results for
-  Subsets of Dataset
+  \subsection{Results for Subsets of
+  Dataset}\label{results-for-subsets-of-dataset}
   
   I took subsets of the data by Congressional periods to try to see if
   leaders were ever more important across certain time periods then they
-  were over the entire dataset. Th
+  were over the entire dataset. Subsets were not useful to explain
   
   \textless{}\textgreater{}
   

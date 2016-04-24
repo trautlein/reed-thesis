@@ -50,7 +50,7 @@ Also the model might underestimate the importance of being a leader for a few an
 
 ### Results for Subsets of Dataset
 
-I took subsets of the data by Congressional periods to try to see if leaders were ever more important across certain time periods then they were over the entire dataset. Th
+I took subsets of the data by Congressional periods to try to see if leaders were ever more important across certain time periods then they were over the entire dataset. Subsets were not useful to explain
 
 
 <<TALK ABOUT HOW FOR REPUBLICANS DURING SOME PERIODS THEIR PARTIES MEAN WAS NOT AS PREDITIVE AS IT HAD BEEN IN THE PAST, PROBABLY DUE TO CIVIL RIGHTS AND THE RESULTS OF NIXON'S SOUTHERN STRATEGY>>
