@@ -2,6 +2,8 @@
 
 ## Results
 
+### Results for Complete Dataset
+
 ```{r source R, warning=F, message=F, echo=FALSE}
 ## REMOVE CHUNK LATER
 source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
@@ -27,19 +29,31 @@ N                      & 2239      & 1817      & 11380    & 9270
 
 All of the control variables that were enlisted were found to be statistically signicant. These three variables were the idelogical mean of congress, the ideological mean of congress from the previous congressional session, and the congressperson's ideology from the previous congressional session. For all three of these variables across both parties in both the House and Senate the p-value was always less than 0.0001. It is clear that a legislator's current ideology would be affected by what their ideology was in the previous congressional session. While not as obvious, it also makes sense that you would need to understand the greater political environment that their party is in within their chamber. For example, if congresspeople as a whole were becoming more polarized at a rapid rate, as they are currently, you would expect a singular congressperson to be rapidly polarizing as well. Knowing how the party has changed from the previous Congress to the most recent one allows you to help control for this effect.
 
+#### Democrats
+
 Across all of the years the leadership variable was statistically significant for the Senate Democrats and the House Democrats, represented by the bold text in Table 3.1 above. The Senate Democrats noticed a small shift, approximately a 0.02 leftward shift on the D-NOMINATE scale, indicating that leaders become slightly more liberal across Congresses than their non-leader counterparts. The result was not significant at a confidence level of the normal 0.05, but with a p-value of 0.059 it would be recognized as significant at a slighty higher confidence level. For reasons laid out farther below, I do not think that this is reason enough to disregard this result, as I would guess that this is an underestimate rather than an overestimate. The overall shift is small, only a 0.02 movement towards the more liberal side, but not insignificant.
 
 A statistically significant shift was also noticed among the House Democrats. They had an even more statistically significant result, with a p-value of about 0.015, a much stronger result than that found above with the Senate Democrats. It is strong enough that with the somewhat arbritrary confidence level of 0.05 the predictor remains signficant. The coefficient attached is also larger, 0.03, again with a leftwards shift farther towards the Democratic party extreme, farther towards congresspeople like Senator Sanders and Senator Brown and away from conservatives like Senator Collins and Senator Risch. Again, the overall shift is small but not worth disregarding, however if one was looking to predict the ideological score of a House Democrat you would not pick leadership status as one of your first predictors.
+
+#### Republicans
+
+It is important to talk about the null results received for Republicans in both the House and Senate. While neither of the results were significant, the regression for the Senate did hint at a possible ideological change due to leadership, with a coefficient of 0.013 towards the more conservative side. Accompanied by a p-value of 0.19 they must be looked at skeptically, and instead perhaps taken as a hint for future study as opposed to a specific result. The coefficient found here is similar to the results found for the Democrats, they they moved more towards their party's extreme edges when they were leaders. It was not as strong as the coefficient found for either the House Democrats or the Senate Democrats, but it is no as weak as the Republican House, covered below. While significant was not found in this elementary regression, perhaps a regression with better controls and a stronger method might be able to find results that are not just statistically significant but also are statistically sound.
+
+The House Republicans however seem to be very far away from any possible impact of leadership on ideology. They had a p-value of 0.65, far away from any reasonable confidence level. Even if it had been significant the coefficient attached was incredibly small, 0.004, towards the more moderate wing fo the Republican party or the Democratic party itself. These results are not in sync with the results found for the other three groups analyzed here, and I might suggest that looking at 
+
+#### Comments on Null Results
 
 With the model I have created I think it is likely that the significance of leadership on ideology is underestimated. The change in leadership could have an effect on how the ideology of an entire caucus moves. Speaker Ryan right now is trying hard to make his ideology the ideology of the entire party, as he has pushed his agenda of "Confident America" [@Steinhauer2016]. Ryan is closer to the mean ideological scores of the Freedom Caucus, and one would imagine that a concerted effort to continue to elect leaders of more extreme ideologies might allow the rest of the party to move along with them towards their more extreme wings [@Enten2015].
 
 Also the model might underestimate the importance of being a leader for a few another reasons. For example, leaders are a part of the data on the last congressional ideological mean and the current congressional ideological mean. Also leaders might have altered their early, pre-leader ideology because they expected or wanted to become leaders in the future. All of these could account for the differences among the significance of the leadership variable among the Democrats when compared to the Republicans. Perhaps Republicans were more likely to know they wanted to pursue leadership since they first entered office, or maybe they were more likely to shift along with their leaders, causing the entire mean of the party to move, possibly nullifing the effects of a leader's move.
 
-With the above being said I think it is important to talk about the null results received for Republicans in both the House and Senate. While neither of the results were significant, the regression for the Senate did hint at a possible ideological change due to leadership, with a coefficient of 0.013 towards the more conservative side. Accompanied by a p-value of 0.19 they must be looked at skeptically, and instead perhaps taken as a hint for future study as opposed to a specific result. The coefficient found here is similar to the results found for the Democrats, they they moved more towards their party's extreme edges when they were leaders. It was not as strong as the coefficient found for either the House Democrats or the Senate Democrats, but it is no as weak as the Republican House, covered below. While significant was not found in this elementary regression, perhaps a regression with better controls and a stronger method might be able to find results that are not just statistically significant but also are statistically sound.
 
-The House Republicans however seem to be very far away from any possible impact of leadership on ideology. They had a p-value of 0.65, far away from any reasonable confidence level. Even if it had been significant the coefficient attached was incredibly small, 0.004, towards the more moderate wing fo the Republican party or the Democratic party itself. These results are not in sync with the results 
+### Results for Subsets of Dataset
+
+I took subsets of the data by Congressional periods to try to see if leaders were ever more important across certain time periods then they were over the entire dataset. Th
 
 
+<<TALK ABOUT HOW FOR REPUBLICANS DURING SOME PERIODS THEIR PARTIES MEAN WAS NOT AS PREDITIVE AS IT HAD BEEN IN THE PAST, PROBABLY DUE TO CIVIL RIGHTS AND THE RESULTS OF NIXON'S SOUTHERN STRATEGY>>
 
 ##Discussion
 .

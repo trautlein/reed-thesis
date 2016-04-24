@@ -69,6 +69,10 @@ source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 ```
 
 
+```{r bib, child = 'chapters/bibliography.Rmd'}
+```
+
+
 <!--
   Intro
   Theory/Lit. Review (how to organize?)
@@ -77,7 +81,3 @@ source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
   Discussion
   Conclusion (needed after discussion?)
 -->
-
-```{r bib, child = 'chapters/bibliography.Rmd'}
-```
-
