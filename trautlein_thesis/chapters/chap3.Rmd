@@ -50,7 +50,26 @@ Also the model might underestimate the importance of being a leader for a few an
 
 ### Results for Subsets of Dataset
 
-I took subsets of the data by Congressional periods to try to see if leaders were ever more important across certain time periods then they were over the entire dataset. Subsets were not useful to explain
+I took subsets of the data by Congressional periods to try to see if leaders were ever more important across certain time periods then they were over the entire dataset. There are many different ways to break up Congress, one way suggested by [@Stewart2012 96-97] is the breaking into six different systems, of which only three are during the time period that was able to be coded wih leaders. They are:
+
+- **Industrial System**: 1921-1932: Actually 1894-1932, but for the purposes of our coding only a smaller amount of it can be analyzed. A party of industry and a party of labor, with northern and southern regionalism factoring into parties heavily. Republicans were primarily northern and industrial, whereas Democrats were primarily southern and labor focused.
+- **New Deal System**: 1932-1972: Democrats become more liberal as the Republicans become more conservative compared to industrial system, but the regionalism does not completely fade away.
+- **Candidate-centered system**: 1972-present: After the tension that existed in the United States in the sixties, the regional importance shifts away as ideology begins to matter more and polarization of the parties continues [@Stewart2012 96].
+
+This system of breaking up the parties is not the only manner in which one could break them up, and subscribes to the views that are not taken as true across all of the political science literature. Some push both the Industrial and New Deal system together as one Congressional period. Yet the years themselves above seem to delineate good beginning breaking points for me to subset the data.
+
+
+Subsets were not useful to explain how House Democrats voted. During all of the systems the p-value were relatively high. That being said the subsetting did reduce the p-value by a significant amount, bringing the p-value for all three eras to between 0.22 and 0.26. This is an improvement when compared to the original 0.65 value received, but not enought to pass a positive judgement on the effects of these values. The coefficients were also stronger than they were when all of the eras were lumped together, but they still are smaller than the absolute value of the coefficients that exist for the Democrats in the House and Senate.
+
+```{r, echo=F, eval=F}
+sum_cong_lm(senate_R, 67, 113)
+sum_cong_lm(senate_R, 67, 72)
+sum_cong_lm(senate_R, 73, 92)
+sum_cong_lm(senate_R, 93, 113)
+```
+
+The values obtained for the Senate Republicans did not all become more explanatory as they did for the House Republicans. The p-value increases for all eras except for the New Deal era, when it moves down to 0.14. But during the Industrial and Candidate-centered systems the p-values increase dramatically to point where they seem unable to be rationalized in any way.
+
 
 
 <<TALK ABOUT HOW FOR REPUBLICANS DURING SOME PERIODS THEIR PARTIES MEAN WAS NOT AS PREDITIVE AS IT HAD BEEN IN THE PAST, PROBABLY DUE TO CIVIL RIGHTS AND THE RESULTS OF NIXON'S SOUTHERN STRATEGY>>
