@@ -15,5 +15,5 @@
 
 ---
 nocite: | 
-  @Dodd2012, @Cox2005, @Nokken2004, @Heberlig2006, @Evans1999, @Brewer2015, @Poole1991, @Stewart2001, @Theriault2008, @Mayhew2004
+  @Dodd2012, @Cox2005, @Nokken2004, @Heberlig2006, @Evans1999, @Brewer2015, @Poole1991, @Stewart2012, @Theriault2008, @Mayhew2004
 ...

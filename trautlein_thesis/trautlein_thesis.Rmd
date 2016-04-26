@@ -1,5 +1,5 @@
 ---
-author: 'Hans Trautlein'
+author: 'John R. Trautlein, Jr.'
 date: 'May 2016'
 division: 'History and Social Sciences'
 advisor: 'Alexander H. Montgomery'
@@ -10,12 +10,10 @@ abstract: >
 # If you'd rather include the preliminary content in files instead of inline
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the >.
-#acknowledgements: >
-#  <<todo
-#dedication: >
-#  <<todo
-#preface: >
-#  <<todo
+acknowledgements: >
+  Will add acknowledgements after orals.
+dedication: >
+  Will add dedication after orals.
 bibliography: bib/thesis.bib
 csl: bib/chicago-author-date.csl
 output: 
@@ -66,9 +64,11 @@ source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 ```{r chapter3, child = 'chapters/chap3.Rmd'}
 ```
 
-```{r conclusion, child = 'chapters/conclusion.Rmd'}
+```{r chapter4, child = 'chapters/chap4.Rmd'}
 ```
 
+```{r conclusion, child = 'chapters/conclusion.Rmd'}
+```
 
 ```{r bib, child = 'chapters/bibliography.Rmd'}
 ```
