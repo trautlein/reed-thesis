@@ -1,5 +1,10 @@
-# Methodology
+# Dataset and Methodology
 
+## Dataset
+
+
+
+## Methodology
 
 I will use the `acf` function available in **R** to best estimate the number of years I should lag my data. It is assumed that I will see the highest correlation and covariance at the with a lag of `1`, meaning one congresional session behind.The correlation and covariance will be expected to slowly drop off. Once this `acf` function has been properly plotted I will be able to then move towards the fitting of a model to my data. To do that I will first seperate the data into two groups, Republicans and Democrats. Then again that data will be seperated into two groups, leaders and non-leaders. I will find the mean change of each party's ideology by congressional session within the `D-NOMINATE` dataset. Then I will compare the changes through each Congress of non-leaders to leaders within each party. This will allow me to see the differences in ideological change of one group versus the others.
 
