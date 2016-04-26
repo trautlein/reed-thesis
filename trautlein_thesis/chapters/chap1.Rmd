@@ -91,9 +91,7 @@ plot_house_means + theme_bw()
 ```
 
 ```{r violin_113_senate, echo=F, warning=F, message=F, cache = TRUE}
-senate_R_113 <- senate_R %>% filter(cong == 113)
-senate_D_113 <- senate_D %>% filter(cong == 113)
-senate_113 <- dplyr::bind_rows(senate_D_113, senate_R_113)
+senate_113 <- one_congress(senate, 113)
 
 violin_senate <- ggplot(senate_113, aes(factor(party), ideo)) + 
   geom_violin(adjust = 1) + geom_jitter(height = 0) + 
@@ -106,9 +104,7 @@ violin_senate + theme_bw()
 
 
 ```{r violin_113_house, echo=F, warning=F, message=F, cache = TRUE}
-house_R_113 <- house_R %>% filter(cong == 113)
-house_D_113 <- house_D %>% filter(cong == 113)
-house_113 <- dplyr::bind_rows(house_D_113, house_R_113)
+house_113 <- one_congress(house, 113)
 
 violin_house <- ggplot(house_113, aes(factor(party), ideo)) + 
   geom_violin(adjust = 1) + geom_jitter(height = 0) + 
