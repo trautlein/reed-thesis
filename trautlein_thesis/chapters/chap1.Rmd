@@ -39,7 +39,7 @@ Poole and Rosenthal put dimensionality and roll call voting agendas well in the 
 source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 ```
 
-```{r plotted_senate_means, echo=F, message=F}
+```{r plotted_senate_means, echo=F, message=F, cache = TRUE}
 plot_senate_means <- ggplot(data = senate_means, aes(x = cong, y = mean_ideo, color = party)) +
   geom_line(size = 1) + geom_point(size = 3) +
   scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
