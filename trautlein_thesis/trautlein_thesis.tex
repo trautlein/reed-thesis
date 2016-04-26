@@ -171,30 +171,6 @@ Results are then expanded on and a discussion follows.
 
   \doublespacing
   
-  \begin{Shaded}
-  \begin{Highlighting}[]
-  \CommentTok{#add warning = false perhaps?}
-  \KeywordTok{source}\NormalTok{(}\StringTok{'~/thesis/rcode/plot_ideas.R'}\NormalTok{, }\DataTypeTok{echo=}\OtherTok{FALSE}\NormalTok{)}
-  \end{Highlighting}
-  \end{Shaded}
-  
-  \begin{verbatim}
-  
-  Attaching package: 'dplyr'
-  \end{verbatim}
-  
-  \begin{verbatim}
-  The following objects are masked from 'package:stats':
-  
-      filter, lag
-  \end{verbatim}
-  
-  \begin{verbatim}
-  The following objects are masked from 'package:base':
-  
-      intersect, setdiff, setequal, union
-  \end{verbatim}
-  
   \chapter*{Introduction}\label{introduction}
   \addcontentsline{toc}{chapter}{Introduction}
   
@@ -237,21 +213,51 @@ Results are then expanded on and a discussion follows.
   placate the louder wings of both the Republican and Democratic parties.
   A political scientist or an economist might be quick to answer that a
   congressperson near the median voter in a political party has a strong
-  theoretical reasoning for being chosen. This is because votes for
-  congressional leaders are votes taken solely within the party.\footnote{With
-    the exception of the vote for Speaker in the House of Representatives,
-    although that vote often ends up being made up entirely of the
-    majority party's congresspersons voting in affirmation with the
-    minority party avoiding casting a positive ballot.} The median voter
-  theorem states that ``a majority rule voting system will select the
-  outcome most preferred by the median voter'' (Holcombe 2006, 115). This
-  builds off the assumption that there is only one dimension along which
-  politics exists, for example, left to right or liberal to conservative.
-  Is it also assumed that a voter will choose the option, or in this
-  circumstance the politician, closest to their own ideal point along the
-  singular dimension. In a majoritarian system this ideal median point
-  will prevail, having more than 50\% of the vote in the final vote
-  tallied.
+  theoretical reasoning for being chosen.
+  
+  Understanding what a median voter is as well as the median voter theorem
+  is important for many quantitative approaches to the study of political
+  ideology. A median voter is the voter in the middle of a group of voters
+  measured among one or more
+  dimensions.\footnote{As the number of dimensions increases however it can get more complicated to decide which voter is in fact the median voter. You have to properly scale each dimension to make sure some do not overpower others.}
+  An table of voters is displayed below with their names and respective
+  ideologies, picked from the actual numbers from the Nokken and Poole
+  version of the D-NOMINATE dataset. These are the first dimensions
+  scores, often categorized as ideology, with -1 being extreme liberalism
+  and 1 being extreme conservatism. They are from the 113th Congress, the
+  most recent Congressional session available in the dataset.
+  
+  \begin{table}[]
+  \centering
+  \caption{Ideologies Presented for Median Voter Theorem Example}
+  \begin{tabular}{l|r}
+  Name      & Ideology \\ \hline
+  Warren    & -0.538   \\
+  Reid      & -0.422   \\
+  Wyden     & -0.381   \\
+  Warner    & -0.238   \\
+  Collins   & 0.061    \\
+  McCain    & 0.367    \\
+  Rubio     & 0.531    \\
+  McConnell & 0.568    \\
+  Cruz      & 0.754   
+  \end{tabular}
+  \end{table}
+  
+  This is because votes for congressional leaders are votes taken solely
+  within the party.\footnote{With the exception of the vote for Speaker in
+    the House of Representatives, although that vote often ends up being
+    made up entirely of the majority party's congresspersons voting in
+    affirmation with the minority party avoiding casting a positive
+    ballot.} The median voter theorem states that ``a majority rule voting
+  system will select the outcome most preferred by the median voter''
+  (Holcombe 2006, 115). This builds off the assumption that there is only
+  one dimension along which politics exists, for example, left to right or
+  liberal to conservative. Is it also assumed that a voter will choose the
+  option, or in this circumstance the politician, closest to their own
+  ideal point along the singular dimension. In a majoritarian system this
+  ideal median point will prevail, having more than 50\% of the vote in
+  the final vote tallied.
   
   Studies have examined where leaders come from ideologically speaking.
   One has found, using the DW-NOMINATE scores of congressional leaders,
@@ -415,6 +421,12 @@ Results are then expanded on and a discussion follows.
   data, only low-dimensional models are needed'' (2007, 69).
   
   \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/plotted_senate_means-1} \end{center}
+  
+  \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/plotted_house_means-1} \end{center}
+  
+  \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/violin_113_senate-1} \end{center}
+  
+  \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/violin_113_house-1} \end{center}
   
   \chapter{Methodology}\label{methodology}
   

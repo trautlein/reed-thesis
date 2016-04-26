@@ -9,7 +9,29 @@ The {#rmd-basics} text after the chapter declaration will allow us to link throu
 Party leaders are hugely important in Congress. Perhaps their most important role is setting the legislative agenda in Congress [@Rohde1991 and @Sinclair1983]. By setting the agenda in arguably the most powerful branch of government, congressional leaders have extraordinary power over which bills are brought to a vote and eventually passed. They also have the power of being able to shift congressional actions away from an otherwise 
 sipmles answer to a problem.^[For a recent example of this, see how in 2008 Harry Reid (D) then the majority leader of the Senate, was able to remove the possibility of a nuclear waste repository from being created at Yucca Mountain.] Leaders in Congress have large sway over the leaders who they can choose to fill the many roles below them. They are also the "brand image" of their party, especially when their party does not control the presidency. Understanding the ideology of leaders is important for a Congressional scholar to better understand why leaders act the way the do.
 
-There has often been the question of whether or not congressional leaders are moderates in their party, near to their party's mean, or extremists. Moderates would often be effective legislators, as they would be able to propose more centrist policies that might apply to both political parties. Extremists might be selected due to their ability to placate the louder wings of both the Republican and Democratic parties. A political scientist or an economist might be quick to answer that a congressperson near the median voter in a political party has a strong theoretical reasoning for being chosen. This is because votes for congressional leaders are votes taken solely within the party.^[With the exception of the vote for Speaker in the House of Representatives, although that vote often ends up being made up entirely of the majority party's congresspersons voting in affirmation with the minority party avoiding casting a positive ballot.] The median voter theorem states that "a majority rule voting system will select the outcome most preferred by the median voter" [@Holcombe2006 115]. This builds off the assumption that there is only one dimension along which politics exists, for example, left to right or liberal to conservative. Is it also assumed that a voter will choose the option, or in this circumstance the politician, closest to their own ideal point along the singular dimension. In a majoritarian system this ideal median point will prevail, having more than 50\% of the vote in the final vote tallied. 
+There has often been the question of whether or not congressional leaders are moderates in their party, near to their party's mean, or extremists. Moderates would often be effective legislators, as they would be able to propose more centrist policies that might apply to both political parties. Extremists might be selected due to their ability to placate the louder wings of both the Republican and Democratic parties. A political scientist or an economist might be quick to answer that a congressperson near the median voter in a political party has a strong theoretical reasoning for being chosen. 
+
+Understanding what a median voter is as well as the median voter theorem is important for many quantitative approaches to the study of political ideology. A median voter is the voter in the middle of a group of voters measured among one or more dimensions.\footnote{As the number of dimensions increases however it can get more complicated to decide which voter is in fact the median voter. You have to properly scale each dimension to make sure some do not overpower others.} An table of voters is displayed below with their names and respective ideologies, picked from the actual numbers from the Nokken and Poole version of the D-NOMINATE dataset. These are the first dimensions scores, often categorized as ideology, with -1 being extreme liberalism and 1 being extreme conservatism. They are from the 113th Congress, the most recent Congressional session available in the dataset.
+
+
+\begin{table}[]
+\centering
+\caption{Ideologies Presented for Median Voter Theorem Example}
+\begin{tabular}{l|r}
+Name      & Ideology \\ \hline
+Warren    & -0.538   \\
+Reid      & -0.422   \\
+Wyden     & -0.381   \\
+Warner    & -0.238   \\
+Collins   & 0.061    \\
+McCain    & 0.367    \\
+Rubio     & 0.531    \\
+McConnell & 0.568    \\
+Cruz      & 0.754   
+\end{tabular}
+\end{table}
+
+This is because votes for congressional leaders are votes taken solely within the party.^[With the exception of the vote for Speaker in the House of Representatives, although that vote often ends up being made up entirely of the majority party's congresspersons voting in affirmation with the minority party avoiding casting a positive ballot.] The median voter theorem states that "a majority rule voting system will select the outcome most preferred by the median voter" [@Holcombe2006 115]. This builds off the assumption that there is only one dimension along which politics exists, for example, left to right or liberal to conservative. Is it also assumed that a voter will choose the option, or in this circumstance the politician, closest to their own ideal point along the singular dimension. In a majoritarian system this ideal median point will prevail, having more than 50\% of the vote in the final vote tallied. 
 
 Studies have examined where leaders come from ideologically speaking. One has found, using the DW-NOMINATE scores of congressional leaders, that these leaders do in fact come from near the median of their party, with a tiny preference towards the slightly more extreme candidate, left-leaning for Democrats and right-leaning for Republicans. DW-NOMINATE scores place congresspersons on a single dimension from -1 to 1, with -1 being left-leaning and 1 being right-leaning. The numbers are found by taking the roll call votes over a single Congress and then placing the legislator's scores within the range of possible values. A senator like Ted Cruz would end up with a number close to 1^[In the 113th Congress his point was measured at 0.754.] whereas for senator like Elizabeth Warren you would see a point near to -1^[In the 113th Congress her point was measured at -0.538]. House Democrats were found to be on average -0.050 away from the median point whereas their leaders were on overage -0.097, slightly farther away but still close to the median. For Senate Democrats these numbers are 0.016 and -0.059 respectively, again the the leaders being slighly more extreme than the median but still being quite close to it. For the Republicans the results are similar, although in the other direction. In the House, for leaders the average distance away from the party median for leaders is 0.044 whereas for the rest of the House Republicans it is -0.025. For the Senate Republicans the numbers are 0.048 and 0.057, respectively.^[The Republicans in the Senate are the only group who elect leaders slightly more moderate on average than the party median in that chamber.] They find it "hearening to note that leaders--who some political observers argue have strong influence over angenda setting and lawmaking under certain conditions--are, on balance, fairly representative of their parties. If leaders came from the far extremes of the chambers...then policy might be even less reflective of the preferences of the median voter in the electorate" [@Jessee2010, see specifically 386]. @Jessee2010 also find that the winner of a congressional leadership race is not "ideologically distinctive" from the entire pool candidates [-@Jessee2010, 361].
 
@@ -42,21 +64,62 @@ source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 ```{r plotted_senate_means, echo=F, message=F, cache = TRUE}
 plot_senate_means <- ggplot(data = senate_means, aes(x = cong, y = mean_ideo, color = party)) +
   geom_line(size = 1) + geom_point(size = 3) +
-  scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
+  scale_color_brewer(palette = "Set1") + ylim(c(-.75, .75)) +
   scale_color_manual(values=c("blue", "red")) +
-  xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
-  ggtitle("Mean Senate Ideological Scores Separated By Party")
-ggsave("~/thesis/trautlein_thesis/figures/plot_senate_means.pdf", plot = plot_senate_means,
-  height = 3, width = 6)
+  xlab("Congressional Session") + ylab("Mean Ideology (NOMINATE)") +
+  ggtitle("Mean Senate Ideological Scores Separated By Party") + 
+  guides(col = guide_legend(reverse = TRUE, title = "Party")) +
+  scale_x_continuous(breaks=seq(65,115,10)) 
+
 plot_senate_means + theme_bw()
 ```
 
 
-```{r label_plotted_senate_means, results = "asis", echo=F}
-#label(path = "~/thesis/trautlein_thesis/figures/plot_senate_means.pdf",
-#      caption = "Mean House Ideological Scores Separated By Party",
-#      label = "plot_senate_means", type = "figure")
+```{r plotted_house_means, echo=F, message=F, cache = TRUE}
+plot_house_means <- ggplot(data = house_means, aes(x = cong, y = mean_ideo, color = party)) +
+  geom_line(size = 1) + geom_point(size = 3) +
+  scale_color_brewer(palette = "Set1") + ylim(c(-.75, .75)) +
+  scale_color_manual(values=c("blue", "red")) +
+  xlab("Congressional Session") + ylab("Mean Ideology (NOMINATE)") +
+  ggtitle("Mean House Ideological Scores Separated By Party") + 
+  guides(col = guide_legend(reverse = TRUE, title = "Party")) +
+  scale_x_continuous(breaks=seq(55,115,10)) 
+
+plot_house_means + theme_bw()
+```
+
+```{r violin_113_senate, echo=F, warning=F, message=F, cache = TRUE}
+senate_R_113 <- senate_R %>% filter(cong == 113)
+senate_D_113 <- senate_D %>% filter(cong == 113)
+senate_113 <- dplyr::bind_rows(senate_D_113, senate_R_113)
+
+violin_senate <- ggplot(senate_113, aes(factor(party), ideo)) + 
+  geom_violin(adjust = 1) + geom_jitter(height = 0) + 
+  coord_flip() + ylim(-.75, .75) + 
+  xlab("Party") + ylab("Ideology (NOMINATE)") +
+  ggtitle("Ideology in the Senate by Party for the 113th Congress")
+
+violin_senate + theme_bw()
 ```
 
 
+```{r violin_113_house, echo=F, warning=F, message=F, cache = TRUE}
+house_R_113 <- house_R %>% filter(cong == 113)
+house_D_113 <- house_D %>% filter(cong == 113)
+house_113 <- dplyr::bind_rows(house_D_113, house_R_113)
 
+violin_house <- ggplot(house_113, aes(factor(party), ideo)) + 
+  geom_violin(adjust = 1) + geom_jitter(height = 0) + 
+  coord_flip() + ylim(-.75, .75) + 
+  xlab("Party") + ylab("Ideology (NOMINATE)") +
+  ggtitle("Ideology in the House by Party for the 113th Congress")
+
+violin_house + theme_bw()
+```
+
+
+```{r echo=F}
+# label(path = "~thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
+#       caption = "Here is a caption",
+#       label = "let's try this out")
+```

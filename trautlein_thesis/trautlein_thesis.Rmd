@@ -46,7 +46,7 @@ library(reedtemplates)
 
 \doublespacing
 
-```{r source R code}
+```{r source R code, warning=F, message=F, echo=F}
 #add warning = false perhaps?
 source('~/thesis/rcode/plot_ideas.R', echo=FALSE)
 ```
