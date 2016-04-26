@@ -37,35 +37,40 @@ sum_cong_lm <- function(data, start_cong = 67, end_cong = 113){
   summary(cong_lm(data, start_cong, end_cong))
 }
 
-p_vals <- NULL
-get_p_val <- function(data, start_cong, end_cong = 113) {
-  working_lm <- cong_lm(data, start_cong, end_cong)
-  p_val <- unname(summary(working_lm)$coefficients[,4][5])
-  return(p_val)
+
+one_congress <- function(chamber, cong_session, RorD = NA) {
+  working <- dplyr::filter(chamber, cong == cong_session)
+  
+  ifelse(is.na(RorD),
+         return(working),
+         return(dplyr::filter(working, party == RorD))
+         )
 }
 
-get_p_vals <- function(data, start_cong, end_cong = 113) {
-  p_vals$cong <- NA
-  p_vals$p_val <- NA
-  
-  for(i in start_cong:end_cong) {
-    p_vals[i - start_cong - 1] <- get_p_val(data, i, end_cong)
-  }
-  
-  p_vals_df <- data.frame(Reduce(rbind, p_vals))
-  
-  return(p_vals_df)
-}
 ##### END FUNCTIONS ####################################
 
-# from 1921 to 2015
-lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
-lm_senate_R <- sum_cong_lm(senate_R, 67, 113)
-lm_house_D <- sum_cong_lm(house_D, 67, 113)
-lm_house_R <- sum_cong_lm(house_R, 67, 113)
+# # from 1921 to 2015
+# lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
+# lm_senate_R <- sum_cong_lm(senate_R, 67, 113)
+# lm_house_D <- sum_cong_lm(house_D, 67, 113)
+# lm_house_R <- sum_cong_lm(house_R, 67, 113)
+
+# join parties together to create complete datasets
+senate <- suppressWarnings(dplyr::bind_rows(senate_D, senate_R) %>% arrange(cong, state, name))
+house <- suppressWarnings(dplyr::bind_rows(house_D, house_R) %>% arrange(cong, state, name))
 
 
-sum_cong_lm(senate_D, 85, 101) 
+
+# # create single years for senate
+# senate_R_113 <- one_congress(senate, 113, "R")
+# senate_D_113 <- one_congress(senate, 113, "D")
+# senate_113 <- one_congress(senate, 113)
+# 
+# 
+# house_R_113 <- one_congress(house, 113, "R")
+# house_D_113 <- one_congress(house, 113, "D")
+# house_113 <- one_congress(house, 113)
+ 
 
 
 # plot of how mean_ideo by party has changed over congresses
