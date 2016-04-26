@@ -1,11 +1,7 @@
 # Discussion
 
 
-
-<<TALK ABOUT HOW FOR REPUBLICANS DURING SOME PERIODS THEIR PARTIES MEAN WAS NOT AS PREDITIVE AS IT HAD BEEN IN THE PAST, PROBABLY DUE TO CIVIL RIGHTS AND THE RESULTS OF NIXON'S SOUTHERN STRATEGY>>
-
-
-There are five different outcomes that are possible with the above methodology.
+As discusssed above, there were five different possible hypotheses that we were able to come up with - one null hypothesis and four alternative hypotheses. Again, I will repeat all five of them below.
 
   1. A null result is found - the leaders and non-leaders do not change in significantly different ways.
   2. Leaders move to be more conservative, or right-leaning, when compared to non-leaders.
@@ -13,4 +9,17 @@ There are five different outcomes that are possible with the above methodology.
   4. Leaders move to be more moderate, or centrist, when compared to non-leaders.
   5. Leaders move to be more extreme when compared to non-leaders.
   
-There are compelling reasons for many of these to be true. For outcome where the null result is found this could make sense if leaders and non-leaders have little reason to be different. One could imagine leaders becoming more conservative compared to non-leaders due to age of many of the leaders within Congress and the relation between ideology and age. They could become more moderate in order to fascilitate the dealmaking that must be done in Congress in order to get legislation passed. Or perhaps they would becoem more extreme in order to placate their more extreme bases, only choosing to delineate from them in the rarest of circumstances.
+Luckily I need not pick only one hypothesis above to describe the phenomena observed because three of the hypotheses seemed to be correct, depending on the circumstance.
+
+Firstly, the null hypothesis seems to be correct in the vast majority of situations. While the 
+
+
+Secondly, the Democrats seemed to be explained well by the third hypothesis above, that leaders become more liberal when compared to non-leaders. There are a number of reasons why this could take place. Perhaps one of the most largest reasons I see being the case is that one of the largest threats for these leaders is that they are receiving a large amount of media attention and may attract a primary opponent.
+
+<< ALSO GOING TO REFER TO EXTEMISM LITERATURE THAT I TALKED ABOUT IN LIT REVIEW, MAY EXPAND ON IT IN LIT REVIEW AS WELL >>
+
+Thirdly, the fifth hypothesis also can follow from the third hypothesis above because there are only results on the Democratic side.
+
+
+
+
