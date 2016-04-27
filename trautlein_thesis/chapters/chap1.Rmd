@@ -107,17 +107,46 @@ violin_senate + theme_bw()
 house_113 <- one_congress(house, 113)
 
 violin_house <- ggplot(house_113, aes(factor(party), ideo)) + 
-  geom_violin(adjust = 1) + geom_jitter(height = 0) + 
+  geom_violin(adjust = 1) + geom_jitter(aes(height = x2, color = x2)) + 
   coord_flip() + ylim(-.75, .75) + 
   xlab("Party") + ylab("Ideology (NOMINATE)") +
   ggtitle("Ideology in the House by Party for the 113th Congress")
 
+ggsave("~/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
+       plot = violin_house)
+
 violin_house + theme_bw()
 ```
 
+```{r}
+label_house_113 <- house_113 %>%
+  mutate(labelnames = ifelse(name %in% c("JONES") & statecode==47, name, ""))
 
-```{r echo=F}
-# label(path = "~thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
-#       caption = "Here is a caption",
-#       label = "let's try this out")
+label_violin_house <- ggplot(label_house_113, aes(factor(party), ideo)) + 
+  geom_violin(adjust = 1) + geom_jitter(aes(height = x2, color = x2)) + 
+  coord_flip() + ylim(-.75, .75) + 
+  geom_text_repel(data = dplyr::filter(label_house_113, labelnames != ""), aes(label=labelnames)) + 
+  xlab("Party") + ylab("Ideology (NOMINATE)") +
+  ggtitle("Ideology in the House by Party for the 113th Congress")
+
+label_violin_house
+
+ggplot(data = senate_113, aes(x = ideo, y = x2)) + geom_point() + 
+  geom_text_repel(aes(label=name))
+
+party_colors <- c("R" = "red","D" = "blue")
+p + scale_colour_manual(values = cols)
+
+ggplot(data = senate_113, aes(x = ideo, y = x2, color = party)) + geom_point() + 
+  geom_text_repel(aes(label=name)) + 
+  scale_color_brewer(palette = "Set1") +
+  scale_color_manual(values = cols)
+
+```
+
+
+```{r echo=F, results="asis"}
+label(path = "/Users/hans/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
+     caption = "Here is a caption",
+     type = "figure")
 ```
