@@ -2,7 +2,9 @@
 
 ## Dataset
 
-The dataset that I am using a special version of the DW-NOMINATE dataset that was created by Timothy Nokken and Keith Poole for a 2004 study to research congressional party defection throughout the history of the United States. What it shares with the DW-NOMINATE dataset is a first and second dimasion coordinate for each legislator across the Congresses. But it differs in that
+NOMINATE, the method developed by Poole and Rosenthal has evolved over many years, first seen as D-NOMINATE, W-NOMINATE, then DW-NOMINATE, which the Nokken-Poole dataset is built off of. Seen within a two-dimensional space, each legislator is given an "ideal point," or where they would most likely fit given their role call voting. This is seen as where the legislator maximizes their utility, perhaps by increasing the chance they are elected by being located there as Mayhew might argue [-@Mayhew2004]. They will most often vote for items that are close to this "ideal point" and the farther away a vote will lie from this point the less likely it is that the Member of Congress will vote "Yea" on the bill or resolution.
+
+The dataset that I am using a special version of the DW-NOMINATE dataset that was created by Timothy Nokken and Keith Poole for a 2004 study to research congressional party defection throughout the history of the United States. What it shares with the DW-NOMINATE dataset is a first and second dimension coordinate for each legislator across the Congresses. But it differs in that across different Congresses the members ideal points change. This is what makes this dataset unique among the NOMINATE datasets, as normally a legislator holds the same ideal point across their career. This allows me to compare a legislator's past ideology with their present ideology, helping the eventual model understand the importance of a predictor indicating leadership on this ideological shift.
 
 In order to properly subset my data I completely removed all independents from the dataset. In a later study it might be more useful to instead mark independents as a member of the Republican or Democratic party if they decide to caucus with them, such as Senator Sanders, an independent who caucuses with the Democrats, or Senator Joe Lieberman, and independent who also caucused with the Democrats. This did not seem to be a huge reduction in the total dataset size, as during the period this study looks at there were only sixteen total third party members of the Senate and only thirty-two total third party members in the House.\footnote{A significant percentage of these thirty-two are members of the Minnesota Farmer-Labor party or members of the Progressive party.} The variables a reader of this paper might be most interested in are:
 
@@ -23,22 +25,103 @@ New variables were added during the cleaning and coding of the data. They are:
 - Past Party Mean: The mean 1st dimension score of the party for the past Congress. Continuous and Numerical.
 - Past Ideology: The 1st Dimension score for the Member of Congress for the past Congress.
 
-The mean ideologies by party for each chamber are given below to offer greater context of how parties move within their chamber and in particular the extreme polarization of the past few years.
+The mean ideologies by party for each chamber are given below to offer greater context of how parties move within their chamber and in particular the extreme polarization of the past Congresses. Tables of the past twenty Congresses exist for both chambers below, along with graphs showing how ideology has changed across all available data.
+
+\newpage
 
 
 ```{r senate_means_table, results = "asis", echo=F}
-senate_means_short_10 <- senate_means_short %>% filter(cong > 103)
-kable(senate_means_short_10, col.names = c("Congress", "Dem. Ideology", "Rep. Ideology"),
-      caption = "Senate Mean Ideology By Party, 104th to 113th Congress")
+senate_means_short_20 <- senate_means_short %>% filter(cong > 93)
+kable(senate_means_short_20, col.names = c("Congress", "Dem. Ideology", "Rep. Ideology"),
+      caption = "Senate Mean Ideology By Party, 94th to 113th Congress")
 ```
+
+```{r plotted_senate_means, echo=F, message=F, cache = TRUE}
+plot_senate_means <- ggplot(data = senate_means, aes(x = cong, y = mean_ideo, color = party)) +
+  geom_line(size = 1) + geom_point(size = 3) +
+  scale_color_brewer(palette = "Set1") + ylim(c(-.75, .75)) +
+  scale_color_manual(values=party_colors) +
+  xlab("Congressional Session") + ylab("Mean Ideology (NOMINATE)") +
+  guides(col = guide_legend(reverse = TRUE, title = "Party")) +
+  scale_x_continuous(breaks=seq(65,115,10)) + guides(fill=FALSE) + theme_bw()
+
+ggsave("/Users/cus/thesis/trautlein_thesis/figures/senate_means.pdf",
+       plot = plot_senate_means)
+```
+
+```{r echo=F, results="asis"}
+label(path = "/Users/cus/thesis/trautlein_thesis/figures/senate_means.pdf",
+     caption = "Mean Senate Ideological Scores Separated By Party",
+     type = "figure", scale = 0.85)
+```
+
+```{r plotted_house_means, echo=F, message=F, cache = TRUE}
+plot_house_means <- ggplot(data = house_means, aes(x = cong, y = mean_ideo, color = party)) +
+  geom_line(size = 1) + geom_point(size = 3) +
+  scale_color_brewer(palette = "Set1") + ylim(c(-.75, .75)) +
+  scale_color_manual(values=party_colors) +
+  xlab("Congressional Session") + ylab("Mean Ideology (NOMINATE)") +
+  guides(col = guide_legend(reverse = TRUE, title = "Party")) +
+  scale_x_continuous(breaks=seq(55,115,10)) + guides(fill=FALSE) + theme_bw()
+
+ggsave("/Users/cus/thesis/trautlein_thesis/figures/house_means.pdf",
+       plot = plot_house_means) 
+```
+
+```{r echo=F, results="asis"}
+label(path = "/Users/cus/thesis/trautlein_thesis/figures/house_means.pdf",
+     caption = "Mean House Ideological Scores Separated By Party",
+     type = "figure", scale = 0.85)
+```
+
 
 ```{r house_means_table, results = "asis", echo=F}
-house_means_short_10 <- house_means_short %>% filter(cong > 103)
-kable(house_means_short_10, col.names = c("Congress", "Dem. Ideology", "Rep. Ideology"),
-      caption = "House Mean Ideology By Party, 104th to 113th Congress")
+house_means_short_20 <- house_means_short %>% filter(cong > 93)
+kable(house_means_short_20, col.names = c("Congress", "Dem. Ideology", "Rep. Ideology"),
+      caption = "House Mean Ideology By Party, 94th to 113th Congress")
 ```
 
-Here you can see a 
+In the above tables the polarization trend is clear. This trend is stronger in the House than in the Senate, and stronger among Republicans than among Democrats. This has partly lead to the sharp criticism of the Republicans that has been increasing in recent years [@Mann2012]. The Democrats begin farther from the perfectly "moderate" point of 0, but as the years progress the Republicans move significantly father than the Democrats do.
+
+Finally to better understand the current distribution of a Member of Congress in their chamber there are violin plots below that will help a reader better understand the density of the party across different ideologies, again indicated by the first dimension in the NOMINATE dataset.
+
+```{r violin_113_senate, echo=F, warning=F, message=F, cache = TRUE}
+senate_113 <- one_congress(senate, 113)
+
+violin_senate <- ggplot(senate_113, aes(factor(party), ideo)) + 
+  geom_violin(adjust = 1) + coord_flip() +
+  xlab("Party") + ylab("Ideology (NOMINATE)") + theme_bw()
+
+ggsave("/Users/cus/thesis/trautlein_thesis/figures/violin_senate.pdf",
+       plot = violin_senate)
+```
+
+```{r echo=F, results="asis"}
+label(path = "/Users/cus/thesis/trautlein_thesis/figures/violin_senate.pdf",
+     caption = "Ideology in the Senate by Party for the 113th Congress",
+     type = "figure", scale = 0.7)
+```
+
+
+
+```{r violin_113_house, echo=F, warning=F, message=F, cache = TRUE}
+house_113 <- one_congress(house, 113)
+
+violin_house <- ggplot(house_113, aes(factor(party), ideo)) + 
+  geom_violin(adjust = 1) + coord_flip() + 
+  xlab("Party") + ylab("Ideology (NOMINATE)") + theme_bw()
+
+ggsave("/Users/cus/thesis/trautlein_thesis/figures/violin_house.pdf",
+       plot = violin_house)
+```
+
+```{r echo=F, results="asis"}
+label(path = "/Users/cus/thesis/trautlein_thesis/figures/violin_house.pdf",
+     caption = "Ideology in the House by Party for the 113th Congress",
+     type = "figure", scale = 0.7)
+```
+
+
 
 ## Methodology
 
@@ -49,8 +132,26 @@ My goal is to understand how leadership positions affect the ideology of a Membe
 - Current party ideology: The mean 1st dimension score of the party for the current Congress. Continuous and Numerical.
 - Leadership status: If the Member of Congress is a "leader," as described above in the dataset section. The variable of note. Binary.
 
-I am looking to eventually use these variables to predict the response variable, current ideology. Current ideology is the 1st dimension score of the legislator of interest for the current Congress. I would expect the legislator's past ideology to be the most predictive, followed by the party's current ideology, with the third most predictive varible being the party's past ideology. Leadership status is expected to be the least predictive variable of the four tested for here.
+I am looking to eventually use these variables to predict the response variable, current ideology. Current ideology is the 1st dimension score of the legislator of interest for the current Congress. I would expect the legislator's past ideology to be the most predictive, followed by the party's current ideology, with the third most predictive variable being the party's past ideology. Leadership status is expected to be the least predictive variable of the four variables tested for here.
+
+The few assumptions needed for a linear regression model had to be checked for. There is a chance that the model would be better represented by a non-linear model but due to the author's statistical know-how a linear regression seemed most appropriate. Normality in the error terms as well as a constant variance of the error terms also seemed to be met. The needed assumption that may have been hardest to work around was multicollinearity, or when predictor terms within the regression are able to predict each other with great accuracy. The variables around ideology could have some issues here and a future paper might try to further tease out whether there is a strong problem of colinearity in this dataset and model.
+
+Again, this model is acceptable, but a model that better fits this Congressional phenomena would certainly exist. Further research with more advanced statistical methods might be able to more properly tease out the true effects of holding a leadership position on ideology. Yet even a simple linear regression ends up with results, displayed in the next chapter. The final plot displayed shows the Senators of the 113th Congress, and should help the reader understand where the ideology of specific Members of Congress lies. You do not even need a second dimension to split the legislators, as a split along the first dimension around 0 would break up the parties perfectly with zero misclassifications. However this second dimension is displayed to give the reader a little bit more understanding about how the legislators group themselves, especially within their own parties.
+
+```{r echo=F, eval=F}
+repel_plot <- ggplot(data = senate_113, aes(x = ideo, y = x2)) +
+  geom_point() + geom_text_repel(aes(label=name)) + 
+  xlab("1st Dimension (Ideology, NOMINATE)") +
+  ylab("2nd Dimension (Establishment vs. Anti-establishment, NOMINATE)") + theme_bw()
+
+ggsave("/Users/cus/thesis/trautlein_thesis/figures/repel_plot.pdf",
+       plot = repel_plot)
+```
+
+```{r echo=F, results="asis"}
+label(path = "/Users/cus/thesis/trautlein_thesis/figures/repel_plot.pdf",
+     caption = "The Senate with Both Dimensions for the 113th Congress",
+     type = "figure", scale = 0.8)
+```
 
 
-
-The few assumptions needed for a linear regression model had to be checked for. There is a chance that the model would be better represented by a non-linear model but due to the author's statistical knowhow a linear regression seemed most appropriate. Normality in the error terms as well as a constanct variance of the error terms also seemed to be met. The needed assumption that may have been hardest to work around was multicollinearity, or when predictor terms within the regression are able to predict each other with great accuracy. The variables around ideology could have some issues here and a future paper might try to further tease out whether there is a strong problem of colinearity in this dataset and model.

@@ -59,6 +59,8 @@ senate_means_short <- tidyr::spread(senate_means, party, mean_ideo)
 
 house_means_short <- tidyr::spread(house_means, party, mean_ideo)
 
+party_colors <- c("R" = "red","D" = "blue")
+
 
 
 

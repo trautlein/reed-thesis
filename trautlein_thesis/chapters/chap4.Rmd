@@ -3,7 +3,7 @@
 ## Discussion
 
 
-As discusssed above, there were five different possible hypotheses that we were able to come up with - one null hypothesis and four alternative hypotheses. Again, I will repeat all five of them below.
+As discussed above, there were five different possible hypotheses that we were able to come up with - one null hypothesis and four alternative hypotheses. Again, I will repeat all five of them below.
 
   1. A null result is found - the leaders and non-leaders do not change in significantly different ways.
   2. Leaders move to be more conservative, or right-leaning, when compared to non-leaders.
@@ -13,14 +13,14 @@ As discusssed above, there were five different possible hypotheses that we were 
   
 Luckily I need not pick only one hypothesis above to describe the phenomena observed because three of the hypotheses seemed to be correct, depending on the circumstance.
 
-Firstly, the null hypothesis seems to be correct in the vast majority of situations. While the 
+Firstly, the null hypothesis seems to be correct in the vast majority of situations. While leadership can seem like an important identifier from the outside, it would make sense that they primarily follow or lead their party\footnote{It is impossible to know which direction the causality would go in from this analysis.} in such a way that their ideologies do not drastically change when compared with the mean change of the party. 
+
+The null hypothesis might also have been found for a number of reasons
 
 
-Secondly, the Democrats seemed to be explained well by the third hypothesis above, that leaders become more liberal when compared to non-leaders. There are a number of reasons why this could take place. Perhaps one of the most largest reasons I see being the case is that one of the largest threats for these leaders is that they are receiving a large amount of media attention and may attract a primary opponent.
+Secondly, the Democrats seemed to be explained well by the third and fifth hypotheses above, that leaders become more liberal or extreme when compared to non-leaders. There are a number of reasons why this could take place. Perhaps one of the most largest reasons I see being the case is that one of the largest threats for these leaders is that they are receiving a large amount of media attention and may attract a primary opponent. Leaders in both the Senate, and especially in the House because of the frequent elections, are often in seats that have a non-competitive general election. This can often mean that during the primary election that the incumbent may be challenged by a member of his own party, and this challenge will often come from the left. This would encourage the current leaders in Congress to shift farther towards the left in order to prevent an opponent from appearing or, if they do appear, from successfully challenging them for their seat. This again follows from @Mayhew2012 where the leaders are primarily focused on reelection.
 
-<< ALSO GOING TO REFER TO EXTEMISM LITERATURE THAT I TALKED ABOUT IN LIT REVIEW, MAY EXPAND ON IT IN LIT REVIEW AS WELL >>
-
-Thirdly, the fifth hypothesis also can follow from the third hypothesis above because there are only results on the Democratic side.
+This would also seem to make sense in the context of the ideology of the leaders that are elected by their fellow Members of Congress to lead their party. To reiterate, these leaders are not often middlemen, and instead are closer to their party's extremes than would be expected [@May1973, @Clausen1987; @Grofman2002; @Jessee2010].
 
 
 
