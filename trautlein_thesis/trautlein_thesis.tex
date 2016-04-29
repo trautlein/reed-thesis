@@ -191,7 +191,7 @@ Results are then expanded on and a discussion follows.
   
   Party leaders are hugely important in Congress. Perhaps their most
   important role is setting the legislative agenda in Congress (Rohde
-  1991, and @Sinclair1983). By setting the agenda in arguably the most
+  1991, @Sinclair1983). By setting the agenda in arguably the most
   powerful branch of government, congressional leaders have extraordinary
   power over which bills are brought to a vote and eventually passed. They
   also have the power of being able to shift congressional actions away
@@ -446,9 +446,28 @@ Results are then expanded on and a discussion follows.
   
   \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/violin_113_house-1} \end{center}
   
+  \begin{verbatim}
+  Warning: Removed 103 rows containing non-finite values (stat_ydensity).
+  \end{verbatim}
+  
+  \begin{verbatim}
+  Warning: Removed 103 rows containing missing values (geom_point).
+  \end{verbatim}
+  
+  \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/unnamed-chunk-1-1} \end{center}
+  
+  \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/unnamed-chunk-1-2} \end{center}
+  
+  \begin{verbatim}
+  Scale for 'colour' is already present. Adding another scale for
+  'colour', which will replace the existing scale.
+  \end{verbatim}
+  
+  \begin{center}\includegraphics{trautlein_thesis_files/figure-latex/unnamed-chunk-1-3} \end{center}
+  
   \begin{figure}[h!tbp]
   \centering
-  \includegraphics[angle = 0,scale = 1]{/Users/hans/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf}
+  \includegraphics[angle = 0,scale = 1]{/Users/cus/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf}
   \caption[Here is a caption]{\normalsize{Here is a caption}}
   \label{fig:def}
   \end{figure}
@@ -457,22 +476,167 @@ Results are then expanded on and a discussion follows.
   
   \section{Dataset}\label{dataset}
   
+  The dataset that I am using a special version of the DW-NOMINATE dataset
+  that was created by Timothy Nokken and Keith Poole for a 2004 study to
+  research congressional party defection throughout the history of the
+  United States. What it shares with the DW-NOMINATE dataset is a first
+  and second dimasion coordinate for each legislator across the
+  Congresses. But it differs in that
+  
+  In order to properly subset my data I completely removed all
+  independents from the dataset. In a later study it might be more useful
+  to instead mark independents as a member of the Republican or Democratic
+  party if they decide to caucus with them, such as Senator Sanders, an
+  independent who caucuses with the Democrats, or Senator Joe Lieberman,
+  and independent who also caucused with the Democrats. This did not seem
+  to be a huge reduction in the total dataset size, as during the period
+  this study looks at there were only sixteen total third party members of
+  the Senate and only thirty-two total third party members in the
+  House.\footnote{A significant percentage of these thirty-two are members of the Minnesota Farmer-Labor party or members of the Progressive party.}
+  The variables a reader of this paper might be most interested in are:
+  
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Congress Number, 1st Congress through 113th Congress
+  \item
+    ICPSR ID Number: A unique five digit code assigned to each legislator.
+  \item
+    State Code: A two digit code assigned by state.
+  \item
+    State Name: The name of the state the legislator is from.
+  \item
+    Party Code: 100 if a Democrat, 200 if a Republican, and many others
+    exist for third parties.
+  \item
+    Name: The legislator's last name and occasionally first name and
+    middle name initials.
+  \item
+    1st Dimension Coordinate: The most important dimension, can place a
+    legislator in a party with over 80\% accuracy across most Congresses,
+    and with 100\% accuracy in the current polarized environment.
+  \item
+    2nd Dimension Coordinate: The second dimension of voting data pulled
+    out from the roll call votes. Across history it has often reflected
+    disagreement within the parties. For example, in the 1960s within the
+    Democratic and Republican party it reflected views on Civil Rights.
+    Currently the dimension is not very predictive, but does help
+    designate who is a member of the ``establishment'' versus the
+    anti-establishment Members of Congress.
+  \end{itemize}
+  
+  New variables were added during the cleaning and coding of the data.
+  They are:
+  
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Role: Blank if none, ``W'' if whip, ``L'' if leader, and ``S'' if
+    Speaker.
+  \item
+    Leadership Position: ``Y'' if Role is not blank, ``N'' if Role is
+    blank.
+  \item
+    Party Mean: The mean 1st dimension score of the party for the current
+    Congress. Continuous and Numerical.
+  \item
+    Past Party Mean: The mean 1st dimension score of the party for the
+    past Congress. Continuous and Numerical.
+  \item
+    Past Ideology: The 1st Dimension score for the Member of Congress for
+    the past Congress.
+  \end{itemize}
+  
+  \begin{longtable}[c]{@{}rrr@{}}
+  \caption{Senate Mean Ideology By Party, 104th to 113th
+  Congress}\tabularnewline
+  \toprule
+  Congress & Dem. Ideology & Rep.~Ideology\tabularnewline
+  \midrule
+  \endfirsthead
+  \toprule
+  Congress & Dem. Ideology & Rep.~Ideology\tabularnewline
+  \midrule
+  \endhead
+  104 & -0.32581 & 0.35945\tabularnewline
+  105 & -0.34491 & 0.39311\tabularnewline
+  106 & -0.34037 & 0.38618\tabularnewline
+  107 & -0.34046 & 0.39400\tabularnewline
+  108 & -0.33088 & 0.36725\tabularnewline
+  109 & -0.34327 & 0.41862\tabularnewline
+  110 & -0.34360 & 0.44063\tabularnewline
+  111 & -0.34595 & 0.44511\tabularnewline
+  112 & -0.33365 & 0.50675\tabularnewline
+  113 & -0.36271 & 0.53037\tabularnewline
+  \bottomrule
+  \end{longtable}
+  
+  \begin{longtable}[c]{@{}rrr@{}}
+  \caption{House Mean Ideology By Party, 104th to 113th
+  Congress}\tabularnewline
+  \toprule
+  Congress & Dem. Ideology & Rep.~Ideology\tabularnewline
+  \midrule
+  \endfirsthead
+  \toprule
+  Congress & Dem. Ideology & Rep.~Ideology\tabularnewline
+  \midrule
+  \endhead
+  104 & -0.34211 & 0.48100\tabularnewline
+  105 & -0.35750 & 0.51788\tabularnewline
+  106 & -0.36091 & 0.54278\tabularnewline
+  107 & -0.35842 & 0.55918\tabularnewline
+  108 & -0.35822 & 0.58535\tabularnewline
+  109 & -0.37146 & 0.60593\tabularnewline
+  110 & -0.35234 & 0.64415\tabularnewline
+  111 & -0.33722 & 0.67488\tabularnewline
+  112 & -0.38793 & 0.68400\tabularnewline
+  113 & -0.38112 & 0.69508\tabularnewline
+  \bottomrule
+  \end{longtable}
+  
   \section{Methodology}\label{methodology}
   
-  I will use the \texttt{acf} function available in \textbf{R} to best
-  estimate the number of years I should lag my data. It is assumed that I
-  will see the highest correlation and covariance at the with a lag of
-  \texttt{1}, meaning one congresional session behind.The correlation and
-  covariance will be expected to slowly drop off. Once this \texttt{acf}
-  function has been properly plotted I will be able to then move towards
-  the fitting of a model to my data. To do that I will first seperate the
-  data into two groups, Republicans and Democrats. Then again that data
-  will be seperated into two groups, leaders and non-leaders. I will find
-  the mean change of each party's ideology by congressional session within
-  the \texttt{D-NOMINATE} dataset. Then I will compare the changes through
-  each Congress of non-leaders to leaders within each party. This will
-  allow me to see the differences in ideological change of one group
-  versus the others.
+  My goal is to understand how leadership positions affect the ideology of
+  a Member of Congress. A Member of Congress during one Congress is my
+  unit of observation. I looked at four independent variables and one
+  dependent variable. The independent variables are:
+  
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Past ideology: The 1st dimension score of the Member of Congress for
+    the past Congress. Continuous and Numerical.
+  \item
+    Past party ideology: The mean 1st dimension score of the party for the
+    past Congress. Continuous and Numerical.
+  \item
+    Current party ideology: The mean 1st dimension score of the party for
+    the current Congress. Continuous and Numerical.
+  \item
+    Leadership status: If the Member of Congress is a ``leader,'' as
+    described above in the dataset section. The variable of note. Binary.
+  \end{itemize}
+  
+  I am looking to eventually use these variables to predict the response
+  variable, current ideology. Current ideology is the 1st dimension score
+  of the legislator of interest for the current Congress. I would expect
+  the legislator's past ideology to be the most predictive, followed by
+  the party's current ideology, with the third most predictive varible
+  being the party's past ideology. Leadership status is expected to be the
+  least predictive variable of the four tested for here.
+  
+  The few assumptions needed for a linear regression model had to be
+  checked for. There is a chance that the model would be better
+  represented by a non-linear model but due to the author's statistical
+  knowhow a linear regression seemed most appropriate. Normality in the
+  error terms as well as a constanct variance of the error terms also
+  seemed to be met. The needed assumption that may have been hardest to
+  work around was multicollinearity, or when predictor terms within the
+  regression are able to predict each other with great accuracy. The
+  variables around ideology could have some issues here and a future paper
+  might try to further tease out whether there is a strong problem of
+  colinearity in this dataset and model.
   
   \chapter{Results}\label{results}
   
@@ -610,7 +774,7 @@ Results are then expanded on and a discussion follows.
   They are:
   
   \begin{itemize}
-  \tightlist
+  \itemsep1pt\parskip0pt\parsep0pt
   \item
     \textbf{Industrial System}: 1921-1932: Actually 1894-1932, but for the
     purposes of our coding only a smaller amount of it can be analyzed. A
@@ -694,7 +858,9 @@ Results are then expanded on and a discussion follows.
   into my earlier hypotheses about how leadership positions affect
   ideology.
   
-  \chapter{Discussion}\label{discussion}
+  \chapter{Discussion and Conclusion}\label{discussion-and-conclusion}
+  
+  \section{Discussion}\label{discussion}
   
   As discusssed above, there were five different possible hypotheses that
   we were able to come up with - one null hypothesis and four alternative
@@ -702,7 +868,7 @@ Results are then expanded on and a discussion follows.
   
   \begin{enumerate}
   \def\labelenumi{\arabic{enumi}.}
-  \tightlist
+  \itemsep1pt\parskip0pt\parsep0pt
   \item
     A null result is found - the leaders and non-leaders do not change in
     significantly different ways.
@@ -740,10 +906,7 @@ Results are then expanded on and a discussion follows.
   Thirdly, the fifth hypothesis also can follow from the third hypothesis
   above because there are only results on the Democratic side.
   
-  \chapter*{Conclusion}\label{conclusion-1}
-  \addcontentsline{toc}{chapter}{Conclusion}
-  
-  \setcounter{chapter}{4} \setcounter{section}{0}
+  \section{Conclusion}\label{conclusion-1}
   
   This study was particularly important because while a reasonable amount
   of information exists about how leaders are chosen to their positions
@@ -769,108 +932,85 @@ Results are then expanded on and a discussion follows.
   \setlength{\parindent}{-0.20in} \setlength{\leftskip}{0.20in}
   \setlength{\parskip}{8pt}
   
-  \hypertarget{refs}{}
-  \hypertarget{ref-Brewer2015}{}
   Brewer, Mark D, and Jeffrey M Stonecash. 2015. \emph{Polarization and
   the Politics of Personal Responsibility}. Oxford University Press.
   
-  \hypertarget{ref-Clausen1987}{}
   Clausen, Aage R, and Clyde Wilcox. 1987. ``Policy Partisanship in
   Legislative Leadership Recruitment and Behavior.'' \emph{Legislative
   Studies Quarterly}. JSTOR, 243--63.
   
-  \hypertarget{ref-Cox2005}{}
   Cox, Gary W, and Mathew D McCubbins. 2005. \emph{Setting the Agenda:
   Responsible Party Government in the US House of Representatives}.
   Cambridge University Press.
   
-  \hypertarget{ref-Dodd2012}{}
   Dodd, Lawrence C, and Bruce I Oppenheimer. 2012. \emph{Congress
   Reconsidered}. SAGE.
   
-  \hypertarget{ref-Enten2015}{}
   Enten, Harry. 2015. ``What Paul Ryan Has That Kevin McCarthy and John
   Boehner Don't.'' \emph{FiveThirtyEight}.
   
-  \hypertarget{ref-Evans1999}{}
   Evans, C Lawrence, and Walter J Oleszek. 1999. ``The Strategic Context
   of Congressional Party Leadership.'' In \emph{Congress \&Amp; the
   Presidency: A Journal of Capital Studies}, 26:1--20. 1. Taylor \&amp;
   Francis.
   
-  \hypertarget{ref-Grofman2002}{}
   Grofman, Bernard, William Koetzle, and Anthony J McGann. 2002.
   ``Congressional Leadership 1965--96: A New Look at the Extremism Versus
   Centrality Debate.'' \emph{Legislative Studies Quarterly} 27 (1). Wiley
   Online Library: 87--105.
   
-  \hypertarget{ref-Harris2008}{}
   Harris, Douglas B, and Garrison Nelson. 2008. ``Middlemen No More?
   Emergent Patterns in Congressional Leadership Selection.'' \emph{PS:
   Political Science \&Amp; Politics} 41 (01). Cambridge Univ Press:
   49--55.
   
-  \hypertarget{ref-Heberlig2006}{}
   Heberlig, Eric, Marc Hetherington, and Bruce Larson. 2006. ``The Price
   of Leadership: Campaign Money and the Polarization of Congressional
   Parties.'' \emph{Journal of Politics} 68 (4). Wiley Online Library:
   992--1005.
   
-  \hypertarget{ref-Holcombe2006}{}
   Holcombe, Randall G. 2006. \emph{Public Sector Economics: The Role of
   Government in the American Economy}. Prentice Hall.
   
-  \hypertarget{ref-Jessee2010}{}
   Jessee, Stephen, and Neil Malhotra. 2010. ``Are Congressional Leaders
   Middlepersons or Extremists? Yes.'' \emph{Legislative Studies Quarterly}
   35 (3). Wiley Online Library: 361--92.
   
-  \hypertarget{ref-MacDonald1987}{}
   MacDonald, Stuart Elaine, and George Rabinowitz. 1987. ``The Dynamics of
   Structural Realignment.'' \emph{American Political Science Review} 81
   (03). Cambridge Univ Press: 775--96.
   
-  \hypertarget{ref-May1973}{}
   May, John D. 1973. ``Opinion Structure of Political Parties: The Special
   Law of Curvilinear Disparity.'' \emph{Political Studies} 21 (2). Wiley
   Online Library: 135--51.
   
-  \hypertarget{ref-Mayhew2004}{}
   Mayhew, David R. 2004. \emph{Congress: The Electoral Connection}. 2nd
   Edition. Yale University Press.
   
-  \hypertarget{ref-Nokken2004}{}
   Nokken, Timothy P, and Keith T Poole. 2004. ``Congressional Party
   Defection in American History.'' \emph{Legislative Studies Quarterly} 29
   (4). Wiley Online Library: 545--68.
   
-  \hypertarget{ref-Poole1991}{}
   Poole, Keith T, and Howard Rosenthal. 1991. ``Patterns of Congressional
   Voting.'' \emph{American Journal of Political Science}. JSTOR, 228--78.
   
-  \hypertarget{ref-Poole2007}{}
   Poole, Keith T, and Howard L Rosenthal. 2007. \emph{Ideology and
   Congress}. Transaction Publishers.
   
-  \hypertarget{ref-Rohde1991}{}
   Rohde, David W. 1991. ``Parties and Leaders in the Postreform
   Congress.'' \emph{Chicago, IL: Uni}.
   
-  \hypertarget{ref-Sinclair1983}{}
   Sinclair, Barbara, Roger H Davidson, Walter J Oleszek, Charles O Jones,
   Thomas E Mann, Norman J Ornstein, James L Sundquist, Frank H Mackaman,
   Joseph Cooper, and G Calvin Mackenzie. 1983. ``Purposive Behavior in the
   US Congress: A Review Essay.'' JSTOR.
   
-  \hypertarget{ref-Steinhauer2016}{}
   Steinhauer, Jennifer. 2016. ``Paul Ryan, a Mirage Candidate, Wages a
   Parallel Campaign.'' \emph{The New York Times}.
   
-  \hypertarget{ref-Stewart2012}{}
   Stewart, Charles Haines. 2012. \emph{Analyzing Congress: The New
   Institutionalism in American Politics}. 2nd ed. Norton.
   
-  \hypertarget{ref-Theriault2008}{}
   Theriault, Sean M. 2008. \emph{Party Polarization in Congress}.
   Cambridge University Press.
 

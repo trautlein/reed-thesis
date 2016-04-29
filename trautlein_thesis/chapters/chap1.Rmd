@@ -112,13 +112,13 @@ violin_house <- ggplot(house_113, aes(factor(party), ideo)) +
   xlab("Party") + ylab("Ideology (NOMINATE)") +
   ggtitle("Ideology in the House by Party for the 113th Congress")
 
-ggsave("~/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
+ggsave("/Users/cus/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
        plot = violin_house)
 
 violin_house + theme_bw()
 ```
 
-```{r}
+```{r echo=F}
 label_house_113 <- house_113 %>%
   mutate(labelnames = ifelse(name %in% c("JONES") & statecode==47, name, ""))
 
@@ -135,18 +135,18 @@ ggplot(data = senate_113, aes(x = ideo, y = x2)) + geom_point() +
   geom_text_repel(aes(label=name))
 
 party_colors <- c("R" = "red","D" = "blue")
-p + scale_colour_manual(values = cols)
+#p + scale_colour_manual(values = cols)
 
 ggplot(data = senate_113, aes(x = ideo, y = x2, color = party)) + geom_point() + 
   geom_text_repel(aes(label=name)) + 
   scale_color_brewer(palette = "Set1") +
-  scale_color_manual(values = cols)
+  scale_color_manual(values = party_colors)
 
 ```
 
 
 ```{r echo=F, results="asis"}
-label(path = "/Users/hans/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
+label(path = "/Users/cus/thesis/trautlein_thesis/figures/PlotHouseMeans.pdf",
      caption = "Here is a caption",
      type = "figure")
 ```

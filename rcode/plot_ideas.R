@@ -1,6 +1,8 @@
 library(tidyr)
 library(dplyr)
 library(ggplot2)
+library(ggrepel)
+library(knitr)
 options(scipen = 10, digits = 5)
 
 
@@ -49,45 +51,14 @@ one_congress <- function(chamber, cong_session, RorD = NA) {
 
 ##### END FUNCTIONS ####################################
 
-# # from 1921 to 2015
-# lm_senate_D <- sum_cong_lm(senate_D, 67, 113)
-# lm_senate_R <- sum_cong_lm(senate_R, 67, 113)
-# lm_house_D <- sum_cong_lm(house_D, 67, 113)
-# lm_house_R <- sum_cong_lm(house_R, 67, 113)
-
 # join parties together to create complete datasets
 senate <- suppressWarnings(dplyr::bind_rows(senate_D, senate_R) %>% arrange(cong, state, name))
 house <- suppressWarnings(dplyr::bind_rows(house_D, house_R) %>% arrange(cong, state, name))
 
+senate_means_short <- tidyr::spread(senate_means, party, mean_ideo)
+
+house_means_short <- tidyr::spread(house_means, party, mean_ideo)
 
 
-# # create single years for senate
-# senate_R_113 <- one_congress(senate, 113, "R")
-# senate_D_113 <- one_congress(senate, 113, "D")
-# senate_113 <- one_congress(senate, 113)
-# 
-# 
-# house_R_113 <- one_congress(house, 113, "R")
-# house_D_113 <- one_congress(house, 113, "D")
-# house_113 <- one_congress(house, 113)
- 
-
-
-# plot of how mean_ideo by party has changed over congresses
-# ggplot(data = senate_means, aes(x = cong, y = mean_ideo, color = party)) +
-#   geom_line(size = 1) + geom_point(size = 3) +
-#   scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
-#   scale_color_manual(values=c("blue", "red")) + 
-#   xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
-#   ggtitle("Mean Senate Ideological Scores Separated By Party")
-
-
-# ggplot(data = house_means, aes(x = cong, y = mean_ideo, color = party)) +
-#   geom_line(size = 1) + geom_point(size = 3) +
-#   scale_color_brewer(palette = "Set1") + ylim(c(-1, 1)) +
-#   scale_color_manual(values=c("blue", "red")) +
-#   xlab("Congressional Session") + ylab("Mean Ideology (D-NOMINATE)") +
-#   ggtitle("Mean House Ideological Scores Separated By Party")
-# 
 
 

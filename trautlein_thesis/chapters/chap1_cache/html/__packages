@@ -2,3 +2,4 @@ base
 tidyr
 dplyr
 ggplot2
+ggrepel
