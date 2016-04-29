@@ -1,6 +1,0 @@
-
-# Conclusion {.unnumbered}
-  \setcounter{chapter}{4}
-	\setcounter{section}{0}
-
-This study was particularly important because while a reasonable amount of information exists about how leaders are chosen to their positions based on their ideology it was not completely clear about how their ideology might shift after they have been selected by their fellow members of Congress. This thesis has looked to narrow our gap of understanding of these topics. However, more research is need in the long run especially research that involves stronger statistical methods that can better compensate for the sometimes small number of observations that exist on the models that make reference to the leaders. Research could also be done on whether these leaders are encouraging partisanship in Congress due to their ideology or halting it, as one of the key pieces of information found within this dataset is the great partisanship and polarization of the two dominating parties within American politics. 

@@ -106,17 +106,20 @@ Will add dedication after orals.
 }
 
 \Abstract{
-This paper examines the differences in ideology in Congress between
-non-leaders and congressional leaders, the speakers, and whips. While
-past research has looked at the ideology of congressional leaders before
-they have taken their positions of power they have neglected to look at
-how their ideology changes as they have taken to their new position
-within the congressional power structure. Using measures of ideology
-from a \texttt{NOMINATE} dataset we fit models based on party and
-leadership status. The leaders are then compared to the non-leaders on
-how their ideology changes compared to the mean ideology of Congress at
-the time and the models are assessed for statistical significance.
-Results are then expanded on and a discussion follows.
+This paper examines the differences in ideological change in Congress
+between those in party leadership and those outside of it. Using the
+Nokken-Poole version of DW-NOMINATE an analysis examines the importance
+of leadership on ideological change. No significant difference is found
+in many groups. However, especially among Democrats and also during the
+New Deal political system there is a higher significance of the effect
+of leadership on a legislator's ideology. The significant effects are
+all towards the more liberal end of the ideological spectrum. Theories
+regarding party stability and a party's margin in a chamber are used to
+better understand how and why these legislators may change. The paper
+concludes with a call for greater research into the subject, in
+particular with some case studies on leadership in order to better
+understand the effects occurring a smaller level and also to eventually
+bring more complicated statistical methods to better solve this problem.
 }
 
 \usepackage{setspace}
@@ -149,17 +152,20 @@ Results are then expanded on and a discussion follows.
       \listoffigures
   
       \begin{abstract}
-      This paper examines the differences in ideology in Congress between
-      non-leaders and congressional leaders, the speakers, and whips. While
-      past research has looked at the ideology of congressional leaders before
-      they have taken their positions of power they have neglected to look at
-      how their ideology changes as they have taken to their new position
-      within the congressional power structure. Using measures of ideology
-      from a \texttt{NOMINATE} dataset we fit models based on party and
-      leadership status. The leaders are then compared to the non-leaders on
-      how their ideology changes compared to the mean ideology of Congress at
-      the time and the models are assessed for statistical significance.
-      Results are then expanded on and a discussion follows.
+      This paper examines the differences in ideological change in Congress
+      between those in party leadership and those outside of it. Using the
+      Nokken-Poole version of DW-NOMINATE an analysis examines the importance
+      of leadership on ideological change. No significant difference is found
+      in many groups. However, especially among Democrats and also during the
+      New Deal political system there is a higher significance of the effect
+      of leadership on a legislator's ideology. The significant effects are
+      all towards the more liberal end of the ideological spectrum. Theories
+      regarding party stability and a party's margin in a chamber are used to
+      better understand how and why these legislators may change. The paper
+      concludes with a call for greater research into the subject, in
+      particular with some case studies on leadership in order to better
+      understand the effects occurring a smaller level and also to eventually
+      bring more complicated statistical methods to better solve this problem.
     \end{abstract}
   
       \begin{dedication}
@@ -174,16 +180,78 @@ Results are then expanded on and a discussion follows.
   \chapter*{Introduction}\label{introduction}
   \addcontentsline{toc}{chapter}{Introduction}
   
-  This paper examines the differences in ideology in Congress between
-  non-leaders and congressional leaders, the speakers, and whips. While
-  past research has looked at the ideology of congressional leaders before
-  they have taken their positions of power they have neglected to look at
-  how their ideology changes as they have taken to their new position
-  within the congressional power structure. Using measures of ideology
-  from a \texttt{NOMINATE} dataset we fit models based on party and
-  leadership status. The leaders are then compared to the non-leaders on
-  how their ideology changes compared to the mean ideology of Congress at
-  the time and the models are assessed for statistical significance.
+  When Boehner announced his retirement from his role as House Speaker on
+  September 25th, 2015 pundits thought they believed they knew who was
+  going to be the next Speaker. They placed their bets on Kevin McCarthy,
+  the House Majority Leader and a Representative from California, to move
+  up to the position of House Speaker, as it often is the tradition to do.
+  However there were fractures in the Republican party that were unable to
+  mended with McCarthy as Speaker, and after a period of wooing, the 2012
+  Republican Vice Presidential nominee and Ways and Means Committee
+  Chairman Paul Ryan, a Representative from Wisconsin, was elected to
+  become the new leader of the House. He was less establishment and more
+  right wing than Speaker Boehner, who himself was less establishment
+  minded and more conservative than Majority Leader McCarthy. Paul Ryan
+  was significantly closer to the mean ideology of the other members of
+  the House Freedom Caucus. This quite likely made his ascension to
+  Speaker a less controversial pick than McCarthy would have been (Enten
+  2015). But now that Paul Ryan is Speaker, how do we expect his ideology
+  to change now that the he holds arguably the second most powerful
+  position in American politics after the Presidency itself?
+  
+  This question has so far gone unexplored in the study of political
+  ideology. How do leaders move ideologically compared to a non-leader
+  Member of Congress? Past research has looked at how leaders are chosen
+  from their party to become leaders, but the research typically has ended
+  there. This paper's analytical tools are primarily quantitative. Using
+  measures of ideology from a \texttt{NOMINATE} dataset models are fit
+  based on party and leadership status. The leaders are then compared to
+  the non-leaders on how their ideology changes compared to the mean
+  ideology of Congress at the time and the models are assessed for
+  statistical significance. There are five possible outcomes. They are:
+  
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    A null result is found - the leaders and non-leaders do not change in
+    significantly different ways.
+  \item
+    Leaders move to be more conservative, or right-leaning, when compared
+    to non-leaders.
+  \item
+    Leaders move to be more liberal, or left-leaning, when compared to
+    non-leaders.
+  \item
+    Leaders move to be more moderate, or centrist, when compared to
+    non-leaders.
+  \item
+    Leaders move to be more extreme when compared to non-leaders.
+  \end{enumerate}
+  
+  It seems like the null result should be expected the most due to the
+  large number of other factors that could cause changes in a legislator's
+  ideology and just due to trends in the literature. Null results are
+  common, but often not reported. That being said there are good reasons
+  for all the hypotheses above. For Hypothesis 2 it could make the most
+  sense as leaders are getting older the people often become more
+  conservative the older they get. Hypothesis 3 could be explained by a
+  country that has moved to the left on a number of issues, in particular
+  social issues, in the last generation. Hypothesis 4 would make sense in
+  the context of a leader's desire to form compromise between the two
+  parties that are dominant in the American Political system. Finally,
+  Hypothesis 5 would make sense due to the number of loud forces that
+  exist on both the Democratic and Republican sides that have pushed
+  polarization in Congress farther than it has gone in the the past
+  century. These hypotheses are tested later on within this paper.
+  
+  The paper begins with a literature review to try to comprehend the
+  previous research done on the subject of ideology and Congressional
+  leadership as it applies to this paper. Then the dataset is described in
+  more detail and the methods to be used in the analysis are presented.
+  Next the results are displayed. A discussion of the results follows, and
+  the paper ends with a conclusion of the results found in the study and a
+  look towards future research in this field.
   
   \chapter{Literature Review}\label{literature-review}
   
@@ -463,7 +531,9 @@ Results are then expanded on and a discussion follows.
   ideal point across their career. This allows me to compare a
   legislator's past ideology with their present ideology, helping the
   eventual model understand the importance of a predictor indicating
-  leadership on this ideological shift.
+  leadership on this ideological shift. The dataset is large enough for
+  the tests I intend to do on it, as the Senate has close to 5000 total
+  observations and the House has nearly 25000.
   
   In order to properly subset my data I completely removed all
   independents from the dataset. In a later study it might be more useful
@@ -699,10 +769,10 @@ Results are then expanded on and a discussion follows.
   Congress, and should help the reader understand where the ideology of
   specific Members of Congress lies. You do not even need a second
   dimension to split the legislators, as a split along the first dimension
-  around 0 would break up the parties perfectly with zero
-  misclassifications. However this second dimension is displayed to give
-  the reader a little bit more understanding about how the legislators
-  group themselves, especially within their own parties.
+  around 0 would break up the parties perfectly with zero classifications.
+  However this second dimension is displayed to give the reader a little
+  bit more understanding about how the legislators group themselves,
+  especially within their own parties.
   
   \begin{figure}[h!tbp]
   \centering
@@ -806,7 +876,8 @@ Results are then expanded on and a discussion follows.
   the coefficient attached was incredibly small, 0.004, towards the more
   moderate wing of the Republican party or the Democratic party itself.
   These results are not in sync with the results found for the other three
-  groups analyzed here, and I might suggest that looking at
+  groups analyzed here, and certainly suggest a finding of null results
+  with any reasonable confidence level chosen.
   
   \subsection{Comments on Null Results}\label{comments-on-null-results}
   
@@ -849,18 +920,18 @@ Results are then expanded on and a discussion follows.
   \begin{itemize}
   \itemsep1pt\parskip0pt\parsep0pt
   \item
-    \textbf{Industrial System}: 1921-1932: Actually 1894-1932, but for the
-    purposes of our coding only a smaller amount of it can be analyzed. A
-    party of industry and a party of labor, with northern and southern
-    regionalism factoring into parties heavily. Republicans were primarily
-    northern and industrial, whereas Democrats were primarily southern and
-    labor focused.
+    \textbf{Industrial System}: 1921-1932: The system actually runs from
+    1894-1932, but due to our coding of leaders only going back so far a
+    smaller amount of the era is analyzed. A party of industry and a party
+    of labor, with northern and southern regionalism factoring into
+    parties heavily. Republicans were primarily northern and industrial,
+    whereas Democrats were primarily southern and labor focused.
   \item
-    \textbf{New Deal System}: 1932-1972: Democrats become more liberal as
+    \textbf{New Deal System}: 1933-1972: Democrats become more liberal as
     the Republicans become more conservative compared to industrial
     system, but the regionalism does not completely fade away.
   \item
-    \textbf{Candidate-centered system}: 1972-present: After the tension
+    \textbf{Candidate-centered system}: 1973-present: After the tension
     that existed in the United States in the sixties, the regional
     importance shifts away as ideology begins to matter more and
     polarization of the parties continues (Stewart 2012, 96).
@@ -893,7 +964,7 @@ Results are then expanded on and a discussion follows.
   increase dramatically to point where they seem unable to be rationalized
   in any way. So again subsetting is overall mostly ineffective at helping
   try to tease out statistically significant ideological change due to a
-  leadership position.
+  leadership position among the Republicans.
   
   \subsection{Democrats}\label{democrats-1}
   
@@ -901,7 +972,7 @@ Results are then expanded on and a discussion follows.
   leadership when it comes to ideological change among House Democrats
   however. Null results are found for both the industrial and candidate
   centered systems, with p-values reaching far above 0.20. However for the
-  House Democrats during the New Deal era, from 1932-1972 or the 73rd
+  House Democrats during the New Deal era, from 1933-1972 or the 73rd
   Congress to the 92nd Congress, the subsetting increases the significance
   of the data. Not only does the p-value decrease from the all full
   dataset p-value of 0.015 to the even stronger p-value of 0.006 but the
@@ -915,12 +986,23 @@ Results are then expanded on and a discussion follows.
   Subsetting is also effective in explaining during which congressional
   systems leadership has its greatest effect on the ideology of Senate
   Democrats. Again, the period in which the strongest p-value and
-  coefficient is found is during the New Deal system (1932-1973). The
+  coefficient is found is during the New Deal system (1933-1973). The
   p-value for this time period is 0.08 and its corresponding coefficient
   is a 0.03 shift towards the left, stronger by 0.01 than the baseline
-  analysis of the Senate Democrats. Due to slowed polarization in the
-  Senate compared to the House this ideological shift means more than it
-  would otherwise.
+  analysis of the Senate Democrats. Since there is slowed polarization in
+  the Senate when compared to the House the ideological shift here means
+  more than a simple comparison to the House number would suggest.
+  
+  \begin{table}[h]
+  \centering
+  \caption[Importance of Leadership In Subsetted Data]{Importance of Leadership In Subsetted Data:\\ Bold Values Are Significant. Data Formatted "Leader=Yes Coefficient (P-Value)"}
+  \begin{tabular}{r|rrrr}
+  System              & Senate Ds     & Senate Rs    & House Ds      & House Rs      \\ \hline
+  Industrial          & 0.012 (0.72)  & 0.019 (0.59) & -0.045 (0.28) & 0.044 (0.24)  \\
+  New Deal            & \textbf{-0.032 (0.08)} & 0.021 (0.14) & \textbf{-0.060 (<0.01)} & -0.016 (0.26) \\
+  Candidate-Centered  & -0.013 (0.16) & 0.002 (0.86) & -0.008 (0.55) & -0.013 (0.22)
+  \end{tabular}
+  \end{table}
   
   \section{Conclusion}\label{conclusion}
   
@@ -935,9 +1017,10 @@ Results are then expanded on and a discussion follows.
   
   \section{Discussion}\label{discussion}
   
-  As discussed above, there were five different possible hypotheses that
-  we were able to come up with - one null hypothesis and four alternative
-  hypotheses. Again, I will repeat all five of them below.
+  As discussed in the introduction section, there were five different
+  possible hypotheses that we were able to come up with - one null
+  hypothesis and four alternative hypotheses. Again, I will repeat all
+  five of them below.
   
   \begin{enumerate}
   \def\labelenumi{\arabic{enumi}.}
@@ -978,7 +1061,7 @@ Results are then expanded on and a discussion follows.
   leadership position having an effect on the legislator's ideology. A
   stronger understanding of statistics might allow a researcher to better
   tease out the significance of leadership on a legislator's ideology.
-  Despite all of this however, it would not seem completely offbase for a
+  Despite all of this however, it would not seem completely off-base for a
   null result to be found here. Perhaps party leaders are not unlike the
   rest of their caucus and they might just shift along with the rest of
   their legislators.
@@ -1008,17 +1091,17 @@ Results are then expanded on and a discussion follows.
   Jessee and Malhotra 2010).
   
   Finally, the results were more significant for the Democrats during the
-  New Deal era, or from 1932 to 1972, a period when the Democrats were in
+  New Deal era, or from 1933 to 1972, a period when the Democrats were in
   power in the House for a significant period of time, with only four
   years during this entire period with a Republican
-  Speaker.\footnote{This occurred in the 80th and 83rd Congress, from 1947-1949 and 1953-1955, respectively. Joe Martin, a Representative from Massachusetts, was Speaker during this time.}
+  Speaker.\footnote{This occurred in the 80th and 83rd Congress, from 1947-1948 and 1953-1954, respectively. Joe Martin, a Representative from Massachusetts, was Speaker during this time.}
   While the literature review does not suggest why this period might be
   one of a greater shift towards the left by Democratic leaders there are
   possible reasons for this difference. It could be that as the party was
   feeling more comfortable in its position in the House the voters and
   other legislators wanted to see the party move farther towards the left.
   To understand why, imagine if party members were to always vote along
-  partylines. You would have little incentive to move father towards the
+  party lines. You would have little incentive to move father towards the
   center once you had a majority of the seats in your chamber. As you keep
   gaining seats you gain a larger margin in the the chamber. But if you
   pass a bill with 70\% of the chamber it passes just the same as a bill
@@ -1032,14 +1115,14 @@ Results are then expanded on and a discussion follows.
   
   Overall it seems as if leadership positions can effect the ideology of a
   member in Congress, but that it is not always significant and when it is
-  the degree to which it moves the Member of Congerss can be small.
+  the degree to which it moves the Member of Congress can be small.
   Republicans were more likely to find null results, perhaps due to the
   long periods in which the party was out of power or due to a different
   attitude around leadership within the party. Democrats were more likely
   to have a leadership position affect their overall ideology, but the
   results were often small. The one time when the results seemed quite
   significant in their effect on the leader was during the New Deal system
-  in Congress, from 1932 to 1972. This could have been due to the stronger
+  in Congress, from 1933 to 1972. This could have been due to the stronger
   party that existed at the time, and the pressure that a more liberal
   wing a larger party might put on the leaders of that party.
   
@@ -1057,7 +1140,7 @@ Results are then expanded on and a discussion follows.
   non-parametric approaches to try to better explain the variation in the
   data. More control variables could be added in order to better assess
   significance of the leadership predictor. For example, an age variable,
-  or time spent in Congress variable, might have elicted some interesting
+  or time spent in Congress variable, might have elicited some interesting
   results. More work could be done to examine the differences between the
   Republicans and Democrats - perhaps a some case studies on how specific
   leaders changed their ideologies might be informative to the theory and
@@ -1068,22 +1151,16 @@ Results are then expanded on and a discussion follows.
   
   Overall, this paper has looked to narrow the gap of knowledge that
   exists around ideology and congressional leaders after they take their
-  positions in their respective chambers.
-  
-  This study was particularly important because while a reasonable amount
-  of information exists about how leaders are chosen to their positions
-  based on their ideology it was not completely clear about how their
-  ideology might shift after they have been selected by their fellow
-  members of Congress. This thesis has looked to narrow our gap of
-  understanding of these topics. However, more research is need in the
-  long run especially research that involves stronger statistical methods
-  that can better compensate for the sometimes small number of
-  observations that exist on the models that make reference to the
-  leaders. Research could also be done on whether these leaders are
-  encouraging partisanship in Congress due to their ideology or halting
-  it, as one of the key pieces of information found within this dataset is
-  the great partisanship and polarization of the two dominating parties
-  within American politics.
+  positions in their respective chambers. This study is imperfect and
+  offers as many new questions as it strives to answer. Despite this, the
+  information found on House Democrats during the New Deal system seems to
+  be particularly robust. Research could be expanded in many areas, in
+  particular it would be interesting to see if a researcher could try to
+  establish an understanding of causality throughout different Congresses
+  of whether the leaders are picking the ideology of the party or the
+  party is encouraging the leaders to follow. This could help the
+  burgeoning field of polarization research that surrounds the study of
+  ideology in American politics currently.
   
   \backmatter
   

@@ -37,7 +37,7 @@ A statistically significant shift was also noticed among the House Democrats. Th
 
 It is important to talk about the null results received for Republicans in both the House and Senate. While neither of the results were significant, the regression for the Senate did hint at a possible ideological change due to leadership, with a coefficient of 0.013 towards the more conservative side. Accompanied by a p-value of 0.19 they must be looked at skeptically, and instead perhaps taken as a hint for future study as opposed to a specific result. The coefficient found here is similar to the results found for the Democrats, they they moved more towards their party's extreme edges when they were leaders. It was not as strong as the coefficient found for either the House Democrats or the Senate Democrats, but it is no as weak as the Republican House, covered below. While significant was not found in this elementary regression, perhaps a regression with better controls and a stronger method might be able to find results that are not just statistically significant but also are statistically sound.
 
-The House Republicans however seem to be very far away from any possible impact of leadership on ideology. They had a p-value of 0.65, far away from any reasonable confidence level. Even if it had been significant the coefficient attached was incredibly small, 0.004, towards the more moderate wing of the Republican party or the Democratic party itself. These results are not in sync with the results found for the other three groups analyzed here, and I might suggest that looking at 
+The House Republicans however seem to be very far away from any possible impact of leadership on ideology. They had a p-value of 0.65, far away from any reasonable confidence level. Even if it had been significant the coefficient attached was incredibly small, 0.004, towards the more moderate wing of the Republican party or the Democratic party itself. These results are not in sync with the results found for the other three groups analyzed here, and certainly suggest a finding of null results with any reasonable confidence level chosen.
 
 ### Comments on Null Results
 
@@ -50,9 +50,9 @@ Also the model might underestimate the importance of being a leader for a few an
 
 I took subsets of the data by Congressional periods to try to see if leaders were ever more important across certain time periods then they were over the entire dataset. There are many different ways to break up Congress, one way suggested by [@Stewart2012 96-97] is the breaking into six different eras, or systems, of which only three are during the time period that was able to be coded with leaders.\footnote{The rest were pre-1921 and before my data was able to be clearly coded due how Congressional leadership existed back then.} They are:
 
-- **Industrial System**: 1921-1932: Actually 1894-1932, but for the purposes of our coding only a smaller amount of it can be analyzed. A party of industry and a party of labor, with northern and southern regionalism factoring into parties heavily. Republicans were primarily northern and industrial, whereas Democrats were primarily southern and labor focused.
-- **New Deal System**: 1932-1972: Democrats become more liberal as the Republicans become more conservative compared to industrial system, but the regionalism does not completely fade away.
-- **Candidate-centered system**: 1972-present: After the tension that existed in the United States in the sixties, the regional importance shifts away as ideology begins to matter more and polarization of the parties continues [@Stewart2012 96].
+- **Industrial System**: 1921-1932: The system actually runs from 1894-1932, but due to our coding of leaders only going back so far a smaller amount of the era is analyzed. A party of industry and a party of labor, with northern and southern regionalism factoring into parties heavily. Republicans were primarily northern and industrial, whereas Democrats were primarily southern and labor focused.
+- **New Deal System**: 1933-1972: Democrats become more liberal as the Republicans become more conservative compared to industrial system, but the regionalism does not completely fade away.
+- **Candidate-centered system**: 1973-present: After the tension that existed in the United States in the sixties, the regional importance shifts away as ideology begins to matter more and polarization of the parties continues [@Stewart2012 96].
 
 This system of breaking up the parties is not the only manner in which one could break them up, and subscribes to the views that are not taken as true across all of the political science literature. Some push both the Industrial and New Deal system together as one Congressional period. Yet the years themselves above seem to delineate good beginning breaking points for me to subset the data.
 
@@ -61,14 +61,27 @@ This system of breaking up the parties is not the only manner in which one could
 
 Subsets were not useful to explain how House Republicans voted. During all of the systems the p-value were relatively high. That being said the subsetting did reduce the p-value by a significant amount, bringing the p-value for all three eras to between 0.22 and 0.26. This is an improvement when compared to the original 0.65 value received, but not enough to pass a positive judgement on the effects of these values. The coefficients were also stronger than they were when all of the systems were lumped together, but they still are smaller than the absolute value of the coefficients that exist for the Republicans in the House and Senate.
 
-The values obtained for the Senate Republicans did not all become more explanatory as they did for the House Republicans. The p-value increases for all eras except for the New Deal era, when it moves down to 0.14. But during the Industrial and Candidate-centered systems the p-values increase dramatically to point where they seem unable to be rationalized in any way. So again subsetting is overall mostly ineffective at helping try to tease out statistically significant ideological change due to a leadership position.
+The values obtained for the Senate Republicans did not all become more explanatory as they did for the House Republicans. The p-value increases for all eras except for the New Deal era, when it moves down to 0.14. But during the Industrial and Candidate-centered systems the p-values increase dramatically to point where they seem unable to be rationalized in any way. So again subsetting is overall mostly ineffective at helping try to tease out statistically significant ideological change due to a leadership position among the Republicans.
 
 
 ### Democrats
 
-Subsetting is more effective in talking about the importance of leadership when it comes to ideological change among House Democrats however. Null results are found for both the industrial and candidate centered systems, with p-values reaching far above 0.20. However for the House Democrats during the New Deal era, from 1932-1972 or the 73rd Congress to the 92nd Congress, the subsetting increases the significance of the data. Not only does the p-value decrease from the all full dataset p-value of 0.015 to the even stronger p-value of 0.006 but the coefficient increases as well, doubling from a 0.03 shift towards the left to a 0.06 shift towards the left. This is a very significant shift among the NOMINATE scale, so this will be revisited in the discussion of the results later. It did not come at a reduction of the importance of the other variables, which stayed statistically and substantively significant.
+Subsetting is more effective in talking about the importance of leadership when it comes to ideological change among House Democrats however. Null results are found for both the industrial and candidate centered systems, with p-values reaching far above 0.20. However for the House Democrats during the New Deal era, from 1933-1972 or the 73rd Congress to the 92nd Congress, the subsetting increases the significance of the data. Not only does the p-value decrease from the all full dataset p-value of 0.015 to the even stronger p-value of 0.006 but the coefficient increases as well, doubling from a 0.03 shift towards the left to a 0.06 shift towards the left. This is a very significant shift among the NOMINATE scale, so this will be revisited in the discussion of the results later. It did not come at a reduction of the importance of the other variables, which stayed statistically and substantively significant.
 
-Subsetting is also effective in explaining during which congressional systems leadership has its greatest effect on the ideology of Senate Democrats. Again, the period in which the strongest p-value and coefficient is found is during the New Deal system (1932-1973). The p-value for this time period is 0.08 and its corresponding coefficient is a 0.03 shift towards the left, stronger by 0.01 than the baseline analysis of the Senate Democrats. Due to slowed polarization in the Senate compared to the House this ideological shift means more than it would otherwise.
+Subsetting is also effective in explaining during which congressional systems leadership has its greatest effect on the ideology of Senate Democrats. Again, the period in which the strongest p-value and coefficient is found is during the New Deal system (1933-1973). The p-value for this time period is 0.08 and its corresponding coefficient is a 0.03 shift towards the left, stronger by 0.01 than the baseline analysis of the Senate Democrats. Since there is slowed polarization in the Senate when compared to the House the ideological shift here means more than a simple comparison to the House number would suggest.
+
+\begin{table}[h]
+\centering
+\caption[Importance of Leadership In Subsetted Data]{Importance of Leadership In Subsetted Data:\\ Bold Values Are Significant. Data Formatted "Leader=Yes Coefficient (P-Value)"}
+\begin{tabular}{r|rrrr}
+System              & Senate Ds     & Senate Rs    & House Ds      & House Rs      \\ \hline
+Industrial          & 0.012 (0.72)  & 0.019 (0.59) & -0.045 (0.28) & 0.044 (0.24)  \\
+New Deal            & \textbf{-0.032 (0.08)} & 0.021 (0.14) & \textbf{-0.060 (<0.01)} & -0.016 (0.26) \\
+Candidate-Centered  & -0.013 (0.16) & 0.002 (0.86) & -0.008 (0.55) & -0.013 (0.22)
+\end{tabular}
+\end{table}
+
+
 
 ## Conclusion
 
