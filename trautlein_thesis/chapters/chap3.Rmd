@@ -11,7 +11,7 @@ Some statistically significant results are found in my most basic regression. Th
 
 \begin{table}[h]
 \centering
-\caption{Summary of Models Across All Years, House and Senate: \\ Bolded items are significant leadership predictors}
+\caption[Summary of Models Across All Years, House and Senate]{Summary of Models Across All Years, House and Senate: \\ Bolded items are significant leadership predictors}
 \begin{tabular}{r|rrrr}
                        & Senate Ds & Senate Rs & House Ds & House Rs \\ \hline
 (Intercept)            & 0.00489   & 0.00259   & 0.01131  & 0.00405  \\
