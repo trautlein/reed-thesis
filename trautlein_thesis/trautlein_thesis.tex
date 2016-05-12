@@ -94,11 +94,11 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \Acknowledgements{
-Will add acknowledgements after orals.
+
 }
 
 \Dedication{
-Will add dedication after orals.
+
 }
 
 \Preface{
@@ -136,9 +136,6 @@ bring more complicated statistical methods to better solve this problem.
   \frontmatter % this stuff will be roman-numbered
   \pagestyle{empty} % this removes page numbers from the frontmatter
 
-      \begin{acknowledgements}
-      Will add acknowledgements after orals.
-    \end{acknowledgements}
   
   
   % Add table of abbreviations?
@@ -168,9 +165,6 @@ bring more complicated statistical methods to better solve this problem.
       bring more complicated statistical methods to better solve this problem.
     \end{abstract}
   
-      \begin{dedication}
-      Will add dedication after orals.
-    \end{dedication}
   
   \mainmatter % here the regular arabic numbering starts
   \pagestyle{fancyplain} % turns page numbering back on
@@ -186,8 +180,8 @@ bring more complicated statistical methods to better solve this problem.
   the House Majority Leader and a Representative from California, to move
   up to the position of House Speaker, as it often is the tradition to do.
   However there were fractures in the Republican party that were unable to
-  mended with McCarthy as Speaker, and after a period of wooing, the 2012
-  Republican Vice Presidential nominee and Ways and Means Committee
+  be mended with McCarthy as Speaker, and after a period of wooing, the
+  2012 Republican Vice Presidential nominee and Ways and Means Committee
   Chairman Paul Ryan, a Representative from Wisconsin, was elected to
   become the new leader of the House. He was less establishment and more
   right wing than Speaker Boehner, who himself was less establishment
@@ -234,7 +228,7 @@ bring more complicated statistical methods to better solve this problem.
   ideology and just due to trends in the literature. Null results are
   common, but often not reported. That being said there are good reasons
   for all the hypotheses above. For Hypothesis 2 it could make the most
-  sense as leaders are getting older the people often become more
+  sense; as leaders are getting older, people often become more
   conservative the older they get. Hypothesis 3 could be explained by a
   country that has moved to the left on a number of issues, in particular
   social issues, in the last generation. Hypothesis 4 would make sense in
@@ -242,8 +236,8 @@ bring more complicated statistical methods to better solve this problem.
   parties that are dominant in the American Political system. Finally,
   Hypothesis 5 would make sense due to the number of loud forces that
   exist on both the Democratic and Republican sides that have pushed
-  polarization in Congress farther than it has gone in the the past
-  century. These hypotheses are tested later on within this paper.
+  polarization in Congress recently farther than it has gone in the past
+  century. These hypotheses are tested later in this paper.
   
   The paper begins with a literature review to try to comprehend the
   previous research done on the subject of ideology and Congressional
@@ -259,19 +253,19 @@ bring more complicated statistical methods to better solve this problem.
   
   Party leaders are hugely important in Congress. Perhaps their most
   important role is setting the legislative agenda in Congress (Rohde
-  1991, @Sinclair1983). By setting the agenda in arguably the most
+  1991, Sinclair et al. 1983). By setting the agenda in arguably the most
   powerful branch of government, congressional leaders have extraordinary
   power over which bills are brought to a vote and eventually passed. They
   also have the power of being able to shift congressional actions away
   from an otherwise simple answer to a problem.\footnote{For a recent
-    example of this, see how in 2008 Harry Reid (D) then the majority
-    leader of the Senate, was able to remove the possibility of a nuclear
+    example of this, see how in 2008 Harry Reid (D) (then the majority
+    leader of the Senate) was able to remove the possibility of a nuclear
     waste repository from being created at Yucca Mountain.} Leaders in
   Congress have large sway over the leaders who they can choose to fill
   the many roles below them. They are also the ``brand image'' of their
   party, especially when their party does not control the presidency.
   Understanding the ideology of leaders is important for a Congressional
-  scholar to better understand why leaders act the way the do.
+  scholar to better understand why leaders act the way they do.
   
   There has often been the question of whether or not congressional
   leaders are moderates in their party, near to their party's mean, or
@@ -280,20 +274,21 @@ bring more complicated statistical methods to better solve this problem.
   political parties. Extremists might be selected due to their ability to
   placate the louder wings of both the Republican and Democratic parties.
   A political scientist or an economist might be quick to answer that a
-  congressperson near the median voter in a political party has a strong
-  theoretical reasoning for being chosen.
+  Member of Congress near the median voter in a political party has a
+  strong theoretical reason for being chosen.
   
   Understanding what a median voter is as well as the median voter theorem
   is important for many quantitative approaches to the study of political
   ideology. A median voter is the voter in the middle of a group of voters
   measured among one or more
   dimensions.\footnote{As the number of dimensions increases however it can get more complicated to decide which voter is in fact the median voter. You have to properly scale each dimension to make sure some do not overpower others.}
-  An table of voters is displayed below with their names and respective
-  ideologies, picked from the actual numbers from the Nokken and Poole
-  version of the D-NOMINATE dataset. These are the first dimensions
-  scores, often categorized as ideology, with -1 being extreme liberalism
-  and 1 being extreme conservatism. They are from the 113th Congress, the
-  most recent Congressional session available in the dataset.
+  A table of voters, Table 1.1, is displayed with their names and
+  respective ideologies, picked from the actual numbers from the Nokken
+  and Poole version of the D-NOMINATE dataset. These are the first
+  dimensions scores, often categorized as ideology, with -1 being extreme
+  liberalism and 1 being extreme conservatism. They are from the 113th
+  Congress, the most recent Congressional session available in the
+  dataset.
   
   \begin{table}[]
   \centering
@@ -322,7 +317,7 @@ bring more complicated statistical methods to better solve this problem.
   just makes whichever has the most votes the winner, regardless of
   whether or not they have a majority of the votes. For example, if 40\%
   voted for option A, 30\% voted for option B, and 30\% voted for option C
-  then options A would be chosen under plurality rule, but not under
+  then option A would be chosen under plurality rule, but not under
   majority rule. One of the options would need to be more than 50\%. If
   say in a new vote option D got 50\% of the vote that would not be enough
   to win in a majoritarian system as option E could also have 50\% of the
@@ -330,42 +325,43 @@ bring more complicated statistical methods to better solve this problem.
   
   To continue the discussion above, the reason why you might expect the
   congressperson elected to serve a leadership position to occupy the
-  median space in the party is because in these elections the votes taken
-  solely within the party.\footnote{With the exception of the vote for
-    Speaker in the House of Representatives, although that vote often ends
-    up being made up entirely of the majority party's congresspersons
+  median space in the party is because in these elections the votes are
+  taken solely within the party.\footnote{With the exception of the vote
+    for Speaker in the House of Representatives, although that vote often
+    ends up being made up entirely of the majority party's congresspersons
     voting in affirmation with the minority party avoiding casting a
     positive ballot.} The median voter theorem states that ``a majority
   rule voting system will select the outcome most preferred by the median
   voter'' (Holcombe 2006, 115). This builds off the assumption that there
   is only one dimension along which politics exists, for example, left to
-  right or liberal to conservative. Is it also assumed that a voter will
+  right or liberal to conservative. It is also assumed that a voter will
   choose the option, or in this circumstance the politician, closest to
   their own ideal point along the singular dimension. In a majoritarian
   system this ideal median point will prevail, having more than 50\% of
   the vote in the final vote tallied.
   
-  Studies have examined where leaders come from ideologically speaking.
-  One has found, using the DW-NOMINATE scores of congressional leaders,
-  that these leaders do in fact come from near the median of their party,
-  with a tiny preference towards the slightly more extreme candidate,
-  left-leaning for Democrats and right-leaning for Republicans.
-  DW-NOMINATE scores place congresspersons on a single dimension from -1
-  to 1, with -1 being left-leaning and 1 being right-leaning. The numbers
-  are found by taking the roll call votes over a single Congress and then
-  placing the legislator's scores within the range of possible values. A
-  senator like Ted Cruz would end up with a number close to 1\footnote{In
-    the 113th Congress his point was measured at 0.754.} whereas for
-  senator like Elizabeth Warren you would see a point near to -1\footnote{In
-    the 113th Congress her point was measured at -0.538}. House Democrats
-  were found to be on average -0.050 away from the median point whereas
-  their leaders were on overage -0.097, slightly farther away but still
-  close to the median. For Senate Democrats these numbers are 0.016 and
-  -0.059 respectively, again the the leaders being slightly more extreme
-  than the median but still being quite close to it. For the Republicans
-  the results are similar, although in the other direction. In the House,
-  for leaders the average distance away from the party median for leaders
-  is 0.044 whereas for the rest of the House Republicans it is -0.025. For
+  Studies have examined where leaders come from ideologically speaking
+  (Grofman, Koetzle, and McGann 2002; Jessee and Malhotra 2010). One has
+  found, using the DW-NOMINATE scores of congressional leaders, that these
+  leaders do in fact come from near the median of their party, with a tiny
+  preference towards the slightly more extreme candidate, left-leaning for
+  Democrats and right-leaning for Republicans. DW-NOMINATE scores place
+  Members of Congress on a single dimension from -1 to 1, with -1 being
+  left-leaning and 1 being right-leaning. The numbers are found by taking
+  the roll call votes over a single Congress and then placing the
+  legislator's scores within the range of possible values. A senator like
+  Ted Cruz would end up with a number close to 1\footnote{In the 113th
+    Congress his point was measured at 0.754.} whereas for senator like
+  Elizabeth Warren you would see a point near to -1\footnote{In the 113th
+    Congress her point was measured at -0.538}. House Democrats were found
+  to be on average -0.050 away from the median point whereas their leaders
+  were on overage -0.097, slightly farther away but still close to the
+  median. For Senate Democrats these numbers are 0.016 and -0.059
+  respectively; again the leaders are slightly more extreme than the
+  median but still being quite close to it. For the Republicans the
+  results are similar, although in the other direction. In the House, for
+  leaders the average distance away from the party median for leaders is
+  0.044 whereas for the rest of the House Republicans it is -0.025. For
   the Senate Republicans the numbers are 0.048 and 0.057,
   respectively.\footnote{The Republicans in the Senate are the only group
     who elect leaders slightly more moderate on average than the party
@@ -377,26 +373,26 @@ bring more complicated statistical methods to better solve this problem.
   reflective of the preferences of the median voter in the electorate''
   (Jessee and Malhotra 2010, see specifically 386). Jessee and Malhotra
   (2010) also find that the winner of a congressional leadership race is
-  not ``ideologically distinctive'' from the entire pool candidates (2010,
-  361).
+  not ``ideologically distinctive'' from the entire pool of candidates
+  (2010, 361).
   
   This evidence found in Jessee and Malhotra (2010) looked to revise
   earlier studies on the subject. Harris and Nelson (2008) looked at the
   old ``Austin-Boston'' alliance that encourage the selection of middlemen
-  in the Democratic party, and also examine the changes within the
+  in the Democratic party, and also examined the changes within the
   Republican party leadership as well. Surprised by the election of the
   relatively extreme Pelosi to the Speakership, the two authors felt the
   need to revisit the question of whether the median voter theorem still
   held.\footnote{While the middle\emph{men} theory could still hold, the
     middle\emph{person} theory was in doubt.} Using the same dataset as
   Jessee and Malhotra (2010), they came to a new conclusion, that perhaps
-  more partisan leaders were need as political polarization increased.
+  more partisan leaders were needed as political polarization increased.
   Seeing the role switch from a place for compromise during a ``bargaining
   era and bipartisan Congress'' to a new bully pulpit, often active in the
   media and courting donors, middlepersons seemed to no longer be the most
   appropriate leaders of their party on the national stage of Congress
   (Harris and Nelson 2008, 54). Their final hypothesis is that as partisan
-  divisions increase it will exacerbate the extremism of congressional
+  divisions increase it will exacerbate the extremism of Congressional
   leaders.
   
   Older research is more theoretical and is less likely to use datasets,
@@ -420,7 +416,7 @@ bring more complicated statistical methods to better solve this problem.
   \section{DW-NOMINATE}\label{dw-nominate}
   
   Keith Poole's and Howard Rosenthal's previous work about congressional
-  ideology is the backbone of this study. they have constructed a way to
+  ideology is the backbone of this study. They have constructed a way to
   fit members of Congress across a unidimensional metric that measures
   primarily ideology. Their typical dataset measures a single ``ideal
   point'' for each congressperson throughout their career and is able to
@@ -437,57 +433,56 @@ bring more complicated statistical methods to better solve this problem.
   axis. While at times a second axis is useful, and in the most recent
   session of Congress can be viewed as a measure of establishment versus
   non-establishment leanings, Poole and Rosenthal as well as those who
-  have use their datasets in the past primarily look to create their
+  have used their datasets in the past primarily looked to create their
   models solely from this one dimension due to its explanatory power
   (Poole and Rosenthal 2007, 21). Part of the reason why complicated
-  legislators are able to represented along a single metric is due to the
-  prevalence of logrolling or vote trading (Poole and Rosenthal 2007, 17).
-  The primary dimension is not solely concerned with political party
-  however, it also strongly relates to issues of economic redistribution
-  (Poole and Rosenthal 2007, 70).
+  legislators are able to be represented along a single metric is due to
+  the prevalence of logrolling or vote trading (Poole and Rosenthal 2007,
+  17). The primary dimension is not solely concerned with political party;
+  it also strongly relates to issues of economic redistribution (Poole and
+  Rosenthal 2007, 70).
   
   Looking ahead to how the legislators, specifically the leaders, might
   change within my own study is evidence that ``essentially all movement
   is captured by simple linear movement'' along the single explanatory
   dimension, which suggests that more complicated ideological flip flops
-  are rare within Congress (Poole and Rosenthal 2007, 29).
+  are rare within Congress (Poole and Rosenthal 2007, 29). Poole and
+  Rosenthal are able to look at the patterns of how ideology has changed
+  in the history of Congress. I will solely be looking at post-WW2 data as
+  that is when congressional leadership started becoming truly strong in
+  both the House and Senate.\footnote{Before that it was sometimes
+    non-existent, especially in the smaller Senate, where leadership was
+    not needed as much to organize the many members of each party.} They
+  note that ``{[}t{]}he period from the late New Deal until the mid-1970s
+  saw the development of the only genuine three-political-party system in
+  American history. The southern and northern Democrats may have joined
+  together to organize the House and Senate but they were widely separated
+  on the second dimension. This dimension picked up conflict over civil
+  rights'' (Poole and Rosenthal 2007, 54). During this time there was a
+  conservative coalition between the southern Democrats and most
+  Republicans that was in conflict with the northern Democrats as well a a
+  few northern Republicans (Poole and Rosenthal 2007, 54--56). It is
+  unfortunate that this sole time of a three-political-party stem exists
+  during the data that I plan to use, but this may make my results
+  stronger in less turbulent times. By the ``mid-to-late 1970s the
+  party-line voting returned to a more {[}unidimensional{]} pattern''
+  (Poole and Rosenthal 2007, 57). This was due to the passage of civil
+  rights legislation that either revolved conflicts within the parties or
+  caused legislators to switch from one party to another. Throughout the
+  rest of recent Congressional history the single dimension remains but
+  what the dimensions refers to evolves slowly. Within each individual
+  Congress it is easy to see the majority of conflicts along a single
+  dimension (MacDonald and Rabinowitz 1987).
   
-  Poole and Rosenthal are able to look at the patterns of how ideology has
-  changed in the history of Congress. I will solely be looking at post-WW2
-  data as that is when congressional leadership started becoming truly
-  strong in both the House and Senate.\footnote{Before that it was
-    sometimes non-existent, especially in the smaller Senate, where
-    leadership was not needed as much to organize the many members of each
-    party.} They note that ``{[}t{]}he period from the late New Deal until
-  the mid-1970s saw the development of the only genuine
-  three-political-party system in American history. The southern and
-  northern Democrats may have joined together to organize the House and
-  Senate but they were widely separated on the second dimension. This
-  dimension picked up conflict over civil rights'' (Poole and Rosenthal
-  2007, 54). During this time there was a conservative coalition between
-  the southern Democrats and most Republicans that was in conflict with
-  the northern Democrats as well a a few northern Republicans (Poole and
-  Rosenthal 2007, 54--56). It is unfortunate that this sole time of a
-  three-political-party stem exists during the data that I plan to use,
-  but this may make my results stronger in less turbulent times. By the
-  ``mid-to-late 1970s the party-line voting returned to a more
-  {[}unidimensional{]} pattern'' (Poole and Rosenthal 2007, 57). This was
-  due to the passage of civil rights legislation that either revolved
-  conflicts within the parties or caused legislators to switch from one
-  party to another Throughout the rest of congressional history the single
-  dimension remains but what the dimensions refers to evolves slowly.
-  Within each individual Congress it is easy to see the majority of
-  conflicts along a single dimension (MacDonald and Rabinowitz 1987).
-  
-  Something that should help my analysis is the movement towards a more
+  Something that should help my analysis is the movement towards more
   ``unidimesional politics'' in the most recent sessions of Congress. The
   ideological overlap along this single dimension between the parties is
   essentially gone. The last Congress in which there was an overlap in the
   Senate was the 109th, which ended in early 2007. The second dimension
-  has lost much of it's explanatory power towards party since the 104th
-  Congress, which began in 1995. Poole and Rosenthal say that ``the modern
-  Congress is truly unidimensional'' in 2005, which was before the even
-  greater polarization that began then and continues to move the two
+  has lost much of its explanatory power towards party since the 104th
+  Congress, which began in 1995. Poole and Rosenthal said that ``the
+  modern Congress is truly unidimensional'' in 2005, which was before the
+  even greater polarization that began then and continues to move the two
   parties father apart (Poole and Rosenthal 2007, 55). The first
   dimension, while often referred to as ``ideology,'' can be though of in
   a few different ways. It could be that the dimension is ``thought of as
@@ -509,16 +504,16 @@ bring more complicated statistical methods to better solve this problem.
   \section{Dataset}\label{dataset}
   
   NOMINATE, the method developed by Poole and Rosenthal has evolved over
-  many years, first seen as D-NOMINATE, W-NOMINATE, then DW-NOMINATE,
-  which the Nokken-Poole dataset is built off of. Seen within a
-  two-dimensional space, each legislator is given an ``ideal point,'' or
-  where they would most likely fit given their role call voting. This is
-  seen as where the legislator maximizes their utility, perhaps by
-  increasing the chance they are elected by being located there as Mayhew
-  might argue (2004). They will most often vote for items that are close
-  to this ``ideal point'' and the farther away a vote will lie from this
-  point the less likely it is that the Member of Congress will vote
-  ``Yea'' on the bill or resolution.
+  many years: first seen as D-NOMINATE, W-NOMINATE, then DW-NOMINATE, from
+  which the Nokken-Poole dataset is built. Seen within a two-dimensional
+  space, each legislator is given an ``ideal point,'' or where they would
+  most likely fit given their role call voting. This is seen as where the
+  legislator maximizes their utility, perhaps by increasing the chance
+  they are elected by being located there as Mayhew might argue (2004).
+  They will most often vote for items that are close to this ``ideal
+  point'' and the farther away a vote will lie from this point the less
+  likely it is that the Member of Congress will vote ``Yea'' on the bill
+  or resolution.
   
   The dataset that I am using a special version of the DW-NOMINATE dataset
   that was created by Timothy Nokken and Keith Poole for a 2004 study to
@@ -533,17 +528,17 @@ bring more complicated statistical methods to better solve this problem.
   eventual model understand the importance of a predictor indicating
   leadership on this ideological shift. The dataset is large enough for
   the tests I intend to do on it, as the Senate has close to 5000 total
-  observations and the House has nearly 25000.
+  observations and the House has nearly 25,000.
   
   In order to properly subset my data I completely removed all
   independents from the dataset. In a later study it might be more useful
   to instead mark independents as a member of the Republican or Democratic
   party if they decide to caucus with them, such as Senator Sanders, an
-  independent who caucuses with the Democrats, or Senator Joe Lieberman,
-  and independent who also caucused with the Democrats. This did not seem
-  to be a huge reduction in the total dataset size, as during the period
-  this study looks at there were only sixteen total third party members of
-  the Senate and only thirty-two total third party members in the
+  independent who caucuses with the Democrats, or Senator Joe Lieberman, a
+  independent who also caucused with the Democrats. This did not seem to
+  be a huge reduction in the total dataset size, as during the period this
+  study looks at there were only sixteen total third party members of the
+  Senate and only thirty-two total third party members in the
   House.\footnote{A significant percentage of these thirty-two are members of the Minnesota Farmer-Labor party or members of the Progressive party.}
   The variables a reader of this paper might be most interested in are:
   
@@ -695,13 +690,17 @@ bring more complicated statistical methods to better solve this problem.
   Republicans that has been increasing in recent years (Mann and Ornstein
   2012). The Democrats begin farther from the perfectly ``moderate'' point
   of 0, but as the years progress the Republicans move significantly
-  father than the Democrats do.
+  farther than the Democrats do.
   
   Finally to better understand the current distribution of a Member of
   Congress in their chamber there are violin plots below that will help a
   reader better understand the density of the party across different
   ideologies, again indicated by the first dimension in the NOMINATE
-  dataset.
+  dataset. Violin plots are essentially a density plot, the larger the
+  space between the two lines the larger number of Members of Congress
+  have their first dimensional score in that area. They are similar to
+  boxplots, but are a little better at getting a look at the data beyond
+  just the robust statistics.
   
   \begin{figure}[h!tbp]
   \centering
@@ -758,7 +757,7 @@ bring more complicated statistical methods to better solve this problem.
   regression are able to predict each other with great accuracy. The
   variables around ideology could have some issues here and a future paper
   might try to further tease out whether there is a strong problem of
-  colinearity in this dataset and model.
+  collinearity in this dataset and model.
   
   Again, this model is acceptable, but a model that better fits this
   Congressional phenomena would certainly exist. Further research with
@@ -798,30 +797,31 @@ bring more complicated statistical methods to better solve this problem.
   \begin{tabular}{r|rrrr}
                          & Senate Ds & Senate Rs & House Ds & House Rs \\ \hline
   (Intercept)            & 0.00489   & 0.00259   & 0.01131  & 0.00405  \\
-  cong\_ideo\_mean       & 0.51583   & 0.61344   & 0.73047  & 0.67749  \\
-  last\_cong\_ideo\_mean & -0.38112  & -0.50989  & -0.57483 & -0.53415 \\
-  last\_ideo             & 0.87467   & 0.87061   & 0.87636  & 0.85013  \\
-  leaderY                & \textbf{-0.01863}  & 0.01289   & -\textbf{0.03022} & -0.00417 \\
+  Party Ideo. Mean       & 0.51583   & 0.61344   & 0.73047  & 0.67749  \\
+  Prev. Party Ideo. Mean & -0.38112  & -0.50989  & -0.57483 & -0.53415 \\
+  Prev. Ideo.            & 0.87467   & 0.87061   & 0.87636  & 0.85013  \\ \hline
+  Leader (Yes)           & \textbf{-0.01863}  & 0.01289   & -\textbf{0.03022} & -0.00417 \\ \hline
   Adjusted R-Squared     & 0.802     & 0.781     & 0.781    & 0.824    \\
   N                      & 2239      & 1817      & 11380    & 9270    
   \end{tabular}
   \end{table}
   
-  All of the control variables that were enlisted were found to be
-  statistically significant. These three variables were the ideological
-  mean of congress, the ideological mean of congress from the previous
-  congressional session, and the congressperson's ideology from the
-  previous congressional session. For all three of these variables across
-  both parties in both the House and Senate the p-value was always less
-  than 0.0001. It is clear that a legislator's current ideology would be
-  affected by what their ideology was in the previous congressional
-  session. While not as obvious, it also makes sense that you would need
-  to understand the greater political environment that their party is in
-  within their chamber. For example, if congresspeople as a whole were
-  becoming more polarized at a rapid rate, as they are currently, you
-  would expect a singular congressperson to be rapidly polarizing as well.
-  Knowing how the party has changed from the previous Congress to the most
-  recent one allows you to help control for this effect.
+  All of the control variables, those above the leadership variable, were
+  found to be statistically significant with a p-value of less than 0.001.
+  These three variables were the ideological mean of congress, the
+  ideological mean of congress from the previous congressional session,
+  and the congressperson's ideology from the previous congressional
+  session. For all three of these variables across both parties in both
+  the House and Senate the p-value was always less than 0.0001. It is
+  clear that a legislator's current ideology would be affected by what
+  their ideology was in the previous congressional session. While not as
+  obvious, it also makes sense that you would need to understand the
+  greater political environment that their party is in within their
+  chamber. For example, if congresspeople as a whole were becoming more
+  polarized at a rapid rate, as they are currently, you would expect a
+  singular congressperson to be rapidly polarizing as well. Knowing how
+  the party has changed from the previous Congress to the most recent one
+  allows you to help control for this effect.
   
   \subsection{Democrats}\label{democrats}
   
@@ -830,14 +830,14 @@ bring more complicated statistical methods to better solve this problem.
   represented by the bold text in Table 3.1 above. The Senate Democrats
   noticed a small shift, approximately a 0.02 leftward shift on the
   NOMINATE scale, indicating that leaders become slightly more liberal
-  across Congresses than their non-leader counterparts. The result was not
-  significant at a confidence level of the normal 0.05, but with a p-value
-  of 0.059 it would be recognized as significant at a slightly higher
-  confidence level. For reasons laid out farther below, I do not think
-  that this is reason enough to disregard this result, as I would guess
-  that this is an underestimate rather than an overestimate. The overall
-  shift is small, only a 0.02 movement towards the more liberal side, but
-  not insignificant.
+  across Congresses than their non-leader counterparts, on average. The
+  result was not significant at a significance level of 0.05, but with a
+  p-value of 0.059 it would be recognized as significant at a slightly
+  higher confidence level. For reasons laid out farther below, I do not
+  think that this is reason enough to disregard this result, as I would
+  guess that this is an underestimate rather than an overestimate. The
+  overall shift is small, only a 0.02 movement towards the more liberal
+  side, but not insignificant.
   
   A statistically significant shift was also noticed among the House
   Democrats. They had an even more statistically significant result, with
@@ -861,11 +861,11 @@ bring more complicated statistical methods to better solve this problem.
   towards the more conservative side. Accompanied by a p-value of 0.19
   they must be looked at skeptically, and instead perhaps taken as a hint
   for future study as opposed to a specific result. The coefficient found
-  here is similar to the results found for the Democrats, they they moved
+  here is similar to the results found for the Democrats: that they moved
   more towards their party's extreme edges when they were leaders. It was
   not as strong as the coefficient found for either the House Democrats or
-  the Senate Democrats, but it is no as weak as the Republican House,
-  covered below. While significant was not found in this elementary
+  the Senate Democrats, but it is not as weak as the Republican House,
+  covered below. While significance was not found in this elementary
   regression, perhaps a regression with better controls and a stronger
   method might be able to find results that are not just statistically
   significant but also are statistically sound.
@@ -877,7 +877,7 @@ bring more complicated statistical methods to better solve this problem.
   moderate wing of the Republican party or the Democratic party itself.
   These results are not in sync with the results found for the other three
   groups analyzed here, and certainly suggest a finding of null results
-  with any reasonable confidence level chosen.
+  with any reasonable significance level chosen.
   
   \subsection{Comments on Null Results}\label{comments-on-null-results}
   
@@ -947,11 +947,9 @@ bring more complicated statistical methods to better solve this problem.
   \subsection{Republicans}\label{republicans-1}
   
   Subsets were not useful to explain how House Republicans voted. During
-  all of the systems the p-value were relatively high. That being said the
-  subsetting did reduce the p-value by a significant amount, bringing the
-  p-value for all three eras to between 0.22 and 0.26. This is an
-  improvement when compared to the original 0.65 value received, but not
-  enough to pass a positive judgement on the effects of these values. The
+  all of the systems the p-values were relatively high. That being said
+  the subsetting did reduce the p-value by a significant amount, bringing
+  the p-value for all three eras to between 0.22 and 0.26. The
   coefficients were also stronger than they were when all of the systems
   were lumped together, but they still are smaller than the absolute value
   of the coefficients that exist for the Republicans in the House and
@@ -961,10 +959,10 @@ bring more complicated statistical methods to better solve this problem.
   explanatory as they did for the House Republicans. The p-value increases
   for all eras except for the New Deal era, when it moves down to 0.14.
   But during the Industrial and Candidate-centered systems the p-values
-  increase dramatically to point where they seem unable to be rationalized
-  in any way. So again subsetting is overall mostly ineffective at helping
-  try to tease out statistically significant ideological change due to a
-  leadership position among the Republicans.
+  increase dramatically to a point where they seem unable to be
+  rationalized in any way. So again subsetting is overall mostly
+  ineffective at helping try to tease out statistically significant
+  ideological change due to a leadership position among the Republicans.
   
   \subsection{Democrats}\label{democrats-1}
   
@@ -1056,7 +1054,7 @@ bring more complicated statistical methods to better solve this problem.
   The null hypothesis might also have been found for a number of reasons
   related to the statistical analysis. For example the controls that I
   used could have also factored in a lot of the leadership variable
-  outside of the its specific predictor. This would be problematic for my
+  outside of its specific predictor. This would be problematic for my
   results as I would be unable to find significance despite the actual
   leadership position having an effect on the legislator's ideology. A
   stronger understanding of statistics might allow a researcher to better
@@ -1087,8 +1085,8 @@ bring more complicated statistical methods to better solve this problem.
   leaders that are elected by their fellow Members of Congress to lead
   their party. To reiterate, these leaders are not often middlemen, and
   instead are closer to their party's extremes than would be expected (May
-  1973, Clausen and Wilcox (1987); Grofman, Koetzle, and McGann 2002;
-  Jessee and Malhotra 2010).
+  1973; Clausen and Wilcox 1987; Grofman, Koetzle, and McGann 2002; Jessee
+  and Malhotra 2010).
   
   Finally, the results were more significant for the Democrats during the
   New Deal era, or from 1933 to 1972, a period when the Democrats were in
@@ -1103,17 +1101,16 @@ bring more complicated statistical methods to better solve this problem.
   To understand why, imagine if party members were to always vote along
   party lines. You would have little incentive to move father towards the
   center once you had a majority of the seats in your chamber. As you keep
-  gaining seats you gain a larger margin in the the chamber. But if you
-  pass a bill with 70\% of the chamber it passes just the same as a bill
-  that passes with 51\% of support. So during this time of large
-  Democratic margins and a sense of security of their leadership, the
-  Democrats may have wanted more liberal policy to be passed. This would
-  encourage the leaders to perhaps become more liberal than they otherwise
-  would be.
+  gaining seats you gain a larger margin in the chamber. But if you pass a
+  bill with 70\% of the chamber it passes just the same as a bill that
+  passes with 51\% of support. So during this time of large Democratic
+  margins and a sense of security of their leadership, the Democrats may
+  have wanted more liberal policy to be passed. This would encourage the
+  leaders to perhaps become more liberal than they otherwise would be.
   
   \section{Conclusion}\label{conclusion-1}
   
-  Overall it seems as if leadership positions can effect the ideology of a
+  Overall it seems as if leadership positions can affect the ideology of a
   member in Congress, but that it is not always significant and when it is
   the degree to which it moves the Member of Congress can be small.
   Republicans were more likely to find null results, perhaps due to the
@@ -1130,19 +1127,19 @@ bring more complicated statistical methods to better solve this problem.
   ideology matters when Members of Congress are elected to their
   leadership positions, the research had ended there. So while we might
   have been able to predict that John Boehner and Paul Ryan had ideologies
-  that made them both were reasonable choices for Speaker, the research
-  did not yet speak to how their ideology might change when they got their
+  that made them both reasonable choices for Speaker, the research did not
+  yet speak to how their ideology might change when they obtained their
   position. This is an integral question as leaders have a large amount of
   power when compared to legislators that do not sit in leadership roles.
   
-  These results found are far from the final word on the subject, they are
+  These results found are far from the final word on the subject; they are
   actually the first. Subsequent analyses of this data could look at
   non-parametric approaches to try to better explain the variation in the
   data. More control variables could be added in order to better assess
   significance of the leadership predictor. For example, an age variable,
   or time spent in Congress variable, might have elicited some interesting
   results. More work could be done to examine the differences between the
-  Republicans and Democrats - perhaps a some case studies on how specific
+  Republicans and Democrats - perhaps some case studies on how specific
   leaders changed their ideologies might be informative to the theory and
   story underlying the main question of this paper. Breaking down the data
   based on the type of leader that they are could also be useful. Bringing
@@ -1237,14 +1234,6 @@ bring more complicated statistical methods to better solve this problem.
   
   Poole, Keith T, and Howard L Rosenthal. 2007. \emph{Ideology and
   Congress}. Transaction Publishers.
-  
-  Rohde, David W. 1991. ``Parties and Leaders in the Postreform
-  Congress.'' \emph{Chicago, IL: Uni}.
-  
-  Sinclair, Barbara, Roger H Davidson, Walter J Oleszek, Charles O Jones,
-  Thomas E Mann, Norman J Ornstein, James L Sundquist, Frank H Mackaman,
-  Joseph Cooper, and G Calvin Mackenzie. 1983. ``Purposive Behavior in the
-  US Congress: A Review Essay.'' JSTOR.
   
   Steinhauer, Jennifer. 2016. ``Paul Ryan, a Mirage Candidate, Wages a
   Parallel Campaign.'' \emph{The New York Times}.

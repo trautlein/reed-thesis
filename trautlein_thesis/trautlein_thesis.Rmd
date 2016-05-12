@@ -7,10 +7,8 @@ department: 'Political Science'
 title: 'Ideological Shifts and Congressional Leadership'
 abstract: >
   `r paste(readLines('chapters/abstract.Rmd'), collapse = '\n')`
-acknowledgements: >
-  Will add acknowledgements after orals.
-dedication: >
-  Will add dedication after orals.
+# acknowledgements: >
+# dedication: >
 bibliography: bib/thesis.bib
 csl: bib/chicago-author-date.csl
 output: 
